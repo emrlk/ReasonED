@@ -11,3 +11,5 @@ The ReasonED prototype will consist of a visually appealing website with pages d
   - ddawe - Dakota Dawe - ddawe001@odu.edu
   - jtroy - June Troyer - jtroy003@odu.edu
   - anabi - Areeb Nabi - anabi001@odu.edu
+  - dcies002 - Daniel Cieslinski - dcies002@odu.edu
+
