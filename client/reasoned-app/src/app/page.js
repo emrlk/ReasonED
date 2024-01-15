@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 import Image from 'next/image';
 
-export default async function Cart({ params }) {
+export async function Cart({ params }) {
   const { rows } = await sql`SELECT * from CARTS where user_id=${params.user}`;
 
   return (
