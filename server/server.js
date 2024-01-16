@@ -7,6 +7,11 @@ const port = 3001;
 
 app.use(bodyParser.json());
 
+//Connect Vercel
+app.get("/", (req, res) => { res.send("Express on Vercel"); }); 
+const PORT = process.env.PORT || 5000; 
+app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
+
 // Connect to PostgreSQL database
 const client = new Client({
   user: 'database_user',
@@ -32,4 +37,7 @@ app.get('/api/data', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
+
 });
+
+module.exports = app;
