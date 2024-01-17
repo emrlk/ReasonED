@@ -1,6 +1,6 @@
-import { PrismaClient } from '../prisma';
+const { PrismaClient } = require('../../@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 const Home = ({ leaderboardData }) => {
   return (
