@@ -22,7 +22,7 @@ const Home = ({ leaderboardData }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function handler(req, res) {
   try {
     const leaderboardData = await prisma.leaderboard.findMany({
       orderBy: {
@@ -37,18 +37,10 @@ export async function getServerSideProps() {
       },
     });
 
-    return {
-      props: {
-        leaderboardData,
-      },
-    };
+    res.status(200).json(leaderboardData);
   } catch (error) {
     console.error('Error fetching leaderboard data:', error);
-    return {
-      props: {
-        leaderboardData: [],
-      },
-    };
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
 
