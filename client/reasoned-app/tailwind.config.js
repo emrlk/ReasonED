@@ -10,9 +10,33 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      },
+      colors: {
+        'orange': '#FF8D29',
+        'purple': '#541690',
+        'pink': '#FF4949',
+        'yellow': '#FFCD38',
+      },
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+      },
+
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      }
     },
-  },
   plugins: [],
+  }
 }
