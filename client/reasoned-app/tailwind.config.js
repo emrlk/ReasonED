@@ -7,12 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-        'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-
       screens: {
         sm: '480px',
         md: '768px',
@@ -24,6 +18,7 @@ module.exports = {
         'purple': '#541690',
         'pink': '#FF4949',
         'yellow': '#FFCD38',
+        'white': '#FFFFFF'
       },
       fontFamily: {
         sans: ['Noto Sans JP', 'sans-serif'],
