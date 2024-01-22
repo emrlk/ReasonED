@@ -1,5 +1,19 @@
 import Link from "next/link";
 
+interface ButtonProps {
+  // Text inside the button
+  title: string;
+  //Can interact with?
+  disabled: boolean;
+  color: string;
+}
+
+function Button({ title, disabled, color}: ButtonProps) {
+  return (
+    <button disabled={disabled} color={color}>{title}</button>
+  );
+}
+
 const Page = () => {
   return(
     <div
@@ -18,7 +32,14 @@ const Page = () => {
         <Link href="signup" className="mr-2 font-bold">Sign Up</Link>
         <Link href="login" className="font-bold">Log In</Link>
       </div>
+
+      <div>
+        <Button title="Elementary School" disabled={false} color={'orange'}/>
+      </div>
     </div>
+
+
+
     
   );
 };
