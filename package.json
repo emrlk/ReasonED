@@ -2,7 +2,7 @@
   "name": "reasoned",
   "version": "1.0.0",
   "description": "CS411 Team Crystal Prototype",
-  "main": "index.js",
+  "main": "page.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -21,7 +21,7 @@ module.exports = {
         'white': '#FFFFFF'
       },
       fontFamily: {
-        sans: ['Noto Sans JP', 'sans-serif'],
+        sans: ['Noto_Sans', 'sans-serif'],
       },
 
       spacing: {
@@ -30,7 +30,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
     },
   plugins: [],
   }
