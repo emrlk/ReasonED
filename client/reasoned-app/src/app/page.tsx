@@ -6,12 +6,11 @@ interface ButtonProps {
   title: string;
   //Can interact with?
   disabled: boolean;
-  color: string;
 }
 
-function Button({ title, disabled, color,}: ButtonProps) {
+function Button({ title, disabled}: ButtonProps) {
   return (
-    <button disabled={disabled} color={color}>{title}</button>
+    <button disabled={disabled}>{title}</button>
   );
 }
 
@@ -28,10 +27,10 @@ const Page = () => {
         alt="Screenshots of the dashboard project showing desktop version"
       />
       <div className="grow">
-        <div className="flex items-center justify-center gap-2 md:gap-8 font-bold">
+        <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white">
           <Link href="students">Students</Link>
-          <Link href="students">Teachers</Link>
-          <Link href="students">About</Link>
+          <Link href="teachers">Teachers</Link>
+          <Link href="about">About</Link>
         </div>
       </div>
       <div className={"text-lg "}>
@@ -43,8 +42,10 @@ const Page = () => {
     {/**Page Body */}
     <div className={"constainer bg-orange mx-auto flex justify-center items-center border-b-2 px-6 py-2 h-24"}>
 
-
-      <Button title="Elementary School" disabled={false} color={'bg-orange'} />
+      <div className ="font-bold text-white text-xl">
+        <Button title="Elementary School" disabled={false}/>
+      </div>
+      
     </div>
     </>
 

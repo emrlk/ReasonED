@@ -21,7 +21,7 @@ module.exports = {
         'white': '#FFFFFF'
       },
       fontFamily: {
-        sans: ['Noto_Sans', 'sans-serif'],
+        //sans: ['Noto_Sans', 'sans-serif'],
       },
 
       spacing: {
