@@ -107,7 +107,7 @@ export default function CreateAccount() {
                     </button>
 
                     <a
-                        href="/login"
+                        href="/"
                         className="w-full rounded-md border border-gray-300 px-3 py-1.5 text-sm font-semibold leading-6 text-red-500 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300 flex justify-center items-center"
                     >
                         Cancel
