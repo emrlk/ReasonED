@@ -16,7 +16,7 @@ export default function Header() {
                 <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white">
                     <Link href="students">Students</Link>
                     <Link href="teachers">Teachers</Link>
-                    <Link href="about">About</Link>
+                    <Link href="/about">About</Link>
                 </div>
             </div>
             <div className={"text-sm"}>
