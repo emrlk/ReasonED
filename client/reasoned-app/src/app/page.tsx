@@ -40,17 +40,25 @@ const Page = () => {
       </div>
 
       {/**Page Body */}
-      <div className={"constainer bg-orange h-screen mx-auto flex justify-center items-center  "}>
-
+      <div className={"constainer bg-orange h-screen mx-auto flex justify-center items-center"}>
         <div className="font-bold text-white text-xl">
-          <Button title="Elementary School" disabled={false} />
+          {/*<Button title="Elementary School" disabled={false} />*/}
+          <div className="w-70 mb-4">
+            <button className="bg-purple text-white w-full px-4 py-2 rounded-md">Elementary School</button>
+          </div>
+          <div className="w-70 mb-4">
+            <button className="bg-red-500 text-white w-full px-4 py-2 rounded-md">Middle School</button>
+          </div>
+          <div className="w-70 mb-4">
+            <button className="bg-blue-500 text-white w-full px-4 py-2 rounded-md">High School</button>
+          </div>
+          <div className="w-70">
+            <button className="bg-yellow text-white w-full px-4 py-2 rounded-md">College</button>
+          </div>
         </div>
-
-
-      </div>
+      </div >
     </>
-
-
+    
   );
 };
 export default Page;
