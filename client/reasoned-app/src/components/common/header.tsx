@@ -5,13 +5,17 @@ import Link from 'next/link';
 export default function Header() {
     return (
         <div className={"constainer bg-orange text-purple text-xl mx-auto flex items-center border-b-2 px-6 py-2 h-24"}>
-            <Image
-                src="/ReasonEDLogo.png"
-                width={250}
-                height={190}
-                className="hidden md:block"
-                alt="ReasonED Logo"
-            />
+            <Link href="/">
+                <div className="hidden md:block cursor-pointer">
+                    <Image
+                        src="/ReasonEDLogo.png"
+                        width={250}
+                        height={190}
+                        className="hidden md:block"
+                        alt="ReasonED Logo"
+                    />
+                </div>
+            </Link>
             <div className="grow">
                 <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white">
                     <Link href="students">Students</Link>
