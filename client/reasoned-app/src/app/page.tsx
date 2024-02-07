@@ -35,7 +35,7 @@ const Page = () => {
       </div>
       <div className={"text-lg "}>
         <Link href="/sign-up" className="mr-2">Sign Up</Link>
-        <Link href="login" className="font-bold">Log In</Link>
+        <Link href="/log-in" className="font-bold">Log In</Link>
       </div>
     </div>
     
