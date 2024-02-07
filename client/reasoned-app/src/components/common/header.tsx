@@ -23,7 +23,15 @@ export default function Header() {
                 <div className="flex items-center justify-start gap-2 md:gap-8 font-bold hover:white">
                     <Link href="students">Students</Link>
                     <Link href="teachers">Teachers</Link>
-                    <Link href="/about">About</Link>
+                    {/* About dropdown menu */}
+                    <div className="relative">
+                        <span className="cursor-pointer">About</span>
+                        <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
+                            <Link href="/problem" className="block px-4 py-2 text-purple hover:bg-gray-200">Problem</Link>
+                            <Link href="/about-reasoned" className="block px-4 py-2 text-purple hover:bg-gray-200">About ReasonED</Link>
+                            <Link href="/prototype-info" className="block px-4 py-2 text-purple hover:bg-gray-200">Prototype Info</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={"text-sm"}>

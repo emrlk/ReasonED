@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Styling for About Dropdown Menu */
+.relative:hover .absolute {
+    opacity: 1;
+    visibility: visible;
+}
