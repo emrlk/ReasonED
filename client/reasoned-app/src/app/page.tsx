@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from '@/components/common/header';
 
-
-
 interface ButtonProps {
   // Text inside the button
   title: string;
@@ -44,7 +42,6 @@ const Page = () => {
         </div>
       </div >
     </>
-
   );
 };
 export default Page;
