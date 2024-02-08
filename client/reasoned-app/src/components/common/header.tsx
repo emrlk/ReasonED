@@ -21,15 +21,15 @@ export default function Header() {
                 <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white"></div>*/}
             <div className="flex-grow">
                 <div className="flex items-center justify-start gap-2 md:gap-8 font-bold hover:white">
-                    <Link href="students">Students</Link>
-                    <Link href="teachers">Teachers</Link>
+                    <Link href="students" className="link">Students</Link>
+                    <Link href="teachers" className="link">Teachers</Link>
                     {/* About dropdown menu */}
                     <div className="relative">
-                        <span className="cursor-pointer">About</span>
+                        <span className="link cursor-pointer">About</span>
                         <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
-                            <Link href="/problem" className="block px-4 py-2 text-purple hover:bg-gray-200">Problem</Link>
-                            <Link href="/about-reasoned" className="block px-4 py-2 text-purple hover:bg-gray-200">About ReasonED</Link>
-                            <Link href="/prototype-info" className="block px-4 py-2 text-purple hover:bg-gray-200">Prototype Info</Link>
+                            <Link href="/problem" className="link block px-4 py-2 text-purple hover:bg-gray-200">Problem</Link>
+                            <Link href="/about-reasoned" className="link block px-4 py-2 text-purple hover:bg-gray-200">About ReasonED</Link>
+                            <Link href="/prototype-info" className="link block px-4 py-2 text-purple hover:bg-gray-200">Prototype Info</Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,9 @@ export default function Header() {
                 <div className="bg-purple text-white rounded-md px-3 py-1 mr-2 button">
                     <Link href="/sign-up" className="font-semibold">Sign Up</Link>
                 </div>
-                <Link href="/log-in" className="font-bold">Log In</Link>
+                <div className="link">
+                    <Link href="/log-in" className="font-bold">Log In</Link>
+                </div>
             </div>
         </div>
     );
