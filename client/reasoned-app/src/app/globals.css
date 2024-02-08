@@ -7,3 +7,12 @@
     opacity: 1;
     visibility: visible;
 }
+
+/* Styling for Sign Up button */
+.button {
+    transition: transform 0.1s ease;
+}
+
+.button:hover {
+    transform: translateY(2px);
+}

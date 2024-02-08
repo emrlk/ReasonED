@@ -34,8 +34,10 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            <div className={"text-sm"}>
-                <Link href="/sign-up" className="mr-2 font-semibold">Sign Up</Link>
+            <div className="text-sm flex items-center">
+                <div className="bg-purple text-white rounded-md px-3 py-1 mr-2 button">
+                    <Link href="/sign-up" className="font-semibold">Sign Up</Link>
+                </div>
                 <Link href="/log-in" className="font-bold">Log In</Link>
             </div>
         </div>
