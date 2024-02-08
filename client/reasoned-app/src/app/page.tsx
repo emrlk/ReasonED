@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from '@/components/common/header';
+import Footer from '@/components/common/footer';
 
 interface ButtonProps {
   // Text inside the button
@@ -41,6 +42,9 @@ const Page = () => {
           </div>
         </div>
       </div >
+
+      {/**Footer */}
+      <Footer />
     </>
   );
 };
