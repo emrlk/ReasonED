@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
     return (
-        <footer className="bg-white text-purple font-bold py-4">
+        <footer className="bg-white text-purple font-bold py-2">
             <div className="container mx-auto text-center">
                 <p>
                     <a href="https://www.odu.edu" className="text-sky-400 hover:underline">Old Dominion University</a><br />

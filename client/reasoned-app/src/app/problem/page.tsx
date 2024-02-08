@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/common/header';
+import Footer from '@/components/common/footer';
 
 export default function ProblemPage() {
     return (
@@ -32,6 +33,9 @@ export default function ProblemPage() {
                     Team Crystal is proposing a software solution: <b>ReasonED.io</b>
                 </p>
             </div>
+
+            {/**Footer */}
+            <Footer />
         </>
     );
 }
