@@ -47,7 +47,9 @@ export default function ProblemPage() {
                 {/* Call-to-action section */}
                 <div className="flex flex-col items-center mt-8">
                     <h3 className="text-2xl text-purple font-bold mb-4">Ready to empower critical thinking?</h3>
-                    <button className="bg-purple text-white py-3 px-6 rounded-md button font-semibold">Get Started</button>
+                    <a href="/sign-up">
+                        <button className="bg-purple text-white py-3 px-6 rounded-md button font-semibold">Get Started</button>
+                    </a>
                 </div>
             </div >
 
