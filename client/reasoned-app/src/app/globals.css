@@ -2,4 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Styling for About Dropdown Menu */
+.relative:hover .absolute {
+    opacity: 1;
+    visibility: visible;
+}
 
+/* Styling for Sign Up button */
+.button {
+    transition: transform 0.1s ease;
+}
+
+/* Styling for Navigation Bar links */
+.button:hover {
+    transform: translateY(2px);
+}
+
+.link {
+    transition: color 0.3s ease;
+    color: #4C1D95
+}
+
+.link:hover {
+    color: #b629d2;
+}
