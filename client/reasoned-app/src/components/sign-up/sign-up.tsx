@@ -1,15 +1,13 @@
+"use client";
 import React, { useState } from 'react';
 
 export default function CreateAccount() {
     // Define initial form data
     const initialFormData = {
-        firstName: '',
-        lastName: '',
         email: '',
         username: '',
         password: '',
         dob: '',
-        gender: ''
     };
 
     const [formData, setFormData] = useState(initialFormData);
@@ -20,51 +18,29 @@ export default function CreateAccount() {
     };
 
     // Function to handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Write code here to handle form submission later (sending data to the server)
-        console.log(formData);
+        try {
+            const response = await fetch('/api/create-account', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                console.log('Account created successfully!');
+            } else {
+                console.error('Failed to create account.');
+            }
+        } catch (error) {
+            console.error('Error occurred:', error);
+        }
     };
 
     return (
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
             <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-purple">
-                        First Name
-                    </label>
-                    <div className="mt-2">
-                        <input
-                            id="firstName"
-                            name="firstName"
-                            type="text"
-                            autoComplete="given-name"
-                            required
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:text-sm sm:leading-6"
-                        />
-                    </div>
-                </div>
-
-                <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium leading-6 text-purple">
-                        Last Name
-                    </label>
-                    <div className="mt-2">
-                        <input
-                            id="lastName"
-                            name="lastName"
-                            type="text"
-                            autoComplete="family-name"
-                            required
-                            value={formData.lastName}
-                            onChange={handleChange}
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:text-sm sm:leading-6"
-                        />
-                    </div>
-                </div>
-
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-purple">
                         Email Address
@@ -134,38 +110,6 @@ export default function CreateAccount() {
                             onChange={handleChange}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:text-sm sm:leading-6"
                         />
-                    </div>
-                </div>
-
-                <div>
-                    <label className="block text-sm font-medium leading-6 text-purple">
-                        Gender
-                    </label>
-                    <div className="mt-2 flex items-center">
-                        <input
-                            id="genderMale"
-                            name="gender"
-                            type="radio"
-                            value="male"
-                            checked={formData.gender === "male"}
-                            onChange={handleChange}
-                            className="focus:ring-sky-400 h-4 w-4 text-sky-400 border-gray-300"
-                        />
-                        <label htmlFor="genderMale" className="ml-2 text-purple">
-                            Male
-                        </label>
-                        <input
-                            id="genderFemale"
-                            name="gender"
-                            type="radio"
-                            value="female"
-                            checked={formData.gender === "female"}
-                            onChange={handleChange}
-                            className="ml-6 focus:ring-sky-400 h-4 w-4 text-sky-400 border-gray-300"
-                        />
-                        <label htmlFor="genderFemale" className="ml-2 text-purple">
-                            Female
-                        </label>
                     </div>
                 </div>
 
