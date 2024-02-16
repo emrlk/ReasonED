@@ -1,27 +1,33 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Client } = require('pg');
+const client = require('./database');
+const handleFormSubmission = require('./routes/form-submission');
+const handleLogin = require('./routes/login-submission');
 
 const app = express();
 const port = 3001;
 
 app.use(bodyParser.json());
 
-//Connect Vercel
-app.get("/", (req, res) => { res.send("Express on Vercel"); }); 
-const PORT = process.env.PORT || 5000; 
+// Connect Vercel
+app.get("/", (req, res) => { res.send("Express on Vercel"); });
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
 
-// Connect to PostgreSQL database
-const client = new Client({
-  user: 'database_user',
-  host: 'database_host',
-  database: 'database_name',
-  password: 'database_password',
-  port: 5432,
-});
+// client.connect();
 
-client.connect();
+// Middleware to enable CORS
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
 // Define API routes
 
@@ -33,6 +39,18 @@ app.get('/api/data', async (req, res) => {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
+});
+
+// POST endpoint for signup
+app.post('/sign-up', (req, res) => {
+  // Pass the connection to the form submission handler
+  handleFormSubmission(req, res, client);
+});
+
+// POST endpoint for login
+app.post('/log-in', (req, res) => {
+  // Pass the connection to the login handler
+  handleLogin(req, res, client);
 });
 
 app.listen(port, () => {
