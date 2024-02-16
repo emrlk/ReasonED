@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const client = require('./database');
 const handleFormSubmission = require('./routes/form-submission');
+const handleLogin = require('./routes/login-submission');
 
 const app = express();
 const port = 3001;
@@ -40,9 +41,16 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
+// POST endpoint for signup
 app.post('/sign-up', (req, res) => {
   // Pass the connection to the form submission handler
   handleFormSubmission(req, res, client);
+});
+
+// POST endpoint for login
+app.post('/log-in', (req, res) => {
+  // Pass the connection to the login handler
+  handleLogin(req, res, client);
 });
 
 app.listen(port, () => {
