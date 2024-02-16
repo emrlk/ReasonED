@@ -10,7 +10,10 @@ export default function CreateAccount() {
         dob: '',
     };
 
+    // State variables for form data, success message, and error message
     const [formData, setFormData] = useState(initialFormData);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     // Function to handle form input changes
     const handleChange = (e) => {
@@ -21,20 +24,53 @@ export default function CreateAccount() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Log formData before sending the POST request
+            console.log('Form Data:', formData);
+
+            // Send POST request to create new account
             const response = await fetch('http://localhost:3001/sign-up', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(formData)
             });
-            if (response.ok) {
-                console.log('Account created successfully!');
+
+            // Check if request was successful
+            if (!response.ok) {
+                // Parse response body as JSON
+                const responseData = await response.json();
+
+                // Check if the error message indicates a duplicate email
+                if (responseData.error === 'Email address already registered') {
+                    // Set error message
+                    setErrorMessage('This email address is already registered');
+
+                    // Reset success message
+                    setSuccessMessage('');
+                } else {
+                    throw new Error('Failed to create account');
+                }
             } else {
-                console.error('Failed to create account.');
+                // Set success message 
+                console.log('Account created successfully');
+                setSuccessMessage('Account created successfully');
+
+                // Reset error message
+                setErrorMessage('');
+
+                // Clear form fields
+                setFormData(initialFormData);
             }
         } catch (error) {
-            console.error('Error occurred:', error);
+            // Log the error message to the console for debugging purposes
+            console.error('Error creating account: ', error.message);
+
+            // Set error message and clear success message
+            setErrorMessage('Failed to create account');
+
+            // Reset success message
+            setSuccessMessage('');
         }
     };
 
@@ -130,6 +166,9 @@ export default function CreateAccount() {
                         Cancel
                     </a>
                 </div>
+
+                <div>{successMessage && <p className="text-green-600">{successMessage}</p>}</div>
+                <div>{errorMessage && <p className="text-red-500">{errorMessage}</p>}</div>
             </form>
         </div>
     );
