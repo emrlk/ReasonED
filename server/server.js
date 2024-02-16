@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Client } = require('pg');
+const client = require('./database');
 
 const app = express();
 const port = 3001;
@@ -9,22 +9,10 @@ app.use(bodyParser.json());
 
 // Connect Vercel
 app.get("/", (req, res) => { res.send("Express on Vercel"); });
-const PORT = process.env.PORT || 5000;  // prev. 5000
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
 
-// Connect to PostgreSQL database using environment variables
-const client = new Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  //ssl: {
-  //rejectUnauthorized: false // This allows connections to servers with self-signed certificates
-  //}
-});
-
-client.connect();
+// client.connect();
 
 // Middleware to enable CORS
 app.use((req, res, next) => {
