@@ -12,16 +12,16 @@ app.get("/", (req, res) => { res.send("Express on Vercel"); });
 const PORT = process.env.PORT || 5000;  // prev. 5000
 app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
 
-// Connect to PostgreSQL database
+// Connect to PostgreSQL database using environment variables
 const client = new Client({
-  user: 'default',
-  host: 'ep-little-grass-33923085-pooler.us-east-1.aws.neon.tech',
-  database: 'verceldb',
-  password: 'JNcP7EM2DerI',
-  port: 5432,
-  ssl: {
-    rejectUnauthorized: false // This allows connections to servers with self-signed certificates
-  }
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  //ssl: {
+  //rejectUnauthorized: false // This allows connections to servers with self-signed certificates
+  //}
 });
 
 client.connect();
@@ -33,9 +33,9 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', true);
   if (req.method === 'OPTIONS') {
-      res.sendStatus(200);
+    res.sendStatus(200);
   } else {
-      next();
+    next();
   }
 });
 
