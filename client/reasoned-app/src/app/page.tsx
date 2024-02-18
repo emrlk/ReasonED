@@ -34,13 +34,19 @@ const Page = () => {
             </a>
           </div>
           <div className="w-60 mb-5">
+          <a href="/middle-school" className="middleSchoolGames">
             <button className="bg-red-500 text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">Middle School</button>
+          </a>
           </div>
           <div className="w-60 mb-5">
+            <a href="/high-school" className="highSchoolGames">
             <button className="bg-blue-500 text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">High School</button>
+            </a>
           </div>
           <div className="w-60">
+            <a href="/college" className="collegeGames">
             <button className="bg-yellow text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">College</button>
+            </a>
           </div>
         </div>
       </div >
