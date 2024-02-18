@@ -29,7 +29,9 @@ const Page = () => {
         <div className="font-bold text-white text-xl flex flex-col gap-1/2">
           {/*<Button title="Elementary School" disabled={false} />*/}
           <div className="w-60 mb-5">
+            <a href="/elementary" className="elementaryGames">
             <button className="bg-purple text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">Elementary School</button>
+            </a>
           </div>
           <div className="w-60 mb-5">
             <button className="bg-red-500 text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">Middle School</button>
