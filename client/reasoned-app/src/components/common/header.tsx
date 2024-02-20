@@ -36,7 +36,7 @@ export default function Header() {
             </div>
             <div className="text-sm flex items-center">
                 <div className="bg-purple text-white rounded-md px-3 py-1 mr-2 button">
-                    <Link href="/sign-up" className="font-semibold">Sign Up</Link>
+                    <Link href="/user-selection" className="font-semibold">Sign Up</Link>
                 </div>
                 <div className="link">
                     <Link href="/log-in" className="font-bold">Log In</Link>
