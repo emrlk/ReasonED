@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const client = require('./database');
 
 const handleStudentSignUp = require('./routes/student-submission');
-const handleTeacherSignUp = require('./routes/student-submission');
+const handleTeacherSignUp = require('./routes/teacher-submission');
 const handleLogin = require('./routes/login-submission');
 
 const app = express();
