@@ -12,7 +12,7 @@ export default function CreateTeacherAccountPage() {
                         alt="ReasonED Logo"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple">
-                        Sign Up
+                        Teacher Sign Up
                     </h2>
                 </div>
 
