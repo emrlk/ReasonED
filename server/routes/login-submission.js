@@ -4,26 +4,47 @@ const handleLogin = async (req, res, client) => {
     const { email, password } = req.body;
     try {
         // Query the database to retrieve the user with the provided email
-        const result = await client.query('SELECT * FROM users WHERE email = $1', [email]);
+        const usersResult = await client.query('SELECT * FROM users WHERE email = $1', [email]);
 
-        // Check if a user with the provided email exists
-        if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'User not found' });
+        // Query the teachers database to retrieve the teacher with the provided email
+        const teachersResult = await client.query('SELECT * FROM teachers WHERE email = $1', [email]);
+
+        // Check if a user with the provided email exists in the users database
+        if (usersResult.rows.length > 0) {
+            const user = usersResult.rows[0];
+
+            // Retrieve the hashed password from the users database
+            const hashedPassword = user.password;
+
+            // Compare the provided password with the hashed password
+            const passwordMatch = await bcrypt.compare(password, hashedPassword);
+
+            // Check if the passwords match
+            if (passwordMatch) {
+                // Password is correct, user is authenticated
+                return res.status(200).json({ message: 'Student login successful' });
+            }
         }
 
-        // Retrieve the hashed password from the database
-        const hashedPassword = result.rows[0].password;
+        // Check if a teacher with the provided email exists in the teachers database
+        if (teachersResult.rows.length > 0) {
+            const teacher = teachersResult.rows[0];
 
-        // Compare the provided password with the hashed password
-        const passwordMatch = await bcrypt.compare(password, hashedPassword);
+            // Retrieve the hashed password from the teachers database
+            const hashedPassword = teacher.password;
 
-        // Check if the passwords match
-        if (!passwordMatch) {
-            return res.status(401).json({ error: 'Invalid password' });
+            // Compare the provided password with the hashed password
+            const passwordMatch = await bcrypt.compare(password, hashedPassword);
+
+            // Check if the passwords match
+            if (passwordMatch) {
+                // Password is correct, teacher is authenticated
+                return res.status(200).json({ message: 'Teacher login successful' });
+            }
         }
 
-        // Password is correct, user is authenticated
-        return res.status(200).json({ message: 'Login successful' });
+        // If no user or teacher found with the provided email, return an error
+        return res.status(404).json({ error: 'User not found' });
     } catch (error) {
         console.error('Error occurred while logging in:', error);
         return res.status(500).json({ error: 'Internal server error' });

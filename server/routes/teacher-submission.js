@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 // Server-Side Code for Teacher Sign-Up
-const handleTeacherSignup = async (req, res, client) => {
+const handleTeacherSignUp = async (req, res, client) => {
     const { email, password } = req.body;
 
     try {
@@ -22,4 +22,4 @@ const handleTeacherSignup = async (req, res, client) => {
     }
 };
 
-module.exports = handleTeacherSignup;
+module.exports = handleTeacherSignUp;
