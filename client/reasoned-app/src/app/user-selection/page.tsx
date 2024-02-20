@@ -8,7 +8,7 @@ export default function UserTypeSelectionPage() {
                 <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transform transition duration-300 hover:scale-110">
                     Teacher
                 </button>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transform transition duration-300 hover:scale-110">
+                <button className="bg-orange-shades-500 hover:bg-orange-shades-600 text-white font-bold py-3 px-6 rounded-lg transform transition duration-300 hover:scale-110">
                     Student
                 </button>
             </div>
