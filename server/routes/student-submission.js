@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt');
 
-const handleFormSubmission = async (req, res, client) => {
+// Server-Side Code for Student Sign-Up
+const handleStudentSignUp = async (req, res, client) => {
     const { email, username, password, dob } = req.body;
+
     try {
         // Encrypt the password
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -12,11 +14,12 @@ const handleFormSubmission = async (req, res, client) => {
 
         console.log('New user created with ID:', newUserId);
 
-        res.status(201).json({ id: newUserId }); // Send the new user's ID back to the client
+        // Send the new user's ID back to the client
+        res.status(201).json({ id: newUserId });
     } catch (error) {
         console.error('Error occurred while creating user:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
 
-module.exports = handleFormSubmission;
+module.exports = handleStudentSignUp;

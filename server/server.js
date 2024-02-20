@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const client = require('./database');
-const handleFormSubmission = require('./routes/form-submission');
+
+const handleStudentSignUp = require('./routes/student-submission');
+const handleTeacherSignUp = require('./routes/student-submission');
 const handleLogin = require('./routes/login-submission');
 
 const app = express();
@@ -41,10 +43,16 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-// POST endpoint for signup
+// POST endpoint for student signup
 app.post('/sign-up', (req, res) => {
   // Pass the connection to the form submission handler
-  handleFormSubmission(req, res, client);
+  handleStudentSignUp(req, res, client);
+});
+
+// POST endpoint for teacher signup
+app.post('/teacher-sign-up', (req, res) => {
+  // Pass the connection to the form submission handler
+  handleTeacherSignUp(req, res, client);
 });
 
 // POST endpoint for login
@@ -53,6 +61,7 @@ app.post('/log-in', (req, res) => {
   handleLogin(req, res, client);
 });
 
+// Start Server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 
