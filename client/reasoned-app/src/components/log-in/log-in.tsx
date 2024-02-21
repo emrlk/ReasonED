@@ -21,7 +21,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://reasoned.vercel.app/log-in', {
+            const response = await fetch('http://localhost:3001/log-in', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

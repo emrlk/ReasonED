@@ -13,15 +13,15 @@ const port = 3001;
 app.use(bodyParser.json());
 
 // Connect Vercel
-app.get("/", (req, res) => { res.send("Express on Vercel"); });
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
+// app.get("/", (req, res) => { res.send("Express on Vercel"); });
+const PORT = process.env.PORT || 3001; // prev 5000
+// app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`); });
 
 // client.connect();
 
 // Middleware to enable CORS
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://reasoned.vercel.app'); // Use this link if accessing through localhost-> http://localhost:3000 
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001'); // Use this link if accessing through vercel -> https://reasoned.vercel.app
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', true);
