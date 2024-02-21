@@ -129,6 +129,12 @@ export default function Login() {
                         </a>
                     </div>
 
+                    <div className="flex items-center justify-between mt-4">
+                        <a href="/forgot-password" className="text-purple hover:underline ml-4">
+                            Forgot Password?
+                        </a>
+                    </div>
+
                     {errorMessage && !successMessage && <p className="text-red-500">{errorMessage}</p>}
                     {successMessage && !errorMessage && <p className="text-green-500">{successMessage}</p>}
                 </form>
