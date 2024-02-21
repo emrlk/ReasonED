@@ -28,7 +28,7 @@ export default function CreateAccount() {
             console.log('Form Data:', formData);
 
             // Send POST request to create new account
-            const response = await fetch('http://localhost:3001/sign-up', {
+            const response = await fetch('https://reasoned.vercel.app/sign-up', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

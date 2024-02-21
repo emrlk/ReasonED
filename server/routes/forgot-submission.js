@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { sendPasswordResetEmail } = require('./routes/reset-email');
+const { sendPasswordResetEmail } = require('./reset-email');
 
 const handleForgotPassword = async (req, res, client) => {
     const { email } = req.body;

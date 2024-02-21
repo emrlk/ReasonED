@@ -26,7 +26,7 @@ export default function CreateTeacherAccount() {
             console.log('Form Data:', formData);
 
             // Send POST request to create new account
-            const response = await fetch('http://localhost:3001/teacher-sign-up', {
+            const response = await fetch('https://reasoned.vercel.app/teacher-sign-up', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
