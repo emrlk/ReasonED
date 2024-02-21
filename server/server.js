@@ -5,6 +5,7 @@ const client = require('./database');
 const handleStudentSignUp = require('./routes/student-submission');
 const handleTeacherSignUp = require('./routes/teacher-submission');
 const handleLogin = require('./routes/login-submission');
+const handleForgotPassword = require('./routes/forgot-submission');
 
 const app = express();
 const port = 3001;
@@ -59,6 +60,12 @@ app.post('/teacher-sign-up', (req, res) => {
 app.post('/log-in', (req, res) => {
   // Pass the connection to the login handler
   handleLogin(req, res, client);
+});
+
+// POST endpoint for password reset
+app.post('/forgot-password', (req, res) => {
+  // Pass the connection to the password reset handler
+  handleForgotPassword(req, res, client);
 });
 
 // Start Server
