@@ -71,7 +71,7 @@ app.post('/forgot-password', (req, res) => {
 
 // POST endpoint for password reset
 app.post('/reset-password', (req, res) => {
-  // Call the password reset handler
+  // Pass the connection to the password reset handler
   handleResetPassword(req, res, client);
 });
 
