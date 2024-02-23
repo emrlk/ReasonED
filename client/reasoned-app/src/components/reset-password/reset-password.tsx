@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function ResetPassword() {
+    const { token } = useParams();
+    
     // State variables to manage password input, confirm password input, error message, and success message
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -31,10 +34,15 @@ export default function ResetPassword() {
                 body: JSON.stringify( { password }) // Convert data to JSON string before sending
             });
 
+            console.log('Received response:', response);
+
             // If response is not okay
             if (!response.ok) {
+                console.log('Response not okay');
+
                 // Parse error response as JSON
                 const errorData = await response.json();
+                console.log('Error data:', errorData);
 
                 // Set error message based on response
                 setErrorMessage(errorData.message);

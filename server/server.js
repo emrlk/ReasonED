@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const client = require('./database');
+const connectToDatabase = require('./database');
 
 const handleStudentSignUp = require('./routes/student-submission');
 const handleTeacherSignUp = require('./routes/teacher-submission');
@@ -45,40 +45,36 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-// POST endpoint for student signup
-app.post('/sign-up', (req, res) => {
-  // Pass the connection to the form submission handler
-  handleStudentSignUp(req, res, client);
-});
+// Connect to the database and start the server
+connectToDatabase((err, client) => {
+  if (err) {
+    console.error('Failed to connect to the database:', err);
+  } else {
+    app.post('/sign-up', (req, res) => {
+      handleStudentSignUp(req, res, client);
+    });
 
-// POST endpoint for teacher signup
-app.post('/teacher-sign-up', (req, res) => {
-  // Pass the connection to the form submission handler
-  handleTeacherSignUp(req, res, client);
-});
+    app.post('/teacher-sign-up', (req, res) => {
+      handleTeacherSignUp(req, res, client);
+    });
 
-// POST endpoint for login
-app.post('/log-in', (req, res) => {
-  // Pass the connection to the login handler
-  handleLogin(req, res, client);
-});
+    app.post('/log-in', (req, res) => {
+      handleLogin(req, res, client);
+    });
 
-// POST endpoint for password reset
-app.post('/forgot-password', (req, res) => {
-  // Pass the connection to the password reset handler
-  handleForgotPassword(req, res, client);
-});
+    app.post('/forgot-password', (req, res) => {
+      handleForgotPassword(req, res, client);
+    });
 
-// POST endpoint for password reset
-app.post('/reset-password', (req, res) => {
-  // Pass the connection to the password reset handler
-  handleResetPassword(req, res, client);
-});
+    app.post('/reset-password', (req, res) => {
+      handleResetPassword(req, res, client);
+    });
 
-// Start Server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-
+    // Start Server
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
+    });
+  }
 });
 
 module.exports = app;
