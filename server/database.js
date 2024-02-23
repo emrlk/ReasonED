@@ -13,6 +13,11 @@ const client = new Client({
     },
 });
 
+// Handle connection errors
+client.on('error', (err) => {
+    console.error('Unexpected error on PostgreSQL client', err);
+});
+
 // Connect to the PostgreSQL database
 client.connect()
     .then(() => console.log('Connected to the database'))
