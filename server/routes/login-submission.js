@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 
+// Handler function for login submission
 const handleLogin = async (req, res, client) => {
     console.log('Login request received');
 

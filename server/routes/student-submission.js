@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 
-// Server-Side Code for Student Sign-Up
+// Handler function for student sign up
 const handleStudentSignUp = async (req, res, client) => {
     const { email, username, password, dob } = req.body;
 

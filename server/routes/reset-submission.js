@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 
+// Handler function for reset password (submitting the new password)
 const handleResetPassword = async (req, res, client) => {
     // Retrieve necessary data from request body
     const { token, password } = req.body;
