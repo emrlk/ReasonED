@@ -50,22 +50,27 @@ connectToDatabase((err, client) => {
   if (err) {
     console.error('Failed to connect to the database:', err);
   } else {
+    // POST endpoint for student sign up
     app.post('/sign-up', (req, res) => {
       handleStudentSignUp(req, res, client);
     });
 
+    // POST endpoint for teacher sign up
     app.post('/teacher-sign-up', (req, res) => {
       handleTeacherSignUp(req, res, client);
     });
 
+    // POST endpoint for login (all users)
     app.post('/log-in', (req, res) => {
       handleLogin(req, res, client);
     });
 
+    // POST endpoint for forgot password
     app.post('/forgot-password', (req, res) => {
       handleForgotPassword(req, res, client);
     });
 
+    // POST endpoint for reset password
     app.post('/reset-password', (req, res) => {
       handleResetPassword(req, res, client);
     });

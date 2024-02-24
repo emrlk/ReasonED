@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 const { sendPasswordResetEmail } = require('./reset-email');
 
 const handleForgotPassword = async (req, res, client) => {
@@ -9,35 +9,44 @@ const handleForgotPassword = async (req, res, client) => {
         let userResult = await client.query('SELECT * FROM users WHERE email = $1', [email]);
         let isTeacher = false;
 
+        // If the email does not exist in users table, check in teachers table
         if (userResult.rows.length === 0) {
-            // If the email does not exist in users table, check in teachers table
             userResult = await client.query('SELECT * FROM teachers WHERE email = $1', [email]);
             isTeacher = true;
         }
 
+        // If the email does not exist in both tables, return an error response
         if (userResult.rows.length === 0) {
-            // If the email does not exist in both tables, return an error response
             return res.status(404).json({ message: 'Email not found' });
         }
 
-        // Generate a random temporary password
-        const temporaryPassword = Math.random().toString(36).slice(-8);
+        // Generate a secure token
+        crypto.randomBytes(20, async (err, buffer) => {
+            if (err) {
+                console.error('Error generating token:', err);
+                return res.status(500).json({ message: 'Failed to generate token.' });
+            }
 
-        // Encrypt the temporary password
-        const hashedPassword = await bcrypt.hash(temporaryPassword, 10);
+            const token = buffer.toString('hex');
 
-        // Update the user's password in the appropriate table
-        if (isTeacher) {
-            await client.query('UPDATE teachers SET password = $1 WHERE email = $2', [hashedPassword, email]);
-        } else {
-            await client.query('UPDATE users SET password = $1 WHERE email = $2', [hashedPassword, email]);
-        }
+            try {
+                // Update the user's token in the appropriate table
+                if (isTeacher) {
+                    await client.query('UPDATE teachers SET reset_token = $1 WHERE email = $2', [token, email]);
+                } else {
+                    await client.query('UPDATE users SET reset_token = $1 WHERE email = $2', [token, email]);
+                }
 
-        // Send password reset email
-        await sendPasswordResetEmail(email, temporaryPassword);
+                // Continue with sending password reset email
+                await sendPasswordResetEmail(email, token);
 
-        // Return a success response
-        return res.status(200).json({ message: 'Password reset successful. Check your email for the temporary password.' });
+                // Return a success response
+                return res.status(200).json({ message: 'Password reset email sent. Check your email to reset your password.' });
+            } catch (updateError) {
+                console.error('Error updating reset token in database:', updateError);
+                return res.status(500).json({ message: 'Failed to update reset token in database.' });
+            }
+        });
     } catch (error) {
         console.error('Error resetting password:', error);
         return res.status(500).json({ message: 'Internal server error' });
