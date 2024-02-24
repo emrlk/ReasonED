@@ -5,7 +5,8 @@ export default function CreateTeacherAccount() {
     // Define initial form data
     const initialFormData = {
         email: '',
-        password: ''
+        password: '',
+        confirmPassword: '',
     };
 
     // State variables for form data, success message, and error message
@@ -22,6 +23,12 @@ export default function CreateTeacherAccount() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Check if password and confirm password match
+            if (formData.password !== formData.confirmPassword) {
+                setErrorMessage('Password and confirm password do not match');
+                return;
+            }
+
             // Log formData before sending the POST request
             console.log('Form Data:', formData);
 
@@ -105,6 +112,24 @@ export default function CreateTeacherAccount() {
                             autoComplete="current-password"
                             required
                             value={formData.password}
+                            onChange={handleChange}
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:text-sm sm:leading-6"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label htmlFor="confirmPassword" className="block text-sm font-medium leading-6 text-purple">
+                        Confirm Password
+                    </label>
+                    <div className="mt-2">
+                        <input
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            type="password"
+                            autoComplete="new-password"
+                            required
+                            value={formData.confirmPassword}
                             onChange={handleChange}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:text-sm sm:leading-6"
                         />

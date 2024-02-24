@@ -36,7 +36,7 @@ export default function ResetPasswordPage() {
                         alt="ReasonED Logo"
                     />
                     {/* Conditionally render text based on the presence of 'token' */}
-                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-sky-900">
+                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple">
                         {token ? 'Password Reset' : 'Forgot your Password?'}
                     </h2>
                 </div>

@@ -2,7 +2,12 @@ const bcrypt = require('bcrypt');
 
 // Handler function for teacher sign up
 const handleTeacherSignUp = async (req, res, client) => {
-    const { email, password } = req.body;
+    const { email, password, confirmPassword } = req.body;
+
+    // Check if password and confirmPassword match
+    if (password !== confirmPassword) {
+        return res.status(400).json({ error: 'Passwords do not match' });
+    }
 
     try {
         // Encrypt the password
