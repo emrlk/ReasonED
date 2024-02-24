@@ -45,41 +45,57 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-// Connect to the database and start the server
-connectToDatabase((err, client) => {
-  if (err) {
-    console.error('Failed to connect to the database:', err);
-  } else {
-    // POST endpoint for student sign up
-    app.post('/sign-up', (req, res) => {
-      handleStudentSignUp(req, res, client);
-    });
-
-    // POST endpoint for teacher sign up
-    app.post('/teacher-sign-up', (req, res) => {
-      handleTeacherSignUp(req, res, client);
-    });
-
-    // POST endpoint for login (all users)
-    app.post('/log-in', (req, res) => {
-      handleLogin(req, res, client);
-    });
-
-    // POST endpoint for forgot password
-    app.post('/forgot-password', (req, res) => {
-      handleForgotPassword(req, res, client);
-    });
-
-    // POST endpoint for reset password
-    app.post('/reset-password', (req, res) => {
-      handleResetPassword(req, res, client);
-    });
-
-    // Start Server
-    app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
-    });
-  }
+// POST endpoint for student sign up
+app.post('/sign-up', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleStudentSignUp(req, res, client);
+  });
 });
 
-module.exports = app;
+// POST endpoint for teacher sign up
+app.post('/teacher-sign-up', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleTeacherSignUp(req, res, client);
+  });
+});
+
+// POST endpoint to handle login requests
+app.post('/login', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleLogin(req, res, client);
+  });
+});
+
+// POST endpoint to handle forgetting password
+app.post('/forgot-password', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleForgotPassword(req, res, client);
+  });
+});
+
+// POST endpoint to handle resetting password
+app.post('/reset-password', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleResetPassword(req, res, client);
+  });
+});
+
+// Start Server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
