@@ -66,7 +66,7 @@ app.post('/teacher-sign-up', (req, res) => {
 });
 
 // POST endpoint to handle login requests
-app.post('/login', (req, res) => {
+app.post('/log-in', (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
