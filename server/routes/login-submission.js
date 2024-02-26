@@ -1,4 +1,12 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { sendVerificationEmail } = require('../emails/verification-email')
+
+// Function to generate a random verification code
+function generateVerificationCode() {
+    // Implement your logic to generate a verification code
+    return Math.floor(100000 + Math.random() * 900000);
+}
 
 // Handler function for login submission
 const handleLogin = async (req, res, client) => {
@@ -29,7 +37,28 @@ const handleLogin = async (req, res, client) => {
             if (passwordMatch) {
                 // Password is correct, user is authenticated
                 console.log('Password match. User authenticated');
-                return res.status(200).json({ message: 'Student login successful' });
+
+                // Generate verification code
+                const verificationCode = generateVerificationCode();
+
+                // Store verification code in the database
+                await client.query('UPDATE users SET verification_code = $1 WHERE id = $2', [verificationCode, user.id]);
+
+                // Send verification email
+                sendVerificationEmail(email, verificationCode);
+
+                // Generate token payload
+                const tokenPayload = {
+                    userId: user.id,
+                    username: user.username,
+                    email: user.email
+                };
+
+                // Sign the token
+                const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
+
+                // Return response with token and verification code
+                return res.status(200).json({ token, verificationCode });
             } else {
                 // Password is incorrect
                 console.log('Incorrect password');
@@ -52,7 +81,27 @@ const handleLogin = async (req, res, client) => {
             if (passwordMatch) {
                 // Password is correct, teacher is authenticated
                 console.log('Password match. Teacher authenticated');
-                return res.status(200).json({ message: 'Teacher login successful' });
+
+                // Generate verification code
+                const verificationCode = generateVerificationCode();
+
+                // Store verification code in the database
+                await client.query('UPDATE teachers SET verification_code = $1 WHERE id = $2', [verificationCode, teacher.id]);
+
+                // Send verification email
+                sendVerificationEmail(email, verificationCode);
+
+                // Generate token payload
+                const tokenPayload = {
+                    userId: teacher.id,
+                    email: teacher.email
+                };
+
+                // Sign the token
+                const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
+
+                // Return response with token and verification code
+                return res.status(200).json({ token, verificationCode });
             } else {
                 // Password is incorrect
                 console.log('Incorrect password');

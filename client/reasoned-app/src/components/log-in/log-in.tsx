@@ -57,6 +57,9 @@ export default function Login() {
 
                 // Set success message for successful login
                 setSuccessMessage('Login successful');
+
+                // Redirect user to verification page
+                window.location.href = '/verification';
             }
         } catch (error) {
             // Log the error message to the console for debugging purposes

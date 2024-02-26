@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const { sendPasswordResetEmail } = require('./reset-email');
+const { sendPasswordResetEmail } = require('../emails/reset-email');
 
 // Handler function for forgot password (sending the reset email upon submission)
 const handleForgotPassword = async (req, res, client) => {
