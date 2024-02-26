@@ -4,7 +4,6 @@ const { sendVerificationEmail } = require('../emails/verification-email')
 
 // Function to generate a random verification code
 function generateVerificationCode() {
-    // Implement your logic to generate a verification code
     return Math.floor(100000 + Math.random() * 900000);
 }
 
@@ -50,8 +49,9 @@ const handleLogin = async (req, res, client) => {
                 // Generate token payload
                 const tokenPayload = {
                     userId: user.id,
+                    email: user.email,
                     username: user.username,
-                    email: user.email
+                    DoB: user.dob
                 };
 
                 // Sign the token
