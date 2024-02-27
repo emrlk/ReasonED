@@ -28,7 +28,7 @@ export default function ResetPassword({ token }) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify( { token, password }) 
+                body: JSON.stringify({ token, password })
             });
 
             // console.log('Received response:', response);
@@ -41,18 +41,22 @@ export default function ResetPassword({ token }) {
                 const errorData = await response.json();
                 console.log('Error data:', errorData);
 
-                // Set error message based on response
+
+                // Set error message and clear success message
                 setErrorMessage(errorData.message);
+                setSuccessMessage('');
             } else {
-                // Set success message
+                // Clear error message and set success message
+                setErrorMessage('');
                 setSuccessMessage('Password reset successfully');
             }
         } catch (error) {
             // Log the error to console
             console.error('Error resetting password:', error);
 
-            // Set error message
+            // Set error message and clear success message
             setErrorMessage('Failed to reset password');
+            setSuccessMessage('');
         }
     };
 

@@ -182,6 +182,7 @@ app.post('/verify-code', async (req, res) => {
       // Remove leading and trailing whitespaces in verificationCode
       const trimmedVerificationCode = verificationCode.trim();
 
+      // If the verificiation don't match
       if (user.verification_code !== trimmedVerificationCode) {
         return res.status(400).json({ error: 'Invalid verification code' });
       }
