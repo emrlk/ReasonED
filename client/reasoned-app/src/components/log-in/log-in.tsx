@@ -50,13 +50,42 @@ export default function Login() {
                 setSuccessMessage('');
             } else {
                 // If response is successful, log success message
-                console.log('Login successful');
+                // console.log('Login successful');
 
                 // Clear error message
-                setErrorMessage('');
+                //setErrorMessage('');
 
                 // Set success message for successful login
-                setSuccessMessage('Login successful');
+                // setSuccessMessage('Login successful');
+
+                // Parse response body as JSON 
+                const { token } = await response.json();
+
+                localStorage.setItem('token', token);
+
+                /// console.log('Token in localStorage:', token);
+
+                // Fetch user data after successful login
+                const userDataResponse = await fetch('http://localhost:3001/fetch/user', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                // If the response status is not okay
+                if (!userDataResponse.ok) {
+                    // Handle the error
+                    const errorData = await userDataResponse.json();
+                    console.error('Error fetching user data:', errorData.error);
+                    // Handle the error appropriately, such as displaying an error message to the user
+                } else {
+                    // If the response status is okay, parse the JSON response
+                    const userData = await userDataResponse.json();
+                    // Proceed with handling the user data, such as setting it in state or displaying it in the UI
+                    console.log('User data:', userData);
+                }
 
                 // Redirect user to verification page
                 window.location.href = '/verification';

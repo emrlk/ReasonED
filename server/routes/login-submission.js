@@ -51,14 +51,15 @@ const handleLogin = async (req, res, client) => {
                     userId: user.id,
                     email: user.email,
                     username: user.username,
-                    DoB: user.dob
+                    DoB: user.dob,
+                    userType: 'student'
                 };
 
                 // Sign the token
                 const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
 
-                // Return response with token and verification code
-                return res.status(200).json({ token, verificationCode });
+                // Return response with token 
+                return res.status(200).json({ token });
             } else {
                 // Password is incorrect
                 console.log('Incorrect password');
@@ -94,14 +95,15 @@ const handleLogin = async (req, res, client) => {
                 // Generate token payload
                 const tokenPayload = {
                     userId: teacher.id,
-                    email: teacher.email
+                    email: teacher.email,
+                    userType: 'teacher'
                 };
 
                 // Sign the token
                 const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
 
-                // Return response with token and verification code
-                return res.status(200).json({ token, verificationCode });
+                // Return response with token 
+                return res.status(200).json({ token });
             } else {
                 // Password is incorrect
                 console.log('Incorrect password');
