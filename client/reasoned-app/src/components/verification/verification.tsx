@@ -126,6 +126,7 @@ export default function Verification() {
                     <button
                         type="submit"
                         className="rounded-md bg-purple px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+                        style={{ minWidth: '150px' }}
                     >
                         Verify Code
                     </button>
