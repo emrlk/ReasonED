@@ -22,7 +22,12 @@ export default function Header() {
             <div className="flex-grow">
                 <div className="flex items-center justify-start gap-2 md:gap-8 font-bold hover:white">
                     <Link href="students" className="link">Students</Link>
-                    <Link href="teachers" className="link">Teachers</Link>
+                    <div className="relative">
+                    <Link href="teachers" className="link"><span className="link cursor-pointer">Teachers</span></Link>
+                        <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
+                            <Link href="/resources" className="link block px-4 py-2 text-purple hover:bg-gray-200">Resources</Link>
+                        </div>
+                    </div>
                     {/* About dropdown menu */}
                     <div className="relative">
                         <span className="link cursor-pointer">About</span>
