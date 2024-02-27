@@ -14,6 +14,10 @@ config/name="Straw Manny"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
