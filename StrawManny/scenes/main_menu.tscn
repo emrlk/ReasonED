@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://assets/manny.png" type="Texture" id=1]
-[ext_resource path="res://assets/Menu Text/Straw_Manny_Text.png" type="Texture" id=2]
+[ext_resource path="res://assets/manny-trimmed.png" type="Texture" id=1]
+[ext_resource path="res://assets/Straw_Manny_Logo-no-background-400x424.png" type="Texture" id=2]
 [ext_resource path="res://assets/Decor_Tiles/Decor_Tile_B_01.png" type="Texture" id=3]
 [ext_resource path="res://assets/Decor_Tiles/Decor_Tile_B_02.png" type="Texture" id=4]
 [ext_resource path="res://assets/Decor_Tiles/Decor_Tile_B_03.png" type="Texture" id=5]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/Decor_Tiles/Decor_Tile_B_06.png" type="Texture" id=10]
 [ext_resource path="res://assets/Decor_Tiles/Decor_Tile_B_08.png" type="Texture" id=11]
 [ext_resource path="res://assets/UI/medievalbutton/Main_Menu.png" type="Texture" id=12]
+[ext_resource path="res://assets/Background Elements/Samples/uncolored_castle.png" type="Texture" id=13]
+[ext_resource path="res://assets/Tiles/Ground_Tile_02_B.png" type="Texture" id=14]
 [ext_resource path="res://scripts/menu_buttons.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=1]
@@ -141,6 +143,565 @@
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
+10/name = "Ground_Tile_02_B.png 10"
+10/texture = ExtResource( 14 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 256, 256 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Ground_Tile_02_B.png 11"
+11/texture = ExtResource( 14 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 128, 128 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "uncolored_castle.png 12"
+12/texture = ExtResource( 13 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 960, 448, 32, 32 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "uncolored_castle.png 13"
+13/texture = ExtResource( 13 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 768, 640, 128, 128 )
+13/tile_mode = 1
+13/autotile/bitmask_mode = 0
+13/autotile/bitmask_flags = [  ]
+13/autotile/icon_coordinate = Vector2( 0, 0 )
+13/autotile/tile_size = Vector2( 32, 32 )
+13/autotile/spacing = 0
+13/autotile/occluder_map = [  ]
+13/autotile/navpoly_map = [  ]
+13/autotile/priority_map = [  ]
+13/autotile/z_index_map = [  ]
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "uncolored_castle.png 14"
+14/texture = ExtResource( 13 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 1024, 160, 32, 32 )
+14/tile_mode = 1
+14/autotile/bitmask_mode = 0
+14/autotile/bitmask_flags = [  ]
+14/autotile/icon_coordinate = Vector2( 0, 0 )
+14/autotile/tile_size = Vector2( 32, 32 )
+14/autotile/spacing = 0
+14/autotile/occluder_map = [  ]
+14/autotile/navpoly_map = [  ]
+14/autotile/priority_map = [  ]
+14/autotile/z_index_map = [  ]
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "uncolored_castle.png 15"
+15/texture = ExtResource( 13 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 960, 640, 32, 32 )
+15/tile_mode = 1
+15/autotile/bitmask_mode = 0
+15/autotile/bitmask_flags = [  ]
+15/autotile/icon_coordinate = Vector2( 0, 0 )
+15/autotile/tile_size = Vector2( 32, 32 )
+15/autotile/spacing = 0
+15/autotile/occluder_map = [  ]
+15/autotile/navpoly_map = [  ]
+15/autotile/priority_map = [  ]
+15/autotile/z_index_map = [  ]
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "uncolored_castle.png 16"
+16/texture = ExtResource( 13 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 256, 128, 128 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "uncolored_castle.png 17"
+17/texture = ExtResource( 13 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 128, 256, 128, 128 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+18/name = "uncolored_castle.png 18"
+18/texture = ExtResource( 13 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 256, 256, 128, 128 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
+19/name = "uncolored_castle.png 19"
+19/texture = ExtResource( 13 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 384, 256, 128, 128 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
+20/name = "uncolored_castle.png 20"
+20/texture = ExtResource( 13 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 512, 256, 128, 128 )
+20/tile_mode = 0
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shape_offset = Vector2( 0, 0 )
+20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape_one_way = false
+20/shape_one_way_margin = 0.0
+20/shapes = [  ]
+20/z_index = 0
+21/name = "uncolored_castle.png 21"
+21/texture = ExtResource( 13 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 640, 256, 128, 128 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape_one_way = false
+21/shape_one_way_margin = 0.0
+21/shapes = [  ]
+21/z_index = 0
+22/name = "uncolored_castle.png 22"
+22/texture = ExtResource( 13 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 768, 256, 128, 128 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = 0
+23/name = "uncolored_castle.png 23"
+23/texture = ExtResource( 13 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 896, 256, 128, 128 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shape_offset = Vector2( 0, 0 )
+23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape_one_way = false
+23/shape_one_way_margin = 0.0
+23/shapes = [  ]
+23/z_index = 0
+24/name = "uncolored_castle.png 24"
+24/texture = ExtResource( 13 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 0, 384, 128, 128 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
+25/name = "uncolored_castle.png 25"
+25/texture = ExtResource( 13 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 128, 384, 128, 128 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
+26/name = "uncolored_castle.png 26"
+26/texture = ExtResource( 13 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 256, 384, 128, 128 )
+26/tile_mode = 0
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shape_offset = Vector2( 0, 0 )
+26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+26/shape_one_way = false
+26/shape_one_way_margin = 0.0
+26/shapes = [  ]
+26/z_index = 0
+27/name = "uncolored_castle.png 27"
+27/texture = ExtResource( 13 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 384, 384, 128, 128 )
+27/tile_mode = 0
+27/occluder_offset = Vector2( 0, 0 )
+27/navigation_offset = Vector2( 0, 0 )
+27/shape_offset = Vector2( 0, 0 )
+27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+27/shape_one_way = false
+27/shape_one_way_margin = 0.0
+27/shapes = [  ]
+27/z_index = 0
+28/name = "uncolored_castle.png 28"
+28/texture = ExtResource( 13 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 512, 384, 128, 128 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape_one_way = false
+28/shape_one_way_margin = 0.0
+28/shapes = [  ]
+28/z_index = 0
+29/name = "uncolored_castle.png 29"
+29/texture = ExtResource( 13 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 640, 384, 128, 128 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shape_offset = Vector2( 0, 0 )
+29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape_one_way = false
+29/shape_one_way_margin = 0.0
+29/shapes = [  ]
+29/z_index = 0
+30/name = "uncolored_castle.png 30"
+30/texture = ExtResource( 13 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 768, 384, 128, 128 )
+30/tile_mode = 0
+30/occluder_offset = Vector2( 0, 0 )
+30/navigation_offset = Vector2( 0, 0 )
+30/shape_offset = Vector2( 0, 0 )
+30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape_one_way = false
+30/shape_one_way_margin = 0.0
+30/shapes = [  ]
+30/z_index = 0
+31/name = "uncolored_castle.png 31"
+31/texture = ExtResource( 13 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 896, 384, 128, 128 )
+31/tile_mode = 0
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shape_offset = Vector2( 0, 0 )
+31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape_one_way = false
+31/shape_one_way_margin = 0.0
+31/shapes = [  ]
+31/z_index = 0
+32/name = "uncolored_castle.png 32"
+32/texture = ExtResource( 13 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 0, 512, 128, 128 )
+32/tile_mode = 0
+32/occluder_offset = Vector2( 0, 0 )
+32/navigation_offset = Vector2( 0, 0 )
+32/shape_offset = Vector2( 0, 0 )
+32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+32/shape_one_way = false
+32/shape_one_way_margin = 0.0
+32/shapes = [  ]
+32/z_index = 0
+33/name = "uncolored_castle.png 33"
+33/texture = ExtResource( 13 )
+33/tex_offset = Vector2( 0, 0 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 128, 512, 128, 128 )
+33/tile_mode = 0
+33/occluder_offset = Vector2( 0, 0 )
+33/navigation_offset = Vector2( 0, 0 )
+33/shape_offset = Vector2( 0, 0 )
+33/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+33/shape_one_way = false
+33/shape_one_way_margin = 0.0
+33/shapes = [  ]
+33/z_index = 0
+34/name = "uncolored_castle.png 34"
+34/texture = ExtResource( 13 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 256, 512, 128, 128 )
+34/tile_mode = 0
+34/occluder_offset = Vector2( 0, 0 )
+34/navigation_offset = Vector2( 0, 0 )
+34/shape_offset = Vector2( 0, 0 )
+34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+34/shape_one_way = false
+34/shape_one_way_margin = 0.0
+34/shapes = [  ]
+34/z_index = 0
+35/name = "uncolored_castle.png 35"
+35/texture = ExtResource( 13 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 384, 512, 128, 128 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 0, 0 )
+35/navigation_offset = Vector2( 0, 0 )
+35/shape_offset = Vector2( 0, 0 )
+35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape_one_way = false
+35/shape_one_way_margin = 0.0
+35/shapes = [  ]
+35/z_index = 0
+36/name = "uncolored_castle.png 36"
+36/texture = ExtResource( 13 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 512, 512, 128, 128 )
+36/tile_mode = 0
+36/occluder_offset = Vector2( 0, 0 )
+36/navigation_offset = Vector2( 0, 0 )
+36/shape_offset = Vector2( 0, 0 )
+36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+36/shape_one_way = false
+36/shape_one_way_margin = 0.0
+36/shapes = [  ]
+36/z_index = 0
+37/name = "uncolored_castle.png 37"
+37/texture = ExtResource( 13 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 640, 512, 128, 128 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 0, 0 )
+37/navigation_offset = Vector2( 0, 0 )
+37/shape_offset = Vector2( 0, 0 )
+37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape_one_way = false
+37/shape_one_way_margin = 0.0
+37/shapes = [  ]
+37/z_index = 0
+38/name = "uncolored_castle.png 38"
+38/texture = ExtResource( 13 )
+38/tex_offset = Vector2( 0, 0 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 768, 512, 128, 128 )
+38/tile_mode = 0
+38/occluder_offset = Vector2( 0, 0 )
+38/navigation_offset = Vector2( 0, 0 )
+38/shape_offset = Vector2( 0, 0 )
+38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+38/shape_one_way = false
+38/shape_one_way_margin = 0.0
+38/shapes = [  ]
+38/z_index = 0
+39/name = "uncolored_castle.png 39"
+39/texture = ExtResource( 13 )
+39/tex_offset = Vector2( 0, 0 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 896, 512, 128, 128 )
+39/tile_mode = 0
+39/occluder_offset = Vector2( 0, 0 )
+39/navigation_offset = Vector2( 0, 0 )
+39/shape_offset = Vector2( 0, 0 )
+39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+39/shape_one_way = false
+39/shape_one_way_margin = 0.0
+39/shapes = [  ]
+39/z_index = 0
+40/name = "uncolored_castle.png 40"
+40/texture = ExtResource( 13 )
+40/tex_offset = Vector2( 0, 0 )
+40/modulate = Color( 1, 1, 1, 1 )
+40/region = Rect2( 0, 640, 128, 128 )
+40/tile_mode = 0
+40/occluder_offset = Vector2( 0, 0 )
+40/navigation_offset = Vector2( 0, 0 )
+40/shape_offset = Vector2( 0, 0 )
+40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+40/shape_one_way = false
+40/shape_one_way_margin = 0.0
+40/shapes = [  ]
+40/z_index = 0
+41/name = "uncolored_castle.png 41"
+41/texture = ExtResource( 13 )
+41/tex_offset = Vector2( 0, 0 )
+41/modulate = Color( 1, 1, 1, 1 )
+41/region = Rect2( 128, 640, 128, 128 )
+41/tile_mode = 0
+41/occluder_offset = Vector2( 0, 0 )
+41/navigation_offset = Vector2( 0, 0 )
+41/shape_offset = Vector2( 0, 0 )
+41/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+41/shape_one_way = false
+41/shape_one_way_margin = 0.0
+41/shapes = [  ]
+41/z_index = 0
+42/name = "uncolored_castle.png 42"
+42/texture = ExtResource( 13 )
+42/tex_offset = Vector2( 0, 0 )
+42/modulate = Color( 1, 1, 1, 1 )
+42/region = Rect2( 256, 640, 128, 128 )
+42/tile_mode = 0
+42/occluder_offset = Vector2( 0, 0 )
+42/navigation_offset = Vector2( 0, 0 )
+42/shape_offset = Vector2( 0, 0 )
+42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+42/shape_one_way = false
+42/shape_one_way_margin = 0.0
+42/shapes = [  ]
+42/z_index = 0
+43/name = "uncolored_castle.png 43"
+43/texture = ExtResource( 13 )
+43/tex_offset = Vector2( 0, 0 )
+43/modulate = Color( 1, 1, 1, 1 )
+43/region = Rect2( 384, 640, 128, 128 )
+43/tile_mode = 0
+43/occluder_offset = Vector2( 0, 0 )
+43/navigation_offset = Vector2( 0, 0 )
+43/shape_offset = Vector2( 0, 0 )
+43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+43/shape_one_way = false
+43/shape_one_way_margin = 0.0
+43/shapes = [  ]
+43/z_index = 0
+44/name = "uncolored_castle.png 44"
+44/texture = ExtResource( 13 )
+44/tex_offset = Vector2( 0, 0 )
+44/modulate = Color( 1, 1, 1, 1 )
+44/region = Rect2( 512, 640, 128, 128 )
+44/tile_mode = 0
+44/occluder_offset = Vector2( 0, 0 )
+44/navigation_offset = Vector2( 0, 0 )
+44/shape_offset = Vector2( 0, 0 )
+44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+44/shape_one_way = false
+44/shape_one_way_margin = 0.0
+44/shapes = [  ]
+44/z_index = 0
+45/name = "uncolored_castle.png 45"
+45/texture = ExtResource( 13 )
+45/tex_offset = Vector2( 0, 0 )
+45/modulate = Color( 1, 1, 1, 1 )
+45/region = Rect2( 640, 640, 128, 128 )
+45/tile_mode = 0
+45/occluder_offset = Vector2( 0, 0 )
+45/navigation_offset = Vector2( 0, 0 )
+45/shape_offset = Vector2( 0, 0 )
+45/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+45/shape_one_way = false
+45/shape_one_way_margin = 0.0
+45/shapes = [  ]
+45/z_index = 0
+46/name = "uncolored_castle.png 46"
+46/texture = ExtResource( 13 )
+46/tex_offset = Vector2( 0, 0 )
+46/modulate = Color( 1, 1, 1, 1 )
+46/region = Rect2( 768, 640, 128, 128 )
+46/tile_mode = 0
+46/occluder_offset = Vector2( 0, 0 )
+46/navigation_offset = Vector2( 0, 0 )
+46/shape_offset = Vector2( 0, 0 )
+46/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+46/shape_one_way = false
+46/shape_one_way_margin = 0.0
+46/shapes = [  ]
+46/z_index = 0
+47/name = "uncolored_castle.png 47"
+47/texture = ExtResource( 13 )
+47/tex_offset = Vector2( 0, 0 )
+47/modulate = Color( 1, 1, 1, 1 )
+47/region = Rect2( 896, 640, 128, 128 )
+47/tile_mode = 0
+47/occluder_offset = Vector2( 0, 0 )
+47/navigation_offset = Vector2( 0, 0 )
+47/shape_offset = Vector2( 0, 0 )
+47/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+47/shape_one_way = false
+47/shape_one_way_margin = 0.0
+47/shapes = [  ]
+47/z_index = 0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -178,60 +739,33 @@ atlas = ExtResource( 12 )
 region = Rect2( 290, 130, 261, 114 )
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+rect_min_size = Vector2( 40, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap2" type="TileMap" parent="."]
 scale = Vector2( 1, 0.94 )
 tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 2, 1, 0, 4, 1, 0, 6, 1, 0, 8, 1, 0, 10, 1, 0, 12, 1, 0, 14, 2, 0, 131072, 3, 0, 131074, 4, 0, 131076, 4, 0, 131078, 4, 0, 131080, 4, 0, 131082, 4, 0, 131084, 4, 0, 131086, 5, 0, 262144, 3, 0, 262146, 4, 0, 262148, 4, 0, 262150, 4, 0, 262152, 4, 0, 262154, 4, 0, 262156, 4, 0, 262158, 5, 0, 393216, 3, 0, 393218, 4, 0, 393220, 4, 0, 393222, 4, 0, 393224, 4, 0, 393226, 4, 0, 393228, 4, 0, 393230, 5, 0, 524288, 6, 0, 524290, 7, 0, 524292, 7, 0, 524294, 7, 0, 524296, 7, 0, 524298, 7, 0, 524300, 7, 0, 524302, 8, 0 )
+tile_data = PoolIntArray( -458763, 1610612744, 0, -458762, 1610612743, 0, -458761, 1610612743, 0, -458760, 1610612743, 0, -458759, 1610612743, 0, -458758, 1610612743, 0, -458757, 1610612743, 0, -458756, 1610612743, 0, -458755, 1610612743, 0, -458754, 1610612743, 0, -458753, 1610612743, 0, -524288, 1610612743, 0, -524287, 1610612743, 0, -524286, 1610612743, 0, -524285, 1610612743, 0, -524284, 1610612743, 0, -524283, 1610612743, 0, -524282, 1610612743, 0, -524281, 1610612743, 0, -524280, 1610612743, 0, -524279, 1610612743, 0, -524278, 1610612743, 0, -524277, 1610612743, 0, -524276, 1610612743, 0, -524275, 1610612743, 0, -524274, 1610612743, 0, -524273, 1610612743, 0, -524272, 1610612743, 0, -524271, 1610612742, 0, -393227, 1610612741, 0, -393226, 1610612740, 0, -393225, 1610612740, 0, -393224, 1610612740, 0, -393223, 1610612740, 0, -393222, 1610612740, 0, -393221, 1610612740, 0, -393220, 1610612740, 0, -393219, 1610612740, 0, -393218, 1610612740, 0, -393217, 1610612740, 0, -458752, 1610612740, 0, -458751, 1610612740, 0, -458750, 1610612740, 0, -458749, 1610612740, 0, -458748, 1610612740, 0, -458747, 1610612740, 0, -458746, 1610612740, 0, -458745, 1610612740, 0, -458744, 1610612740, 0, -458743, 1610612740, 0, -458742, 1610612740, 0, -458741, 1610612740, 0, -458740, 1610612740, 0, -458739, 1610612740, 0, -458738, 1610612740, 0, -458737, 1610612740, 0, -458736, 1610612740, 0, -458735, 1610612739, 0, -327691, 1610612741, 0, -327690, 1610612740, 0, -327689, 1610612740, 0, -327688, 1610612740, 0, -327687, 1610612740, 0, -327686, 1610612740, 0, -327685, 1610612740, 0, -327684, 1610612740, 0, -327683, 1610612740, 0, -327682, 1610612740, 0, -327681, 1610612740, 0, -393216, 1610612740, 0, -393215, 1610612740, 0, -393214, 1610612740, 0, -393213, 1610612740, 0, -393212, 1610612740, 0, -393211, 1610612740, 0, -393210, 1610612740, 0, -393209, 1610612740, 0, -393208, 1610612740, 0, -393207, -536870908, 0, -393206, -536870908, 0, -393205, 1610612740, 0, -393204, 1610612740, 0, -393203, -536870908, 0, -393202, 1610612740, 0, -393201, 1610612740, 0, -393200, 1610612740, 0, -393199, 1610612739, 0, -262155, 1610612741, 0, -262154, 1610612740, 0, -262153, 1610612740, 0, -262152, 1610612740, 0, -262151, 1610612740, 0, -262150, 1610612740, 0, -262149, -536870908, 0, -262148, 1610612740, 0, -262147, 1610612740, 0, -262146, -536870908, 0, -262145, -536870908, 0, -327680, -536870908, 0, -327679, -536870908, 0, -327678, -536870908, 0, -327677, -536870908, 0, -327676, -536870908, 0, -327675, -536870908, 0, -327674, -536870908, 0, -327673, 1610612740, 0, -327672, 1610612740, 0, -327671, -536870908, 0, -327670, 1610612740, 0, -327669, -536870908, 0, -327668, 1610612740, 0, -327667, 1610612740, 0, -327666, 1610612740, 0, -327665, 1610612740, 0, -327664, 1610612740, 0, -327663, 1610612739, 0, -196619, 1610612741, 0, -196618, 1610612740, 0, -196617, 1610612740, 0, -196616, 1610612740, 0, -196615, 1610612740, 0, -196614, 1610612740, 0, -196613, -536870908, 0, -196612, 1610612740, 0, -196611, 1610612740, 0, -196610, -536870908, 0, -196609, 1610612740, 0, -262144, 1610612740, 0, -262143, 1610612740, 0, -262142, 1610612740, 0, -262141, 1610612740, 0, -262140, 1610612740, 0, -262139, 1610612740, 0, -262138, -536870908, 0, -262137, -536870908, 0, -262136, -536870908, 0, -262135, -536870908, 0, -262134, 1610612740, 0, -262133, -536870908, 0, -262132, -536870908, 0, -262131, -536870908, 0, -262130, -536870908, 0, -262129, -536870908, 0, -262128, -536870908, 0, -262127, 1610612739, 0, -131083, 1610612741, 0, -131082, 1610612740, 0, -131081, 1610612740, 0, -131080, 1610612740, 0, -131079, 1610612740, 0, -131078, 1610612740, 0, -131077, -536870908, 0, -131076, 1610612740, 0, -131075, -536870908, 0, -131074, 1610612740, 0, -131073, 1610612740, 0, -196608, 1610612740, 0, -196607, 1610612740, 0, -196606, -536870908, 0, -196605, 1610612740, 0, -196604, 1610612740, 0, -196603, 1610612740, 0, -196602, 1610612740, 0, -196601, 1610612740, 0, -196600, 1610612740, 0, -196599, 1610612740, 0, -196598, 1610612740, 0, -196597, 1610612740, 0, -196596, 1610612740, 0, -196595, 1610612740, 0, -196594, -536870908, 0, -196593, 1610612740, 0, -196592, 1610612740, 0, -196591, 1610612739, 0, -65547, 1610612741, 0, -65546, 1610612740, 0, -65545, 1610612740, 0, -65544, 1610612740, 0, -65543, 1610612740, 0, -65542, 1610612740, 0, -65541, 1610612740, 0, -65540, 1610612740, 0, -65539, -536870908, 0, -65538, 1610612740, 0, -65537, 1610612740, 0, -131072, 1610612740, 0, -131071, 1610612740, 0, -131070, 1610612740, 0, -131069, 1610612740, 0, -131068, 1610612740, 0, -131067, 1610612740, 0, -131066, 1610612740, 0, -131065, 1610612740, 0, -131064, 1610612740, 0, -131063, 1610612740, 0, -131062, 1610612740, 0, -131061, 1610612740, 0, -131060, 1610612740, 0, -131059, -536870908, 0, -131058, -536870908, 0, -131057, 1610612740, 0, -131056, -536870908, 0, -131055, 1610612739, 0, -11, 1610612741, 0, -10, 1610612740, 0, -9, 1610612740, 0, -8, 1610612740, 0, -7, 1610612740, 0, -6, 1610612740, 0, -5, 1610612740, 0, -4, 1610612740, 0, -3, 1610612740, 0, -2, 1610612740, 0, -1, 1610612740, 0, -65536, 1610612737, 0, -65535, -536870909, 0, -65534, 1610612737, 0, -65533, 1610612737, 0, -65532, 1610612737, 0, -65531, -536870909, 0, -65530, -536870909, 0, -65529, 1610612737, 0, -65528, 1610612740, 0, -65527, 1610612740, 0, -65526, 1610612740, 0, -65525, 1610612740, 0, -65524, -536870908, 0, -65523, -536870908, 0, -65522, 1610612740, 0, -65521, 1610612740, 0, -65520, -536870908, 0, -65519, 1610612739, 0, 65525, 1610612741, 0, 65526, 1610612740, 0, 65527, 1610612740, 0, 65528, 1610612740, 0, 65529, 1610612740, 0, 65530, -536870908, 0, 65531, 1610612740, 0, 65532, 1610612740, 0, 65533, 1610612740, 0, 65534, 1610612740, 0, 65535, 1610612739, 0, 0, 16, 0, 1, 17, 0, 2, 18, 0, 3, 19, 0, 4, 20, 0, 5, 21, 0, 6, 22, 0, 7, 23, 0, 8, -536870905, 0, 9, 1610612740, 0, 10, 1610612740, 0, 11, 1610612740, 0, 12, -536870908, 0, 13, -536870908, 0, 14, 1610612740, 0, 15, -536870908, 0, 16, 1610612740, 0, 17, 1610612739, 0, 131061, 1610612741, 0, 131062, 1610612740, 0, 131063, 1610612740, 0, 131064, 1610612740, 0, 131065, 1610612740, 0, 131066, -536870908, 0, 131067, 1610612740, 0, 131068, 1610612740, 0, 131069, -536870908, 0, 131070, 1610612740, 0, 131071, 1610612739, 0, 65536, 24, 0, 65537, 25, 0, 65538, 26, 0, 65539, 27, 0, 65540, 28, 0, 65541, 29, 0, 65542, 30, 0, 65543, 31, 0, 65544, 1610612741, 0, 65545, 1610612740, 0, 65546, 1610612740, 0, 65547, -536870908, 0, 65548, -536870908, 0, 65549, 1610612740, 0, 65550, 1610612740, 0, 65551, -536870908, 0, 65552, 1610612740, 0, 65553, 1610612739, 0, 196597, 1610612741, 0, 196598, 1610612740, 0, 196599, 1610612740, 0, 196600, 1610612740, 0, 196601, 1610612740, 0, 196602, -536870908, 0, 196603, 1610612740, 0, 196604, 1610612740, 0, 196605, 1610612740, 0, 196606, 1610612740, 0, 196607, -536870911, 0, 131072, 32, 0, 131073, 33, 0, 131074, 34, 0, 131075, 35, 0, 131076, 36, 0, 131077, 37, 0, 131078, 38, 0, 131079, 39, 0, 131080, 1610612741, 0, 131081, 1610612740, 0, 131082, 1610612740, 0, 131083, 1610612740, 0, 131084, -536870908, 0, 131085, 1610612740, 0, 131086, 1610612740, 0, 131087, -536870908, 0, 131088, 1610612740, 0, 131089, 1610612739, 0, 262133, 1610612741, 0, 262134, 1610612740, 0, 262135, 1610612740, 0, 262136, 1610612740, 0, 262137, 1610612740, 0, 262138, -536870908, 0, 262139, 1610612740, 0, 262140, -536870908, 0, 262141, 1610612740, 0, 262142, 1610612740, 0, 262143, 1610612739, 0, 196608, 40, 0, 196609, 41, 0, 196610, 42, 0, 196611, 43, 0, 196612, 44, 0, 196613, 45, 0, 196614, 46, 0, 196615, 47, 0, 196616, -536870905, 0, 196617, 1610612740, 0, 196618, 1610612740, 0, 196619, 1610612740, 0, 196620, 1610612740, 0, 196621, 1610612740, 0, 196622, -536870908, 0, 196623, -536870908, 0, 196624, 1610612740, 0, 196625, 1610612739, 0, 327669, 1610612741, 0, 327670, 1610612740, 0, 327671, 1610612740, 0, 327672, 1610612740, 0, 327673, 1610612740, 0, 327674, -536870908, 0, 327675, 1610612740, 0, 327676, -536870908, 0, 327677, 1610612740, 0, 327678, 1610612740, 0, 327679, -536870911, 0, 262144, 45, 0, 262145, 45, 0, 262146, 45, 0, 262147, 45, 0, 262148, 45, 0, 262149, 45, 0, 262150, 45, 0, 262151, 45, 0, 262152, 1610612741, 0, 262153, 1610612740, 0, 262154, 1610612740, 0, 262155, -536870908, 0, 262156, 1610612740, 0, 262157, 1610612740, 0, 262158, -536870908, 0, 262159, -536870908, 0, 262160, 1610612740, 0, 262161, 1610612739, 0, 393205, 1610612741, 0, 393206, 1610612740, 0, 393207, 1610612740, 0, 393208, 1610612740, 0, 393209, 1610612740, 0, 393210, 1610612740, 0, 393211, -536870908, 0, 393212, 1610612740, 0, 393213, 1610612740, 0, 393214, 1610612740, 0, 393215, 1610612740, 0, 327680, 1610612743, 0, 327681, 1610612743, 0, 327682, -536870907, 0, 327683, 1610612743, 0, 327684, 1610612743, 0, 327685, 1610612743, 0, 327686, 1610612743, 0, 327687, -536870907, 0, 327688, 1610612740, 0, 327689, 1610612740, 0, 327690, 1610612740, 0, 327691, -536870908, 0, 327692, 1610612740, 0, 327693, 1610612740, 0, 327694, -536870908, 0, 327695, 1610612740, 0, 327696, -536870908, 0, 327697, 1610612739, 0, 458741, 1610612741, 0, 458742, 1610612740, 0, 458743, 1610612740, 0, 458744, 1610612740, 0, 458745, 1610612740, 0, 458746, 1610612740, 0, 458747, -536870908, 0, 458748, 1610612740, 0, 458749, 1610612740, 0, 458750, 1610612740, 0, 458751, 1610612740, 0, 393216, 1610612740, 0, 393217, 1610612740, 0, 393218, 1610612740, 0, 393219, 1610612740, 0, 393220, 1610612740, 0, 393221, 1610612740, 0, 393222, 1610612740, 0, 393223, 1610612740, 0, 393224, 1610612740, 0, 393225, 1610612740, 0, 393226, 1610612740, 0, 393227, -536870908, 0, 393228, 1610612740, 0, 393229, -536870908, 0, 393230, -536870908, 0, 393231, 1610612740, 0, 393232, 1610612740, 0, 393233, 1610612739, 0, 524277, 1610612741, 0, 524278, 1610612740, 0, 524279, 1610612740, 0, 524280, 1610612740, 0, 524281, 1610612740, 0, 524282, 1610612740, 0, 524283, -536870908, 0, 524284, 1610612740, 0, 524285, 1610612740, 0, 524286, 1610612740, 0, 524287, 1610612740, 0, 458752, 1610612740, 0, 458753, 1610612740, 0, 458754, 1610612740, 0, 458755, 1610612740, 0, 458756, 1610612740, 0, 458757, 1610612740, 0, 458758, 1610612740, 0, 458759, 1610612740, 0, 458760, 1610612740, 0, 458761, 1610612740, 0, 458762, -536870908, 0, 458763, -536870908, 0, 458764, 1610612740, 0, 458765, 1610612740, 0, 458766, -536870908, 0, 458767, 1610612740, 0, 458768, -536870908, 0, 458769, 1610612739, 0, 589813, 1610612741, 0, 589814, 1610612740, 0, 589815, 1610612740, 0, 589816, 1610612740, 0, 589817, 1610612740, 0, 589818, 1610612740, 0, 589819, 1610612740, 0, 589820, -536870908, 0, 589821, -536870908, 0, 589822, -536870908, 0, 589823, 1610612740, 0, 524288, 1610612740, 0, 524289, 1610612740, 0, 524290, -536870908, 0, 524291, -536870908, 0, 524292, 1610612740, 0, 524293, 1610612740, 0, 524294, 1610612740, 0, 524295, 1610612740, 0, 524296, -536870908, 0, 524297, -536870908, 0, 524298, -536870908, 0, 524299, -536870908, 0, 524300, -536870908, 0, 524301, -536870908, 0, 524302, 1610612740, 0, 524303, 1610612740, 0, 524304, -536870908, 0, 524305, 1610612739, 0, 655349, 1610612741, 0, 655350, 1610612740, 0, 655351, 1610612740, 0, 655352, 1610612740, 0, 655353, 1610612740, 0, 655354, 1610612740, 0, 655355, 1610612740, 0, 655356, 1610612740, 0, 655357, 1610612740, 0, 655358, -536870908, 0, 655359, -536870908, 0, 589824, 1610612740, 0, 589825, -536870908, 0, 589826, 1610612740, 0, 589827, 1610612740, 0, 589828, 1610612740, 0, 589829, 1610612740, 0, 589830, 1610612740, 0, 589831, 1610612740, 0, 589832, -536870908, 0, 589833, -536870908, 0, 589834, 1610612740, 0, 589835, 1610612740, 0, 589836, -536870908, 0, 589837, -536870908, 0, 589838, -536870908, 0, 589839, 1610612740, 0, 589840, 1610612740, 0, 589841, 1610612739, 0, 720885, 1610612738, 0, 720886, 1610612737, 0, 720887, 1610612737, 0, 720888, 1610612737, 0, 720889, 1610612737, 0, 720890, 1610612737, 0, 720891, 1610612737, 0, 720892, 1610612737, 0, 720893, 1610612737, 0, 720894, 1610612737, 0, 720895, 1610612737, 0, 655360, 1610612737, 0, 655361, 1610612737, 0, 655362, 1610612737, 0, 655363, 1610612737, 0, 655364, 1610612737, 0, 655365, 1610612737, 0, 655366, 1610612737, 0, 655367, 1610612737, 0, 655368, 1610612737, 0, 655369, 1610612737, 0, 655370, 1610612737, 0, 655371, 1610612737, 0, 655372, 1610612737, 0, 655373, 1610612737, 0, 655374, 1610612737, 0, 655375, 1610612737, 0, 655376, 1610612737, 0, 655377, 1610612736, 0 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 32.0
 margin_top = 32.0
-margin_right = -32.0
-margin_bottom = 32.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 960.0
-margin_bottom = 600.0
+[node name="Sound" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 971.0
+margin_bottom = 542.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 641.0
-margin_bottom = 600.0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 641.0
-margin_bottom = 317.0
-texture = ExtResource( 2 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 321.0
-margin_right = 641.0
-margin_bottom = 552.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="Sound" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 98.0
-margin_bottom = 231.0
-
-[node name="Spacer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Sound"]
-margin_right = 98.0
-margin_bottom = 124.0
-size_flags_vertical = 3
-
-[node name="toggle_sound" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Sound"]
-margin_top = 128.0
-margin_right = 98.0
-margin_bottom = 231.0
+[node name="toggle_sound" type="TextureButton" parent="MarginContainer/Sound"]
+margin_right = 971.0
+margin_bottom = 103.0
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = SubResource( 2 )
@@ -240,65 +774,81 @@ texture_hover = SubResource( 4 )
 stretch_mode = 4
 script = ExtResource( 15 )
 
-[node name="Spacer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 102.0
-margin_right = 237.0
-margin_bottom = 231.0
-size_flags_horizontal = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 971.0
+margin_bottom = 542.0
 
-[node name="Menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 241.0
-margin_right = 502.0
-margin_bottom = 231.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 559.0
+margin_bottom = 542.0
 
-[node name="Tutorial" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Menu"]
+[node name="Logo" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 559.0
+margin_bottom = 424.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Logo"]
+margin_left = 79.0
+margin_right = 479.0
+margin_bottom = 424.0
+texture = ExtResource( 2 )
+
+[node name="Menu" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 428.0
+margin_right = 559.0
+margin_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Tutorial" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_top = 1.0
 margin_right = 260.0
-margin_bottom = 113.0
+margin_bottom = 114.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = SubResource( 5 )
 texture_hover = SubResource( 6 )
 stretch_mode = 4
 
-[node name="Play" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Menu"]
-margin_top = 117.0
-margin_right = 261.0
-margin_bottom = 231.0
+[node name="Spacer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_left = 264.0
+margin_right = 294.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 30, 0 )
+size_flags_horizontal = 3
+
+[node name="Play" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+margin_left = 298.0
+margin_right = 559.0
+margin_bottom = 114.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = SubResource( 7 )
 texture_hover = SubResource( 8 )
 stretch_mode = 4
 
-[node name="Spacer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 506.0
-margin_right = 641.0
-margin_bottom = 231.0
-size_flags_horizontal = 3
+[node name="Manny" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 563.0
+margin_right = 971.0
+margin_bottom = 542.0
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 645.0
-margin_right = 960.0
-margin_bottom = 600.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Manny"]
+margin_right = 408.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 30, 40 )
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
-margin_left = 157.0
-margin_top = 300.0
-margin_right = 157.0
-margin_bottom = 300.0
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Manny"]
+margin_top = 44.0
+margin_right = 408.0
+margin_bottom = 537.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource( 1 )
-expand = true
-stretch_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 510, 300 )
 current = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Sound/toggle_sound" to="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Sound/toggle_sound" method="_on_Volume_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Menu/Tutorial" to="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Sound/toggle_sound" method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/Sound/toggle_sound" to="MarginContainer/Sound/toggle_sound" method="_on_Volume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/Tutorial" to="MarginContainer/Sound/toggle_sound" method="_on_Tutorial_pressed"]
