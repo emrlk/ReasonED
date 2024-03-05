@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://assets/Tiles/Ground_Tile_02_B.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,17 @@
 [ext_resource path="res://assets/Props/Tree_04.png" type="Texture" id=4]
 [ext_resource path="res://assets/Tiles/500x500grass_tile.png" type="Texture" id=5]
 [ext_resource path="res://assets/idle-manny.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_002.png" type="Texture" id=7]
 [ext_resource path="res://assets/run-manny.png" type="Texture" id=8]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_005.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_009.png" type="Texture" id=10]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_006.png" type="Texture" id=11]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_003.png" type="Texture" id=12]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_001.png" type="Texture" id=13]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_004.png" type="Texture" id=14]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_000.png" type="Texture" id=15]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_007.png" type="Texture" id=16]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_008.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=1]
 30/name = "Ground_Tile_02_B.png 30"
@@ -506,6 +516,64 @@ animations = [ {
 "speed": 40.0
 } ]
 
+[sub_resource type="AtlasTexture" id=152]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=153]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=154]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=155]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=156]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=157]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=158]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=159]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=160]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=161]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="SpriteFrames" id=162]
+animations = [ {
+"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 30.0
+} ]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Ground TileMap" type="TileMap" parent="."]
@@ -533,6 +601,15 @@ frame = 18
 
 [node name="Camera2D" type="Camera2D" parent="Manny"]
 current = true
-zoom = Vector2( 1.5, 1.5 )
+zoom = Vector2( 2, 2 )
 smoothing_enabled = true
 smoothing_speed = 4.0
+
+[node name="Enemy-Knight" type="KinematicBody2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy-Knight"]
+frames = SubResource( 162 )
+animation = "Idle"
+frame = 4
+speed_scale = 0.5
+playing = true
