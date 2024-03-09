@@ -1,4 +1,5 @@
 {
     "ComponentPreviewer.previewFolderRelPath": "client\\reasoned-app\\src\\app\\",
-    "ComponentPreviewer.serverURL": "http://localhost:5173/.c_preview/page.tsx"
+    "ComponentPreviewer.serverURL": "http://localhost:5173/.c_preview/page.tsx",
+    "godotTools.editorPath.godot3": "c:\\Users\\izsnu\\Downloads\\Godot_v3.5.3-stable_mono_win64 (1)\\Godot_v3.5.3-stable_mono_win64\\Godot_v3.5.3-stable_mono_win64.exe"
 }

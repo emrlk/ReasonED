@@ -1,0 +1,85 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_001.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_005.png" type="Texture" id=3]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_009.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_006.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_002.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_003.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_004.png" type="Texture" id=8]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_000.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_007.png" type="Texture" id=10]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__IDLE_008.png" type="Texture" id=11]
+
+[sub_resource type="AtlasTexture" id=152]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=153]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=154]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=155]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=156]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=157]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=158]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=159]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=160]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="AtlasTexture" id=161]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 1800, 1000 )
+
+[sub_resource type="SpriteFrames" id=162]
+animations = [ {
+"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 30.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy-Knight" type="KinematicBody2D" parent="."]
+scale = Vector2( 0.75, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy-Knight"]
+frames = SubResource( 162 )
+animation = "Idle"
+frame = 6
+speed_scale = 0.5
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy-Knight"]
+polygon = PoolVector2Array( -194.667, 7, -165.333, 18, -169.333, 30, -144, 58, -145.333, 145, -82.6667, 173, -70.6667, 185, 53.3333, 186, 146.667, 182, 118.667, 125, 242.667, 100, 406.667, 83, 461.333, 90, 533.333, 53, 530.667, -21, 357.333, -9, 180, 16, 144, -4, 160, -49, 145.333, -110, 188, -166, 128, -244, 86.6667, -281, 90.6667, -318, 5.33333, -334, -49.3333, -298, -57.3333, -263, -101.333, -193, -105.333, -147, -137.333, -99, -129.333, -74, -196, -16 )

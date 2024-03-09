@@ -43,7 +43,7 @@ func read_input():
 	#Normalize vector to prevent diagonal movement from being faster
 	velocity = velocity.normalized()
 	#Speed of sprite:
-	velocity = move_and_slide(velocity * 600)
+	velocity = move_and_slide(velocity * 800)
 	
 	
 
