@@ -20,13 +20,10 @@
 
 .link {
     transition: color 0.3s ease;
-    color: #4C1D95
+    
 }
 
-.link:hover {
-    color: #b629d2;
-}
 
 .relative>.link {
     padding: .5rem 0;
-} 
+}
