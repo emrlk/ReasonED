@@ -1,7 +1,7 @@
 import React from 'react';
-import CreateAccount from '@/components/sign-up/sign-up';
+import CreateTeacherAccount from '@/components/teacher-sign-up/teacher-sign-up';
 
-export default function CreateAccountPage() {
+export default function CreateTeacherAccountPage() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">
@@ -12,11 +12,11 @@ export default function CreateAccountPage() {
                         alt="ReasonED Logo"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple">
-                        Student Sign Up
+                        Teacher Sign Up
                     </h2>
                 </div>
 
-                <CreateAccount />
+                <CreateTeacherAccount />
             </div>
         </main>
     );

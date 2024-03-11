@@ -26,3 +26,7 @@
 .link:hover {
     color: #b629d2;
 }
+
+.relative>.link {
+    padding: .5rem 0;
+} 

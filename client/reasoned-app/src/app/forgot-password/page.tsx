@@ -1,22 +1,26 @@
+"use client";
 import React from 'react';
-import CreateAccount from '@/components/sign-up/sign-up';
+import ForgotPassword from '@/components/forgot-password/forgot-password';
 
-export default function CreateAccountPage() {
+export default function ForgotPasswordPage() {
+    const setToken = (token) => {
+        // Logic to set the token???
+    };
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <img
+                <img
                         className="mx-auto h-20 w-auto"
                         src="ReasonEDLogo.png"
                         alt="ReasonED Logo"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple">
-                        Student Sign Up
+                        Forgot your Password?
                     </h2>
                 </div>
-
-                <CreateAccount />
+                <ForgotPassword setToken={setToken} />
             </div>
         </main>
     );

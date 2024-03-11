@@ -3,7 +3,7 @@
 The ReasonED prototype will consist of a visually appealing website with pages dedicated to games, readings, and educator resources respectively. Three two-dimensional games will be developed and embedded on the website, each in which a logical fallacy is personified as a fun character with some flawed tendency that corresponds to the fallacy. 
 
 # <a href="https://reasoned.vercel.app/" target="_blank" rel="noopener noreferrer">Prototype Link </a> 
-# <a href="https://emrlk.github.io/reasonED.io/" target="_blank" rel="noopener noreferrer">Process Link (Team Website)</a>
+# <a href="https://emrlk.github.io/ReasonED-Team-Website/" target="_blank" rel="noopener noreferrer">Process Link (Team Website)</a>
 
 # Members
   - emrlk - Emily Louk - elouk001@odu.edu
