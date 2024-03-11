@@ -26,18 +26,21 @@ export default function ForgotPassword({ setToken }) {
                 // Parse error response as JSON
                 const errorData = await response.json();
 
-                // Set error message based on response
+                // Set error message and clear success message
                 setErrorMessage(errorData.message);
+                setSuccessMessage('');
             } else {
-                // Set success message
+                // Clear error message and set success message
+                setErrorMessage('');
                 setSuccessMessage('Password reset link sent to your email');
             }
         } catch (error) {
             // Log the error to console
             console.error('Error resetting password:', error);
 
-            // Set error message
+            // Set error message and clear success message
             setErrorMessage('Failed to reset password');
+            setSuccessMessage('');
         }
     };
 
