@@ -1,0 +1,84 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="LeftPadding" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 838.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 842.0
+margin_right = 920.0
+margin_bottom = 600.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 78.0
+margin_bottom = 274.0
+size_flags_vertical = 3
+
+[node name="Head" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 278.0
+margin_right = 78.0
+margin_bottom = 298.0
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 54.0
+margin_bottom = 17.0
+text = "Head"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
+margin_left = 58.0
+margin_right = 78.0
+margin_bottom = 20.0
+text = "="
+
+[node name="Body" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 302.0
+margin_right = 78.0
+margin_bottom = 322.0
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 53.0
+margin_bottom = 17.0
+text = "Body"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
+margin_left = 57.0
+margin_right = 77.0
+margin_bottom = 20.0
+text = "="
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 78.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="RightPadding" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 924.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 100, 0 )
