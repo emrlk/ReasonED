@@ -2,9 +2,9 @@ extends Node2D
 
 const root_path = "res://Assets/Characters/Harry/"
 
-onready var body_sprite = $CompositionSprite/Body
-onready var hair_sprite = $CompositionSprite/Hair
-onready var spacesuit_sprite = $CompositionSprite/Shirt
+onready var body_sprite = $PlayerKinematicBody2D/BodyParts/Body
+onready var hair_sprite = $PlayerKinematicBody2D/BodyParts/Hair
+onready var spacesuit_sprite = $PlayerKinematicBody2D/BodyParts/Spacesuit
 
 onready var hair_color_label = get_node("../MarginContainer/HBoxContainer/VBoxContainer/Head/HairColor")
 onready var body_color_label = get_node("../MarginContainer/HBoxContainer/VBoxContainer/Body/BodyColor")
