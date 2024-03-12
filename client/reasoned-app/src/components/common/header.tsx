@@ -37,7 +37,7 @@ export default function Header() {
 
                     {/* About */}
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                    <Link href="about" className="link">About</Link>
+                    <Link href="about-reasoned" className="link">About</Link>
                     </div>
                 </div>
             </div>
