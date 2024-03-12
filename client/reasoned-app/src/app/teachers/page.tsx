@@ -1,30 +1,36 @@
-import React from 'react';
-import Header from '@/components/common/header';
-import Footer from '@/components/common/footer';
-
+import Footer from "@/components/common/footer";
+import Header from "@/components/common/header";
+import Link from 'next/link';
 export default function PrototypePage() {
-    return (
-        <>
-            {/* Navbar */}
-            <Header />
+  return (
+    <>
+      {/* Navbar */}
+      <Header />
 
-            {/* Page Body */}
-            <div className="constainer bg-orange min-h-screen mx-auto py-8">
-                <h2 className="text-4xl text-white font-bold mb-6">Teachers</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+      {/* Page Body */}
+      <div className="constainer bg-orange min-h-screen mx-auto py-5 ">
+        <div className=" mb-5 mx-60 px-10 py-10">
+          <h1 className="text-6xl text-white font-bold mb-10 ">Teachers</h1>
 
-                    {/* Left column */}
-                    <div className="flex flex-col justify-center">
-                        <p className="text-white mb-4">
-                        ReasonED aims to support teachers in educating their students about logical fallacies. Our age-curated games introduce students to logical fallacies in a fun, interactive way. Each of our characters each embody a logical fallacy and need help learning to reason more accurately about the world around them. As students aid each character, they build the skills they need to combat these fallacies themselves. Be sure to visit our resources page for ways to incorporate ReasonED more fully in your classroom!
-                        </p>
-                    </div>
+          {/* Left column */}
+          <div className="flex justify-center ">
+            <p className="text-white mb-4 text-xl font-semibold">
+              ReasonED aims to support teachers in educating their students
+              about logical fallacies. Our age-curated games introduce students
+              to logical fallacies in a fun, interactive way. Each of our
+              characters embody specific logical fallacies and need help learning to
+              reason more accurately about the world around them. As students
+              progress through our games, they build the skills they need to combat
+              these fallacies themselves. Be sure to visit our 
+              <Link href="resources" className="link text-purple font-bold"> Resources </Link> 
+              page for tools to incorporate more of ReasonED in your classroom!
+            </p>
+          </div>
+        </div>
+      </div>
 
-                </div>
-            </div>
-
-            {/* Footer */}
-            <Footer />
-        </>
-    );
+      {/* Footer */}
+      <Footer />
+    </>
+  );
 }
