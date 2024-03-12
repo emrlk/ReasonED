@@ -22,15 +22,15 @@ const Contact: FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='mb-5 py-5'>
         <label
-          htmlFor='full-name'
+          htmlFor='name'
           className='mb-3 block text-base font-bold text-white'
         >
           Full Name
         </label>
         <input
           type='text'
-          id='full-name'
-          name='full-name' // Add name attribute for better autofill support
+          id='name'
+          name='name' // Add name attribute for better autofill support
           autoComplete='name' // Set autocomplete attribute
           placeholder='Full Name'
           className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
