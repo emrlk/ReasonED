@@ -122,14 +122,20 @@ export default function Verification() {
                     </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-between space-x-4">
                     <button
                         type="submit"
-                        className="rounded-md bg-purple px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
-                        style={{ minWidth: '150px' }}
+                        className="w-1/2 rounded-md bg-purple px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
                     >
-                        Verify Code
+                        Verify
                     </button>
+
+                    <a
+                        href="/log-in"
+                        className="w-1/2 rounded-md border border-gray-300 px-3 py-1.5 text-sm font-semibold leading-6 text-red-500 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300 flex justify-center items-center"
+                    >
+                        Cancel
+                    </a>
                 </div>
 
                 {errorMessage && <p className="text-red-500">{errorMessage}</p>}
