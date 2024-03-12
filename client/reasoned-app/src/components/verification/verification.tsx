@@ -102,9 +102,7 @@ export default function Verification() {
                 //const { usertype } = responseData;
 
                 // Redirect user to the appropriate page based on userType
-                if (currentUser.usertype === 'teacher') {
-                    window.location.href = '/teacher-home-page';
-                } else if (currentUser.usertype === 'student') {
+                if (currentUser.usertype === 'student') {
                     window.location.href = '/student-home-page';
                 }
             }
