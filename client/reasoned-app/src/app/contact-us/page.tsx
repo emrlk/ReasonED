@@ -13,7 +13,7 @@ export default function contact() {
 
                     <div className="flex justify-left ">
                         <p className="text-white mb-4 text-xl font-semibold">
-                            Have questions, suggestions, or resources to offer? Fill out the form below!
+                            Have questions, suggestions, or resources to offer? Reach out to us below.
                         </p>
                     </div>
                     <div>
