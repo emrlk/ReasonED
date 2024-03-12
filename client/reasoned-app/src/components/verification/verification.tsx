@@ -43,6 +43,7 @@ export default function Verification() {
 
                 // Set the user data to the currentUser state
                 setCurrentUser(userData);
+
             } catch (error) {
                 // Log any errors
                 console.error('Error fetching user data:', error);
@@ -57,6 +58,13 @@ export default function Verification() {
     const handleSubmit = async (e) => {
         // Prevents default form submission behavior
         e.preventDefault();
+
+        // Check if currentUser is null
+        if (!currentUser) {
+            // Handle the case where currentUser is not available yet
+            console.error('User data not available yet');
+            return;
+        }
 
         // POST request for verifying 2FA code
         try {
@@ -86,6 +94,19 @@ export default function Verification() {
                 // setTimeout(() => {
                 // window.location.href = '/home-page';
                 // }, 2000); // 2 seconds delay
+
+                // Parse the response body as JSON
+                // const responseData = await response.json();
+
+                // Extract the userType from the response data
+                //const { usertype } = responseData;
+
+                // Redirect user to the appropriate page based on userType
+                if (currentUser.usertype === 'teacher') {
+                    window.location.href = '/teacher-home-page';
+                } else if (currentUser.usertype === 'student') {
+                    window.location.href = '/student-home-page';
+                }
             }
         } catch (error) {
             // Log the error to console
