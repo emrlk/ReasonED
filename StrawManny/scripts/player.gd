@@ -80,5 +80,6 @@ func _on_Inventory_item_added(item):
 	print("Ability Power: ", item)
 
 
+# This gets called when an item that is a powerup is being picked up so abilities from the powerup should be added here
 func _on_Inventory_item_received_for_instant_use(item):
 	print("Powerup: ", item)
