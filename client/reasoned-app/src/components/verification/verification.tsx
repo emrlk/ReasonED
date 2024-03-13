@@ -102,9 +102,7 @@ export default function Verification() {
                 //const { usertype } = responseData;
 
                 // Redirect user to the appropriate page based on userType
-                if (currentUser.usertype === 'teacher') {
-                    window.location.href = '/teacher-home-page';
-                } else if (currentUser.usertype === 'student') {
+                if (currentUser.usertype === 'student') {
                     window.location.href = '/student-home-page';
                 }
             }
@@ -118,7 +116,7 @@ export default function Verification() {
         }
     };
 
-    // JSX Structure
+    // TSX Structure
     return (
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <p className="text-sm text-purple mb-4">
