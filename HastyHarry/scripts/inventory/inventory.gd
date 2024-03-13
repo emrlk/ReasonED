@@ -13,6 +13,7 @@ func get_item(item_to_find):
 	return null
 
 func add_item(item):
+	print("adding item: ", item)
 	items.append(item)
 	
 func get_num_of_items():

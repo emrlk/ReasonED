@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White.png-bfa1f39d733cacd5ad51a75f38456ff5.stex"
+path="res://.import/white.png-b716cbc2a590197389d2bcfc70491c77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Harry/Customization/Spacesuit/White.png"
-dest_files=[ "res://.import/White.png-bfa1f39d733cacd5ad51a75f38456ff5.stex" ]
+source_file="res://assets/characters/harry/customization/spacesuit/white.png"
+dest_files=[ "res://.import/white.png-b716cbc2a590197389d2bcfc70491c77.stex" ]
 
 [params]
 

@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="HastyHarry"
-run/main_scene="res://Scenes/Player/Customization/CharacterCustomizationLevel.tscn"
+run/main_scene="res://scenes/player/customization/character_customization_level.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/PlayerKinematicBody2D/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 

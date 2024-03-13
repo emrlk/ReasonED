@@ -1,6 +1,6 @@
 extends Node2D
 
-const root_path = "res://Assets/Characters/Harry/"
+const root_path = "res://assets/characters/harry/"
 
 onready var body_sprite = $PlayerKinematicBody2D/BodyParts/Body
 onready var hair_sprite = $PlayerKinematicBody2D/BodyParts/Hair
@@ -31,7 +31,7 @@ func _ready():
 	
 func load_character_data():
 	var file = File.new()
-	file.open(root_path + "HarryCustomization.csv", file.READ)
+	file.open(root_path + "harry_customization.csv", file.READ)
 	file.get_csv_line()# skip the first line containing data about each column
 	while !file.eof_reached():
 		var data = Array(file.get_csv_line())

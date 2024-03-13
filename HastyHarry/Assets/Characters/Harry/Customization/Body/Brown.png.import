@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Brown.png-c0e6a268c593832b69943b0871794eaa.stex"
+path="res://.import/brown.png-9c2bd83031aeb9adc51c991d30072216.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Harry/Customization/Body/Brown.png"
-dest_files=[ "res://.import/Brown.png-c0e6a268c593832b69943b0871794eaa.stex" ]
+source_file="res://assets/characters/harry/customization/body/brown.png"
+dest_files=[ "res://.import/brown.png-9c2bd83031aeb9adc51c991d30072216.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gray.png-a1142cefaeda2a0e3a69c6848c4c9daa.stex"
+path="res://.import/gray.png-a8002821c1b6c88e2d57d61d88aa27aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Harry/Customization/Hair/Gray.png"
-dest_files=[ "res://.import/Gray.png-a1142cefaeda2a0e3a69c6848c4c9daa.stex" ]
+source_file="res://assets/characters/harry/customization/hair/gray.png"
+dest_files=[ "res://.import/gray.png-a8002821c1b6c88e2d57d61d88aa27aa.stex" ]
 
 [params]
 
