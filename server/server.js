@@ -10,6 +10,7 @@ const handleForgotPassword = require('./routes/forgot-submission');
 const handleResetPassword = require('./routes/reset-submission');
 const fetchUserData = require('./routes/fetch');
 const verifyCode = require('./routes/verification-submission')
+const handleChangePassword = require('./routes/change-submission');
 
 const app = express();
 const port = 3001;
@@ -95,6 +96,16 @@ app.post('/reset-password', (req, res) => {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
     handleResetPassword(req, res, client);
+  });
+});
+
+// POST endpoint to handle resetting password (after user is logged in)
+app.post('/change-password', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleChangePassword(req, res, client);
   });
 });
 
