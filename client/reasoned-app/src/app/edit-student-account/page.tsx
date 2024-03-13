@@ -1,10 +1,9 @@
 "use client";
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import LoggedInHeader from '@/components/common/logged-in-header';
 import Footer from '@/components/common/footer';
 
-const StudentProfile = () => {
+const EditStudentAccount = () => {
     // Define state variables for currentUser and loading
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -56,7 +55,7 @@ const StudentProfile = () => {
         fetchUserData();
     }, []); // Run once on component mount
 
-    // JSX Structure
+    // TSX Structure
     return (
         <>
             {/**Navbar */}
@@ -65,35 +64,20 @@ const StudentProfile = () => {
             {/**Page Body */}
             <div className="bg-orange h-screen flex justify-center items-center flex-col text-center">
                 <div className="font-bold text-white text-xl flex flex-col gap-1/2">
-                    {/* Profile Card */}
-                    <div className="sm:mx-auto sm:w-full sm:max-w-md bg-white border-2 border-purple shadow-lg rounded-lg overflow-hidden">
-                        <div className="px-6 py-8">
-                            <div className="text-center">
-                                <h2 className="mb-2 text-2xl font-semibold text-purple">Profile</h2>
-                                <img
-                                    className="mx-auto h-20 w-20 rounded-full shadow-lg"
-                                    src="/Avatar.jpg"
-                                    alt="Avatar Logo"
-                                />
-                                {/* <h2 className="text-lg font-semibold text-gray-800">{currentUser ? 'Profile' : 'Welcome User!'}</h2> */}
-                                {currentUser && (
-                                    <>
-                                        <p className="mt-2 text-xl text-purple">{currentUser.username}</p>
-                                        <p className="mt-2 text-sm text-purple">{currentUser.email}</p>
-                                        {/* <p className="mt-2 text-sm text-purple">{currentUser.usertype}</p> */}
+                    
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
+                    <div className="px-6 py-8">
+                        <div className="text-center">
+                            <h2 className="text-lg font-semibold text-gray-800">{currentUser ? 'Update your Account?' : 'Welcome User!'}</h2>
+                        </div>
 
-                                        {/* Add other user information here */}
+                        <p className="mt-4 text-sm text-gray-600">Note: You cannot change your email address.</p>
 
-                                        {/* Edit Student account link (will turn into a button w/ animations later) */}
-                                        <div className="flex justify-center mt-4">
-                                            <a href="/edit-student-account" className="text-sm text-purple hover:underline">Edit Account</a>
-                                        </div>
-
-                                    </>
-                                )}
-                            </div>
+                        <div className="flex justify-between mt-4">
+                            <a href="/change-password" className="text-sky-400 hover:underline">Change Password</a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -103,4 +87,4 @@ const StudentProfile = () => {
     );
 };
 
-export default StudentProfile;
+export default EditStudentAccount;

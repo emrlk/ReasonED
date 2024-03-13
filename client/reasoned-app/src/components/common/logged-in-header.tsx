@@ -32,7 +32,7 @@ export default function LoggedInHeader() {
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
                     <Link href="settings" className="link"><span className="link cursor-pointer transform hover:scale-105">Settings</span></Link>
                         <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
-                            <Link href="/edit-profile" className="link block px-4 py-2 text-purple hover:bg-gray-200 rounded">Edit Profile</Link>
+                            <Link href="/edit-student-account" className="link block px-4 py-2 text-purple hover:bg-gray-200 rounded">Edit Account</Link>
                         </div>
                     </div>
 
