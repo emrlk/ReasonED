@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function LoggedInHeader() {
+export default function LoggedInStudent() {
     return (
         <div className={"constainer bg-purple text-white  mx-auto flex items-center  px-6 py-2 h-24"}>
             <Link href="/student-home-page">
@@ -30,7 +30,7 @@ export default function LoggedInHeader() {
 
                     {/* Settings (Dropdown) */}
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                    <Link href="settings" className="link"><span className="link cursor-pointer transform hover:scale-105">Settings</span></Link>
+                    <Link href="student-settings" className="link"><span className="link cursor-pointer transform hover:scale-105">Settings</span></Link>
                         <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
                             <Link href="/edit-student-account" className="link block px-4 py-2 text-purple hover:bg-gray-200 rounded">Edit Account</Link>
                         </div>

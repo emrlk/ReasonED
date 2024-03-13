@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import LoggedInHeader from '@/components/common/logged-in-header';
+import LoggedInStudent from '@/components/common/logged-in-student';
 import Footer from '@/components/common/footer';
 
 const EditStudentAccount = () => {
@@ -59,25 +59,25 @@ const EditStudentAccount = () => {
     return (
         <>
             {/**Navbar */}
-            <LoggedInHeader />
+            <LoggedInStudent />
 
             {/**Page Body */}
             <div className="bg-orange h-screen flex justify-center items-center flex-col text-center">
                 <div className="font-bold text-white text-xl flex flex-col gap-1/2">
-                    
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
-                    <div className="px-6 py-8">
-                        <div className="text-center">
-                            <h2 className="text-lg font-semibold text-gray-800">{currentUser ? 'Update your Account?' : 'Welcome User!'}</h2>
-                        </div>
 
-                        <p className="mt-4 text-sm text-gray-600">Note: You cannot change your email address.</p>
+                    <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
+                        <div className="px-6 py-8">
+                            <div className="text-center">
+                                <h2 className="text-lg font-semibold text-purple">{currentUser ? 'Update Account?' : 'Welcome User!'}</h2>
+                            </div>
 
-                        <div className="flex justify-between mt-4">
-                            <a href="/change-password" className="text-sky-400 hover:underline">Change Password</a>
+                            <p className="mt-4 text-sm text-purple">Note: You cannot change your email address.</p>
+
+                            <div className="flex justify-center mt-4">
+                                <a href="/change-student-password" className="text-sm text-purple hover:underline">Change Password</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
 
