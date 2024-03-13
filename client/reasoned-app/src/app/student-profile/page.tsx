@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import LoggedInHeader from '@/components/common/logged-in-header';
 import Footer from '@/components/common/footer';
 
-const StudentPage = () => {
+const StudentProfile = () => {
     // Define state variables for currentUser and loading
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -62,34 +62,35 @@ const StudentPage = () => {
             <LoggedInHeader />
 
             {/**Page Body */}
-            <div className={"constainer bg-orange h-screen mx-auto flex justify-center items-center flex-col text-center"}>
-                {/**Welcome Message */}
-                <h1 className="font-extrabold text-8xl text-purple mb-3 hover:scale-105 transition duration-300">{currentUser ? `Welcome ${currentUser.username}!` : 'Welcome User~'}</h1>
-                <p className="text-2xl text-white mb-16 hover:scale-105 transition duration-300 font-bold">Empower Critical Thinking with Engaging Games</p>
+            <div className="bg-orange h-screen flex justify-center items-center flex-col text-center">
                 <div className="font-bold text-white text-xl flex flex-col gap-1/2">
-                    {/*<Button title="Elementary School" disabled={false} />*/}
-                    <div className="w-60 mb-5">
-                        <a href="/elementary" className="elementaryGames">
-                            <button className="bg-purple text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">Elementary School</button>
-                        </a>
-                    </div>
-                    <div className="w-60 mb-5">
-                        <a href="/middle-school" className="middleSchoolGames">
-                            <button className="bg-red-500 text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">Middle School</button>
-                        </a>
-                    </div>
-                    <div className="w-60 mb-5">
-                        <a href="/high-school" className="highSchoolGames">
-                            <button className="bg-blue-500 text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">High School</button>
-                        </a>
-                    </div>
-                    <div className="w-60">
-                        <a href="/college" className="collegeGames">
-                            <button className="bg-yellow text-white w-full px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">College</button>
-                        </a>
+                    {/* Profile Card */}
+                    <div className="sm:mx-auto sm:w-full sm:max-w-md bg-white border-2 border-purple shadow-lg rounded-lg overflow-hidden">
+                        <div className="px-6 py-8">
+                            <div className="text-center">
+                                <h2 className="mb-2 text-2xl font-semibold text-purple">Profile</h2>
+                                <img
+                                    className="mx-auto h-20 w-20 rounded-full shadow-lg"
+                                    src="/Avatar.jpg"
+                                    alt="Avatar Logo"
+                                />
+                                {/* <h2 className="text-lg font-semibold text-gray-800">{currentUser ? 'Profile' : 'Welcome User!'}</h2> */}
+                                {currentUser && (
+                                    <>
+                                        <p className="mt-2 text-xl text-purple">{currentUser.username}</p>
+                                        <p className="mt-2 text-sm text-purple">{currentUser.email}</p>
+                                        {/* <p className="mt-2 text-sm text-purple">{currentUser.usertype}</p> */}
+                                        {/* Add other user information here */}
+
+                                        {/* Edit Profile button */}
+                                        <button className="mt-4 bg-purple text-white py-1 px-2 rounded-md text-sm transition duration-300 ease-in-out transform hover:scale-105">Edit Profile</button>
+                                    </>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div >
+            </div>
 
             {/**Footer */}
             <Footer />
@@ -97,4 +98,4 @@ const StudentPage = () => {
     );
 };
 
-export default StudentPage;
+export default StudentProfile;

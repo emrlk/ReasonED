@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function LoggedInHeader() {
     return (
         <div className={"constainer bg-purple text-white  mx-auto flex items-center  px-6 py-2 h-24"}>
-            <Link href="/">
+            <Link href="/student-home-page">
                 {/*<div className="hidden md:block cursor-pointer">*/}
                 <div className="hidden md:block cursor-pointer mr-5 transform hover:scale-105">
                     <Image
@@ -23,23 +23,20 @@ export default function LoggedInHeader() {
             <div className="flex-grow ">
                 <div className="flex items-center justify-start gap-2 md:gap-8 font-bold hover:white text-2xl ">
 
-                    {/* Students */}
+                    {/* Profile */}
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                        <Link href="students" className="link">Students</Link>
+                        <Link href="student-profile" className="link">Profile</Link>
                     </div>
 
-                    {/* Teachers (Dropdown)*/}
+                    {/* Settings (Dropdown) */}
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                        <Link href="teachers" className="link"><span className="link cursor-pointer transform hover:scale-105">Teachers</span></Link>
+                    <Link href="settings" className="link"><span className="link cursor-pointer transform hover:scale-105">Settings</span></Link>
                         <div className="absolute z-10 mt-2 bg-white rounded shadow-md opacity-0 invisible transition-opacity duration-300">
-                            <Link href="/resources" className="link block px-4 py-2 text-purple hover:bg-gray-200 rounded">Resources</Link>
+                            <Link href="/edit-profile" className="link block px-4 py-2 text-purple hover:bg-gray-200 rounded">Edit Profile</Link>
                         </div>
                     </div>
 
-                    {/* About */}
-                    <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                        <Link href="about" className="link">About</Link>
-                    </div>
+                    {/* Add Leaderboard and other links here */}
                 </div>
             </div>
 
