@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var animation = $AnimatedSprite
+onready var inventory = $Inventory
 
 export var move_right_action = String("right")
 export var move_left_action = String("left")
@@ -28,6 +29,7 @@ func _physics_process(_delta):
 	
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
+
 
 
 func is_any_input_down() -> bool:
@@ -71,3 +73,8 @@ func read_input():
 	inputs[move_left_action] = Input.is_action_pressed(move_left_action)
 	inputs[move_up_action] = Input.is_action_pressed(move_up_action)
 	inputs[move_down_action] = Input.is_action_pressed(move_down_action)
+
+
+# This gets called when an item is added to the inventory script on manny incase we need to use it for something
+func _on_Inventory_item_added(item):
+	pass # Replace with function body.
