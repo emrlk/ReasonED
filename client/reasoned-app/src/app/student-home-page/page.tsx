@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import LoggedInHeader from '@/components/common/logged-in-header';
+import LoggedInHeader from '@/components/common/logged-in-student';
 import Footer from '@/components/common/footer';
 
 const StudentPage = () => {
@@ -55,7 +55,7 @@ const StudentPage = () => {
         fetchUserData();
     }, []); // Run once on component mount
 
-    // JSX Structure
+    // TSX Structure
     return (
         <>
             {/**Navbar */}

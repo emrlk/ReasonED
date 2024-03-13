@@ -107,6 +107,7 @@ export default function CreateAccount() {
     }
   };
 
+  // TSX Structure
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
       <form onSubmit={handleSubmit} className="space-y-6">
