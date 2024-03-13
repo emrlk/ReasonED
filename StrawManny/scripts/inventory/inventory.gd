@@ -1,6 +1,7 @@
 extends Node
 
 signal item_added(item)
+signal item_received_for_instant_use(item)
 
 var items = []
 
@@ -15,8 +16,11 @@ func get_item(item_to_find):
 
 func add_item(item):
 	print("adding item: ", item)
-	items.append(item)
-	emit_signal("item_added", item)
+	if item.is_powerup():
+		emit_signal("item_received_for_instant_use", item)
+	else:
+		items.append(item)
+		emit_signal("item_added", item)
 	
 func get_num_of_items():
 	return items.size()

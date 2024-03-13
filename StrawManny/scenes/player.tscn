@@ -22,3 +22,4 @@ polygon = PoolVector2Array( 35, -25, 37.2738, -16.3279, 38.8562, -8.85247, 36.21
 script = ExtResource( 1 )
 
 [connection signal="item_added" from="Inventory" to="." method="_on_Inventory_item_added"]
+[connection signal="item_received_for_instant_use" from="Inventory" to="." method="_on_Inventory_item_received_for_instant_use"]

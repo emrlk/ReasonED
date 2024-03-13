@@ -5,6 +5,8 @@ signal picked_up(inventory)
 onready var collision_shape = $CollisionShape2D
 
 export var can_be_picked_up = bool(true)
+export var is_instant_powerup = bool(false)
+
 var picked_up = bool(false)
 
 
@@ -15,6 +17,10 @@ func _ready():
 
 func is_picked_up() -> bool:
 	return picked_up
+
+
+func is_powerup() -> bool:
+	return is_instant_powerup
 
 
 func allowed_to_be_picked_up() -> bool:

@@ -77,4 +77,8 @@ func read_input():
 
 # This gets called when an item is added to the inventory script on manny incase we need to use it for something
 func _on_Inventory_item_added(item):
-	pass # Replace with function body.
+	print("Ability Power: ", item)
+
+
+func _on_Inventory_item_received_for_instant_use(item):
+	print("Powerup: ", item)
