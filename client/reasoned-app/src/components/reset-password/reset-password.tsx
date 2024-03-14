@@ -22,6 +22,29 @@ export default function ResetPassword({ token }) {
             return;
         }
 
+        // Password validation
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{6,}$/;
+        const missingValidations = [];
+        if (!passwordRegex.test(password)) {
+            if (!/(?=.*\d)/.test(password)) {
+                missingValidations.push("at least one number");
+            }
+            if (!/(?=.*[a-z])/.test(password)) {
+                missingValidations.push("at least one lowercase letter");
+            }
+            if (!/(?=.*[A-Z])/.test(password)) {
+                missingValidations.push("at least one uppercase letter");
+            }
+            if (!/(?=.*[!@#$%^&*()_+}{"':;?/>.<,])/.test(password)) {
+                missingValidations.push("at least one special character");
+            }
+            if (password.length < 6) {
+                missingValidations.push("at least 6 characters long");
+            }
+            setErrorMessage(`Password must contain ${missingValidations.join(", ")}`);
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:3001/reset-password', {
                 method: 'POST',

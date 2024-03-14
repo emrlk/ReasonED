@@ -74,6 +74,29 @@ export default function ChangeStudentPassword() {
             return;
         }
 
+        // Password validation
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{6,}$/;
+        const missingValidations = [];
+        if (!passwordRegex.test(newPassword)) {
+            if (!/(?=.*\d)/.test(newPassword)) {
+                missingValidations.push("at least one number");
+            }
+            if (!/(?=.*[a-z])/.test(newPassword)) {
+                missingValidations.push("at least one lowercase letter");
+            }
+            if (!/(?=.*[A-Z])/.test(newPassword)) {
+                missingValidations.push("at least one uppercase letter");
+            }
+            if (!/(?=.*[!@#$%^&*()_+}{"':;?/>.<,])/.test(newPassword)) {
+                missingValidations.push("at least one special character");
+            }
+            if (newPassword.length < 6) {
+                missingValidations.push("at least 6 characters long");
+            }
+            setErrorMessage(`Password must contain ${missingValidations.join(", ")}`);
+            return;
+        }
+
         try {
             // console.log('User Email:', currentUser.email);
 

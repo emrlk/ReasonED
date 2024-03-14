@@ -74,13 +74,18 @@ const EditStudentAccount = () => {
                             <p className="mt-4 text-sm text-purple">Note: You cannot change your email address.</p>
 
                         </div>
+
                         {/* Box Footer */}
                         <div className="bg-gray-200 px-6 py-4">
-                            <div className="flex justify-center">
-                                <a href="/change-student-password" className="text-sm text-purple hover:underline">Change Password</a>
-                            </div>
+                            {/* Change Username */}
                             <div className="flex justify-center mt-2">
                                 <a href="/change-username" className="text-sm text-purple hover:underline">Change Username</a>
+                            </div>
+
+
+                            {/* Change Password */}
+                            <div className="flex justify-center">
+                                <a href="/change-student-password" className="text-sm text-purple hover:underline">Change Password</a>
                             </div>
                         </div>
                     </div>
