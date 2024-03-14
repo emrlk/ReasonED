@@ -68,13 +68,19 @@ const EditStudentAccount = () => {
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
                         <div className="px-6 py-8">
                             <div className="text-center">
-                                <h2 className="text-lg font-semibold text-purple">{currentUser ? 'Update Account?' : 'Welcome User!'}</h2>
+                                <h2 className="text-lg font-semibold text-purple">{'Update Account'}</h2>
                             </div>
 
                             <p className="mt-4 text-sm text-purple">Note: You cannot change your email address.</p>
 
-                            <div className="flex justify-center mt-4">
+                        </div>
+                        {/* Box Footer */}
+                        <div className="bg-gray-200 px-6 py-4">
+                            <div className="flex justify-center">
                                 <a href="/change-student-password" className="text-sm text-purple hover:underline">Change Password</a>
+                            </div>
+                            <div className="flex justify-center mt-2">
+                                <a href="/change-username" className="text-sm text-purple hover:underline">Change Username</a>
                             </div>
                         </div>
                     </div>

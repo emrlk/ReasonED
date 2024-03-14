@@ -11,6 +11,7 @@ const handleResetPassword = require('./routes/reset-submission');
 const fetchUserData = require('./routes/fetch');
 const verifyCode = require('./routes/verification-submission')
 const handleChangePassword = require('./routes/change-submission');
+const handleChangeUsername = require('./routes/username-submission');
 
 const app = express();
 const port = 3001;
@@ -114,6 +115,17 @@ app.get('/fetch/user', authenticateJWT, fetchUserData);  // Note: will call all 
 
 // POST endpoint to verify 2FA code
 app.post('/verify-code', verifyCode);
+
+// POST endpoint to change a student's username
+// app.post('/change-username', handleChangeUsername);
+app.post('/change-username', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    handleChangeUsername(req, res, client);
+  });
+});
 
 // Start Server
 app.listen(port, () => {
