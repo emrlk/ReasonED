@@ -83,14 +83,14 @@ const StudentProfile = () => {
                                         {/* <p className="mt-2 text-sm text-purple">{currentUser.usertype}</p> */}
 
                                         {/* Add other user information here */}
-
-                                        {/* Edit Student account link (will turn into a button w/ animations later) */}
-                                        <div className="flex justify-center mt-4">
-                                            <a href="/edit-student-account" className="text-sm text-purple hover:underline">Edit Account</a>
-                                        </div>
-
                                     </>
                                 )}
+                            </div>
+                        </div>
+                        {/* Profile Card Footer */}
+                        <div className="bg-gray-200 px-6 py-4">
+                            <div className="flex justify-center">
+                                <a href="/edit-student-account" className="text-sm text-purple hover:underline">Edit Account</a>
                             </div>
                         </div>
                     </div>
