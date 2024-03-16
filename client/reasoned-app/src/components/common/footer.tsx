@@ -1,7 +1,7 @@
 
 export default function Footer() {
     return (
-        <footer className="bg-purple text-white font-medium py-10">
+        <footer className="bg-purple-shades-900 text-white font-medium py-10">
             <div className="container mx-auto text-center">
                 <p>
                     <a href="https://www.odu.edu" className="text-white hover:text-orange">Old Dominion University</a><br />

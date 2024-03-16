@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <div className={"constainer bg-purple text-white  mx-auto flex items-center  px-6 py-2 h-24"}>
+        <div className={"constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-2 h-24"}>
             <Link href="/">
                 {/*<div className="hidden md:block cursor-pointer">*/}
                 <div className="hidden md:block cursor-pointer mr-5 transform hover:scale-105">
