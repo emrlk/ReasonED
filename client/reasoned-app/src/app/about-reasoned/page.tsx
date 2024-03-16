@@ -72,7 +72,7 @@ export default function AboutReasonED() {
                             intentionally, to try to assert their points, but do so by
                             misstating facts, using terms incorrectly, or using an improper
                             process of inference (Britannica). Logical fallacies are not
-                            typically "back-and-white" claims of fact. Thus, they often slip
+                            typically "black-and-white" claims of fact. Thus, they often slip
                             through the cracks of fact-checking systems and are free to float
                             around online. Making matters worse, social media sites employ
                             algorithms which curate our feeds to only show us what we want to
