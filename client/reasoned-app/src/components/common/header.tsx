@@ -6,7 +6,7 @@ export default function Header() {
         <div className={"constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-2 h-24"}>
             <Link href="/">
                 {/*<div className="hidden md:block cursor-pointer">*/}
-                <div className="hidden md:block cursor-pointer mr-5 transform hover:scale-105">
+                <div className="hidden md:block cursor-pointer mr-10 transform hover:scale-105 pl-20">
                     <Image
                         src="/ReasonEDLogo.png"
                         width={250}
@@ -42,7 +42,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="text-m flex items-center mr-10">
+            <div className="text-m flex items-center mr-10 pr-20">
                 {/* Sign-Up */}
                 <div className="bg-orange text-white rounded-md px-3 py-1 mr-3 button hover:bg-orange-shades-300">
                     <Link href="/user-selection" className="font-semibold">Sign Up</Link>
