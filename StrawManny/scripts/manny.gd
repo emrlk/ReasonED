@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var animation = $AnimatedSprite
 onready var inventory = $Inventory
+onready var collision = $Area2D
 
 
 export var move_right_action = String("right")
@@ -30,7 +31,7 @@ func _physics_process(_delta):
 	
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
-	connect("area_entered", self, "_on_Player_area_entered")
+	collision.connect("body_entered", self, "_on_Player_body_entered")
 
 
 
@@ -86,8 +87,7 @@ func _on_Inventory_item_added(item):
 func _on_Inventory_item_received_for_instant_use(item):
 	print("Powerup: ", item)
 
-# handles collision with Knights
-func _on_Player_area_entered(area):
-	if area.is_in_group("Knight"):
-		# Switch scene to Challenge
-		get_tree().change_scene("Challenge.tscn")
+
+func _on_Player_body_entered(body):
+	if body.is_in_group("Knight"):
+		get_tree().change_scene("res://scenes/Challenge.tscn")
