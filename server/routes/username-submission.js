@@ -25,6 +25,9 @@ const handleUsernameChange = async (req, res, client) => {
     } catch (error) {
         console.error('Error changing username:', error);
         return res.status(500).json({ message: 'Failed to change username.' });
+    } finally {
+        // Close the connection
+        client.end();
     }
 };
 

@@ -120,6 +120,9 @@ const handleLogin = async (req, res, client) => {
         // Log any errors that occur during login process
         console.error('Error occurred while logging in:', error);
         return res.status(500).json({ error: 'Internal server error' });
+    } finally {
+        // Close the connection
+        client.end(); 
     }
 };
 

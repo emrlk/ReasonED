@@ -43,14 +43,23 @@ const handleForgotPassword = async (req, res, client) => {
 
                 // Return a success response
                 return res.status(200).json({ message: 'Password reset email sent. Check your email to reset your password.' });
+
+                // Close the connection
+                client.end();
             } catch (updateError) {
                 console.error('Error updating reset token in database:', updateError);
                 return res.status(500).json({ message: 'Failed to update reset token in database.' });
+
+                // Close the connection
+                client.end();
             }
         });
     } catch (error) {
         console.error('Error resetting password:', error);
         return res.status(500).json({ message: 'Internal server error' });
+
+        // Close the connection
+        client.end();
     }
 };
 

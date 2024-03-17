@@ -39,6 +39,9 @@ const handleResetPassword = async (req, res, client) => {
     } catch (error) {
         console.error('Error updating password:', error);
         return res.status(500).json({ message: 'Failed to update password.' });
+    } finally {
+        // Close the connection
+        client.end();
     }
 };
 

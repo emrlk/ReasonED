@@ -24,6 +24,9 @@ const handleStudentSignUp = async (req, res, client) => {
     } catch (error) {
         console.error('Error occurred while creating user:', error);
         res.status(500).json({ error: 'Internal server error' });
+    } finally {
+        // Close the connection
+        client.end();
     }
 };
 

@@ -24,6 +24,9 @@ const handleTeacherSignUp = async (req, res, client) => {
     } catch (error) {
         console.error('Error occurred while creating teacher:', error);
         res.status(500).json({ error: 'Internal server error' });
+    } finally {
+        // Close the connection
+        client.end();
     }
 };
 
