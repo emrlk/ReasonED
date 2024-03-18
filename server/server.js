@@ -111,13 +111,26 @@ app.post('/change-password', (req, res) => {
 });
 
 // GET endpoint to fetch user data
-app.get('/fetch/user', authenticateJWT, fetchUserData);  // Note: will call all endpoints in this matter later
+app.get('/fetch/user', authenticateJWT, (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    fetchUserData(req, res, client);
+  });
+});
 
 // POST endpoint to verify 2FA code
-app.post('/verify-code', verifyCode);
+app.post('/verify-code', (req, res) => {
+  connectToDatabase((err, client) => {
+    if (err) {
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    verifyCode(req, res, client);
+  });
+});
 
 // POST endpoint to change a student's username
-// app.post('/change-username', handleChangeUsername);
 app.post('/change-username', (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
