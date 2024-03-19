@@ -1,4 +1,9 @@
-// Handler function to update a student's username
+/**
+ * Handler function to update a student's username.
+ * @param {object} req - The request object containing user's email, newUsername, and confirmUsername.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleUsernameChange = async (req, res, client) => {
     // Retrieve necessary data from request body
     const { email, newUsername, confirmUsername } = req.body;

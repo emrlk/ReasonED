@@ -1,6 +1,11 @@
 const bcrypt = require('bcrypt');
 
-// Handler function for teacher sign up
+/**
+ * Handler function for teacher sign up.
+ * @param {object} req - The request object containing teacher's email, password, and confirmPassword.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleTeacherSignUp = async (req, res, client) => {
     const { email, password, confirmPassword } = req.body;
 

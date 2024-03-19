@@ -1,6 +1,11 @@
 const bcrypt = require('bcrypt');
 
-// Handler function for reset password (submitting the new password)
+/**
+ * Handler function for resetting password (submitting the new password).
+ * @param {object} req - The request object containing the reset token and new password.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleResetPassword = async (req, res, client) => {
     // Retrieve necessary data from request body
     const { token, password } = req.body;

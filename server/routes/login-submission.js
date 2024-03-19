@@ -2,12 +2,20 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { sendVerificationEmail } = require('../emails/verification-email')
 
-// Function to generate a random verification code
+/**
+ * Function to generate a random verification code.
+ * @returns {number} - The generated verification code.
+ */
 function generateVerificationCode() {
     return Math.floor(100000 + Math.random() * 900000);
 }
 
-// Handler function for login submission
+/**
+ * Handler function for login submission.
+ * @param {object} req - The request object containing user login information.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleLogin = async (req, res, client) => {
     console.log('Login request received');
 
@@ -122,7 +130,7 @@ const handleLogin = async (req, res, client) => {
         return res.status(500).json({ error: 'Internal server error' });
     } finally {
         // Close the connection
-        client.end(); 
+        client.end();
     }
 };
 

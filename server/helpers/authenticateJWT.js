@@ -1,6 +1,11 @@
 const jwt = require('jsonwebtoken');
 
-// Middleware function to verify JWT token and attach user information to request object
+/**
+ * Middleware function to verify JWT token and attach user information to request object.
+ * @param {object} req - The request object containing the authorization header with JWT token.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {function} next - The next middleware function in the request-response cycle.
+ */
 const authenticateJWT = (req, res, next) => {
 
     // Extract the authorization header from the request

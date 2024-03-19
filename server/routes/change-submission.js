@@ -1,6 +1,11 @@
 const bcrypt = require('bcrypt');
 
-// Handler function for changing password after login
+/**
+ * Handler function for changing password after login.
+ * @param {object} req - The request object containing the user's email, old password, new password, and confirm password.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleChangePassword = async (req, res, client) => {
     // Retrieve necessary data from request body
     const { email, oldPassword, newPassword, confirmPassword } = req.body;

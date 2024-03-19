@@ -1,25 +1,39 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-// Function to send user's verification code
+/**
+ * Function to send user's verification code.
+ * @param {string} email - Email address of the recipient.
+ * @param {string} verificationCode - Verification code to be sent.
+ */
 async function sendVerificationEmail(email, verificationCode) {
     // Create a nodemailer transporter
     const transporter = nodemailer.createTransport({
+        // SMTP host
         host: "smtp.gmail.com",
+        // SMTP port
         port: 587,
+        // Disable TLS
         secure: false,
+        // Require TLS
         requireTLS: true,
         auth: {
-            user: process.env.SMTP_USER, // SMTP username
-            pass: process.env.SMTP_PASSWORD // SMTP password
+            // SMTP username
+            user: process.env.SMTP_USER,
+            // SMTP password
+            pass: process.env.SMTP_PASSWORD
         }
     });
 
     // Define email options
     const mailOptions = {
-        from: process.env.SMTP_USER, // Sender's email address
-        to: email, // Recipient's email address
-        subject: 'Your Verification Code', // Email subject
+        // Sender's email address
+        from: process.env.SMTP_USER,
+        // Recipient's email address
+        to: email,
+        // Email subject
+        subject: 'Your Verification Code',
+        // Plain text email content
         text: `Your verification code is: ${verificationCode}`
     };
 
@@ -29,7 +43,9 @@ async function sendVerificationEmail(email, verificationCode) {
         console.log('2FA email sent successfully.');
     } catch (error) {
         console.error('Error sending 2FA email:', error);
-        throw error; // Throw the error to handle it in the calling function
+
+        // Throw the error to handle it in the calling function
+        throw error;
     }
 }
 

@@ -1,7 +1,12 @@
 const crypto = require('crypto');
 const { sendPasswordResetEmail } = require('../emails/reset-email');
 
-// Handler function for forgot password (sending the reset email upon submission)
+/**
+ * Handler function for handling forgot password requests.
+ * @param {object} req - The request object containing the user's email.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const handleForgotPassword = async (req, res, client) => {
     const { email } = req.body;
 

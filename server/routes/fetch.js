@@ -1,4 +1,9 @@
-// Handler to fetch student/teacher data
+/**
+ * Fetches user data based on the user's type (student or teacher).
+ * @param {object} req - The request object containing user information.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const fetchUserData = (req, res, client) => {
 
     try {

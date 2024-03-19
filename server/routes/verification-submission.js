@@ -1,6 +1,10 @@
 const connectToDatabase = require('../database');
-
-// Handler to verify 2FA codes
+/**
+ * Handler to verify 2FA codes.
+ * @param {object} req - The request object containing user's email and verification code.
+ * @param {object} res - The response object used to send responses back to the client.
+ * @param {object} client - The database client object used to execute queries.
+ */
 const verifyCode = async (req, res, client) => {
 
     try {
