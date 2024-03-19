@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateAccount from '@/components/sign-up/sign-up';
+import CreateAccount from '@/components/student-sign-up/student-sign-up';
 
 export default function CreateAccountPage() {
     return (
