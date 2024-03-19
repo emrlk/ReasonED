@@ -1,8 +1,10 @@
+// Import frameworks, middlewares, and database
 const express = require('express');
 const bodyParser = require('body-parser');
 const connectToDatabase = require('./database');
 const authenticateJWT = require('./helpers/authenticateJWT')
 
+// Import API routes
 const handleStudentSignUp = require('./routes/student-submission');
 const handleTeacherSignUp = require('./routes/teacher-submission');
 const handleLogin = require('./routes/login-submission');
@@ -13,9 +15,13 @@ const verifyCode = require('./routes/verification-submission')
 const handleChangePassword = require('./routes/change-submission');
 const handleChangeUsername = require('./routes/username-submission');
 
+// Create an instance of the Express application
 const app = express();
+
+// Define the port number for the server to listen on
 const port = 3001;
 
+// Use the bodyParser middleware to parse JSON-formatted request bodies
 app.use(bodyParser.json());
 
 // Connect Vercel
@@ -39,16 +45,15 @@ app.use((req, res, next) => {
 });
 
 // Define API routes
-
-app.get('/api/data', async (req, res) => {
-  try {
-    const result = await client.query('SELECT * FROM your_table_name');
-    res.json(result.rows);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  }
-});
+//app.get('/api/data', async (req, res) => {
+//try {
+//const result = await client.query('SELECT * FROM your_table_name');
+//res.json(result.rows);
+//} catch (error) {
+//console.error(error);
+//res.status(500).send('Internal Server Error');
+//}
+//});
 
 // POST endpoint for student sign up
 app.post('/sign-up', (req, res) => {
