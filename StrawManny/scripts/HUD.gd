@@ -1,9 +1,9 @@
 extends Container
 
-var heart_fractions = [preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/100-percent.png"),
-					preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/25-percent.png"),
-					preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/50-percent.png"),
-					preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/75-percent.png")]
+var heart_fractions = [ preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/100-percent.png"),
+						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/25-percent.png"),
+						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/50-percent.png"),
+						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/75-percent.png")]
 var heart_empty = preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/0-percent.png")
 
 onready var health = $VBoxContainer/Top_Bar/Health
