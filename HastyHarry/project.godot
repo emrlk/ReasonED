@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="HastyHarry"
-run/main_scene="res://scenes/player/customization/character_customization_level.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+mouse_cursor/filters/msaa=1
 
 [editor_plugins]
 
@@ -60,7 +64,11 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/sharpen_intensity=0.028
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/filters/anisotropic_filter_level=6
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
