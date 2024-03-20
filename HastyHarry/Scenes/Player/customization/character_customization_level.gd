@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 
 const root_path = "res://assets/characters/harry/"
 
-onready var body_sprite = $PlayerKinematicBody2D/BodyParts/Body
+onready var body_sprite = $CanvasLayer/Character-Preview/PlayerKinematicBody2D/BodyParts/Body
 onready var hair_sprite = $PlayerKinematicBody2D/BodyParts/Hair
 onready var spacesuit_sprite = $PlayerKinematicBody2D/BodyParts/Spacesuit
 onready var hair_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Head/HairColor")
@@ -100,3 +100,4 @@ func _on_B_SpacesuitDecrease_pressed():
 		spacesuit_index = harry_spacesuit_data.size() - 1
 	set_character_textures()
 	set_label_color_text()
+

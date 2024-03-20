@@ -1,153 +1,219 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/player/character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/pickups/pickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/UI/Space-UI/Ship_Parts/Table.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player/customization/character_customization.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/Space-UI/Main_UI/BG.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://space_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/UI/Space-UI/Buttons/BTNs/Backward_BTN.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Space-UI/Buttons/BTNs/Forward_BTN.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Planets/planet09.png" type="Texture" id=9]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="DynamicFont" id=2]
+size = 200
+outline_size = 6
+outline_color = Color( 0.380392, 0.831373, 0.843137, 1 )
+use_filter = true
+extra_spacing_top = -20
+extra_spacing_bottom = -25
+extra_spacing_char = -24
+font_data = ExtResource( 5 )
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 576, 278 )
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -3.0
+margin_top = 597.0
+margin_right = 260.0
+margin_bottom = 673.0
+rect_rotation = -89.8934
+rect_scale = Vector2( 0.555868, 0.538236 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+margin_left = 179.0
+margin_top = 33.0
+margin_right = 1625.0
+margin_bottom = 213.0
+rect_scale = Vector2( 0.485574, 0.421448 )
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 2 )
+text = "Edit Character"
+
+[node name="Planet" type="TextureRect" parent="."]
+margin_left = 250.0
+margin_top = 195.0
+margin_right = 1530.0
+margin_bottom = 1475.0
+rect_scale = Vector2( 1.04012, 0.938424 )
+texture = ExtResource( 9 )
+
+[node name="CustomizerBGMargin" type="MarginContainer" parent="."]
+margin_left = 117.0
+margin_top = 136.0
+margin_right = 507.0
+margin_bottom = 649.0
+rect_min_size = Vector2( 300, 500 )
+rect_scale = Vector2( 0.888, 0.8 )
+
+[node name="Customizer-BG" type="TextureRect" parent="CustomizerBGMargin"]
+margin_right = 390.0
+margin_bottom = 513.0
+texture = ExtResource( 2 )
+stretch_mode = 7
+
+[node name="CustomizeInterfaceMargin" type="MarginContainer" parent="."]
+margin_left = 125.0
+margin_top = 144.0
+margin_right = 2064.0
+margin_bottom = 2465.0
+rect_scale = Vector2( 0.169785, 0.169785 )
+size_flags_stretch_ratio = 0.0
+
+[node name="CustomizerInterface" type="VBoxContainer" parent="CustomizeInterfaceMargin"]
+margin_right = 1939.0
+margin_bottom = 2321.0
+custom_constants/separation = 591
+alignment = 1
+
+[node name="Head" type="HBoxContainer" parent="CustomizeInterfaceMargin/CustomizerInterface"]
+margin_top = 242.0
+margin_right = 1939.0
+margin_bottom = 460.0
+focus_neighbour_bottom = NodePath("../Body")
+theme = ExtResource( 6 )
+alignment = 1
+
+[node name="B_HairDecrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Head"]
+margin_left = 124.0
+margin_right = 346.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 7 )
+flat = true
+align = 0
+
+[node name="Label" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Head"]
+margin_left = 350.0
+margin_top = 3.0
+margin_right = 920.0
+margin_bottom = 215.0
+theme = ExtResource( 6 )
+text = "Hair: "
+align = 1
+valign = 1
+
+[node name="HairColor" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Head"]
+margin_left = 924.0
+margin_top = 3.0
+margin_right = 1589.0
+margin_bottom = 215.0
+theme = ExtResource( 6 )
+text = "Color"
+
+[node name="B_HairIncrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Head"]
+margin_left = 1593.0
+margin_right = 1815.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 8 )
+flat = true
+
+[node name="Body" type="HBoxContainer" parent="CustomizeInterfaceMargin/CustomizerInterface"]
+margin_top = 1051.0
+margin_right = 1939.0
+margin_bottom = 1269.0
+focus_neighbour_top = NodePath("../Head")
+focus_neighbour_bottom = NodePath("../Spacesuit")
+theme = ExtResource( 6 )
+alignment = 1
+
+[node name="B_BodyDecrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Body"]
+margin_left = 88.0
+margin_right = 310.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Label" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Body"]
+margin_left = 314.0
+margin_top = 3.0
+margin_right = 955.0
+margin_bottom = 215.0
+text = "Body: "
+
+[node name="BodyColor" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Body"]
+margin_left = 959.0
+margin_top = 3.0
+margin_right = 1624.0
+margin_bottom = 215.0
+text = "Color"
+
+[node name="B_BodyIncrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Body"]
+margin_left = 1628.0
+margin_right = 1850.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 8 )
+flat = true
+
+[node name="Spacesuit" type="HBoxContainer" parent="CustomizeInterfaceMargin/CustomizerInterface"]
+margin_top = 1860.0
+margin_right = 1939.0
+margin_bottom = 2078.0
+focus_neighbour_top = NodePath("../Body")
+theme = ExtResource( 6 )
+alignment = 1
+
+[node name="B_SpacesuitDecrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit"]
+margin_left = 135.0
+margin_right = 357.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Label" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit"]
+margin_left = 361.0
+margin_top = 3.0
+margin_right = 908.0
+margin_bottom = 215.0
+text = "Suit: "
+
+[node name="SpacesuitColor" type="Label" parent="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit"]
+margin_left = 912.0
+margin_top = 3.0
+margin_right = 1577.0
+margin_bottom = 215.0
+text = "Color"
+
+[node name="B_SpacesuitIncrease" type="Button" parent="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit"]
+margin_left = 1581.0
+margin_right = 1803.0
+margin_bottom = 218.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 8 )
+flat = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CharacterPreview" parent="CanvasLayer" instance=ExtResource( 1 )]
+position = Vector2( 684, 312 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TestPickup" parent="." instance=ExtResource( 2 )]
-position = Vector2( 196, 285 )
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 1024.0
-margin_bottom = 600.0
-
-[node name="LeftPadding" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 765.0
-margin_bottom = 600.0
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 769.0
-margin_right = 920.0
-margin_bottom = 600.0
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 151.0
-margin_bottom = 262.0
-size_flags_vertical = 3
-
-[node name="Head" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 266.0
-margin_right = 151.0
-margin_bottom = 286.0
-
-[node name="B_HairDecrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
-margin_right = 17.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
-margin_left = 21.0
-margin_top = 3.0
-margin_right = 55.0
-margin_bottom = 17.0
-text = "Hair: "
-
-[node name="HairColor" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
-margin_left = 59.0
-margin_top = 3.0
-margin_right = 92.0
-margin_bottom = 17.0
-text = "Color"
-
-[node name="B_HairIncrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Head"]
-margin_left = 96.0
-margin_right = 116.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Body" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 290.0
-margin_right = 151.0
-margin_bottom = 310.0
-
-[node name="B_BodyDecrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
-margin_right = 17.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
-margin_left = 21.0
-margin_top = 3.0
-margin_right = 61.0
-margin_bottom = 17.0
-text = "Body: "
-
-[node name="BodyColor" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
-margin_left = 65.0
-margin_top = 3.0
-margin_right = 98.0
-margin_bottom = 17.0
-text = "Color"
-
-[node name="B_BodyIncrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Body"]
-margin_left = 102.0
-margin_right = 122.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Spacesuit" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 314.0
-margin_right = 151.0
-margin_bottom = 334.0
-
-[node name="B_SpacesuitDecrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit"]
-margin_right = 17.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit"]
-margin_left = 21.0
-margin_top = 3.0
-margin_right = 90.0
-margin_bottom = 17.0
-text = "Spacesuit: "
-
-[node name="SpacesuitColor" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit"]
-margin_left = 94.0
-margin_top = 3.0
-margin_right = 127.0
-margin_bottom = 17.0
-text = "Color"
-
-[node name="B_SpacesuitIncrease" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit"]
-margin_left = 131.0
-margin_right = 151.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 338.0
-margin_right = 151.0
-margin_bottom = 600.0
-size_flags_vertical = 3
-
-[node name="RightPadding" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 924.0
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 100, 0 )
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Head/B_HairDecrease" to="Character" method="_on_B_HairDecrease_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Head/B_HairIncrease" to="Character" method="_on_B_HairIncrease_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Body/B_BodyDecrease" to="Character" method="_on_B_BodyDecrease_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Body/B_BodyIncrease" to="Character" method="_on_B_BodyIncrease_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit/B_SpacesuitDecrease" to="Character" method="_on_B_SpacesuitDecrease_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Spacesuit/B_SpacesuitIncrease" to="Character" method="_on_B_SpacesuitIncrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Head/B_HairDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_HairDecrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Head/B_HairIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_HairIncrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Body/B_BodyDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_BodyDecrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Body/B_BodyIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_BodyIncrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit/B_SpacesuitDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_SpacesuitDecrease_pressed"]
+[connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit/B_SpacesuitIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_SpacesuitIncrease_pressed"]
