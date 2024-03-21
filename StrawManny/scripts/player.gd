@@ -3,15 +3,21 @@ extends KinematicBody2D
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2()
 var sprite : Sprite
-
-onready var dialogue_scene = preload("res://scenes/dialogue.tscn")
-var dialogue
+const sample_text = [
+	"Hello! My name is Manny, Straw Manny!",
+	"I'm a knight, but I'm not the best at combat...",
+	"Mind helping me out?"
+];
 
 func _ready():
 	sprite = $Sprite
 	Engine.set_target_fps(Engine.get_iterations_per_second())
 	
 func read_input():
+	# Don't allow input if a dialog/textbox is active
+	if DialogueManager.is_active():
+		return
+
 	velocity = Vector2()
 	
 	# Move the player and change its direction according to the keybind
@@ -40,20 +46,13 @@ func read_input():
 		#must be same scaling as sprite texture
 		sprite.scale.x = -1
 
-	if Input.is_action_pressed("ui_select"):
-		dialogue = dialogue_scene.instance()
-		get_tree().root.add_child(dialogue)
-		#TODO: figure out how to position this properly...
-		var new_pos = global_position;
-		new_pos.y += 150
-		new_pos.x -= 600
-		dialogue.set_global_position(new_pos)
-		dialogue.get_node("TextBox").start_text_display("Hello! My name is Manny, Straw Manny!")
+	if Input.is_action_just_pressed("ui_select"):
+		var textbox_pos = global_position;
+		DialogueManager.open_textbox(sample_text, textbox_pos);
 
 	# Prevent diagonal movement from being twice as fast as up, down, etc. individually
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 400)
-	
 	
 # Read user input 60 times/second
 func _physics_process(delta):
