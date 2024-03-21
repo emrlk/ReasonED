@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Straw Manny"
-run/main_scene="res://scenes/main.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/main_menu.tscn"
+config/icon="res://assets/Straw_Manny_Logo-no-background.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
 
 [autoload]
 
@@ -44,6 +48,12 @@ right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Pickups"
 
 [mono]
 
