@@ -11,7 +11,7 @@ export default function UserTypeSelectionPage() {
                         Teacher
                     </a>
                 </Link>
-                <Link href="/sign-up" legacyBehavior>
+                <Link href="/student-sign-up" legacyBehavior>
                     <a className="bg-orange-shades-500 hover:bg-orange-shades-600 text-white font-bold py-3 px-6 rounded-lg transform transition duration-300 hover:scale-110">
                         Student
                     </a>
