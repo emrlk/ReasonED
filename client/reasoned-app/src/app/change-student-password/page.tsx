@@ -9,7 +9,7 @@ export default function ChangeStudentPasswordPage() {
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
                         className="mx-auto h-20 w-auto"
-                        src="ReasonEDLogo.png"
+                        src="PurpleReasonEDLogo.png"
                         alt="ReasonED Logo"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple">

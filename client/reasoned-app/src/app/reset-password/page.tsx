@@ -32,7 +32,7 @@ export default function ResetPasswordPage() {
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
                         className="mx-auto h-20 w-auto"
-                        src="ReasonEDLogo.png"
+                        src="PurpleReasonEDLogo.png"
                         alt="ReasonED Logo"
                     />
                     {/* Conditionally render text based on the presence of 'token' */}
