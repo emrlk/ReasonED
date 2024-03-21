@@ -48,6 +48,9 @@ func read_input():
 
 	if Input.is_action_just_pressed("ui_select"):
 		var textbox_pos = global_position;
+		textbox_pos.y += 100
+		textbox_pos.x -= 600
+		velocity = Vector2(0, 0)
 		DialogueManager.open_textbox(sample_text, textbox_pos);
 
 	# Prevent diagonal movement from being twice as fast as up, down, etc. individually

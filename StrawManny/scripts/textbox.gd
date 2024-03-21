@@ -11,6 +11,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func start_text_display(text_to_display : String):
+	label.text = ""
 	text = text_to_display
 	cur_letter_index = 0
 	
