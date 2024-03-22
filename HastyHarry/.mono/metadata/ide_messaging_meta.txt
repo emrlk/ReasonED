@@ -1,2 +1,2 @@
-﻿9164
-C:/Users/izsnu/Downloads/Godot_v3.5.3-stable_mono_win64 (1)/Godot_v3.5.3-stable_mono_win64/Godot_v3.5.3-stable_mono_win64.exe
+﻿12626
+D:/Godot_v3.5.3-stable_mono_win64/Godot_v3.5.3-stable_mono_win64.exe

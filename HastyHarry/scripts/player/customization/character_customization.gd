@@ -5,9 +5,9 @@ const root_path = "res://assets/characters/harry/"
 onready var body_sprite = $PlayerKinematicBody2D/BodyParts/Body
 onready var hair_sprite = $PlayerKinematicBody2D/BodyParts/Hair
 onready var spacesuit_sprite = $PlayerKinematicBody2D/BodyParts/Spacesuit
-onready var hair_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Head/HairColor")
-onready var body_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Body/BodyColor")
-onready var spacesuit_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Spacesuit/SpacesuitColor")
+onready var hair_color_label = get_parent().get_parent().get_node("CustomizeInterfaceMargin/CustomizerInterface/Head/HairColor")
+onready var body_color_label = get_parent().get_parent().get_node("CustomizeInterfaceMargin/CustomizerInterface/Body/BodyColor")
+onready var spacesuit_color_label = get_parent().get_parent().get_node("CustomizeInterfaceMargin/CustomizerInterface/Spacesuit/SpacesuitColor")
 
 var body_index = 0
 var hair_index = 0
@@ -26,6 +26,7 @@ func _ready():
 	load_character_data()
 	set_character_textures()
 	set_label_color_text()
+	print(hair_color_label)
 
 	
 func load_character_data():

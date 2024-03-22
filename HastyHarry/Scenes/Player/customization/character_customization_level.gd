@@ -2,10 +2,10 @@ extends Control
 
 const root_path = "res://assets/characters/harry/"
 
-onready var body_sprite = $CanvasLayer/Character-Preview/PlayerKinematicBody2D/BodyParts/Body
+onready var body_sprite = $CanvasLayer/CharacterPreview/PlayerKinematicBody2D/BodyParts/Body
 onready var hair_sprite = $PlayerKinematicBody2D/BodyParts/Hair
 onready var spacesuit_sprite = $PlayerKinematicBody2D/BodyParts/Spacesuit
-onready var hair_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Head/HairColor")
+onready var hair_color_label = get_node("CustomizerInterfaceMargin/CustomizerInterface/Head/HairColor")
 onready var body_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Body/BodyColor")
 onready var spacesuit_color_label = get_node("Customizer-Interface/HBoxContainer/VBoxContainer/Spacesuit/SpacesuitColor")
 
