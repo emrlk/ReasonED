@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/player/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/UI/Space-UI/Ship_Parts/Table.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/UI/Space-UI/Buttons/BTNs/Backward_BTN.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/Space-UI/Buttons/BTNs/Forward_BTN.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Planets/planet09.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/Space-UI/Main_Menu/Start_BTN.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Player/customization/TextureButton.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=2]
 size = 200
@@ -211,9 +213,20 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="StartButton" type="TextureButton" parent="."]
+margin_left = 559.0
+margin_top = 475.0
+margin_right = 969.0
+margin_bottom = 596.0
+rect_scale = Vector2( 0.622443, 0.622443 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 10 )
+script = ExtResource( 11 )
+
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Head/B_HairDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_HairDecrease_pressed"]
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Head/B_HairIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_HairIncrease_pressed"]
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Body/B_BodyDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_BodyDecrease_pressed"]
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Body/B_BodyIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_BodyIncrease_pressed"]
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit/B_SpacesuitDecrease" to="CanvasLayer/CharacterPreview" method="_on_B_SpacesuitDecrease_pressed"]
 [connection signal="pressed" from="CustomizeInterfaceMargin/CustomizerInterface/Spacesuit/B_SpacesuitIncrease" to="CanvasLayer/CharacterPreview" method="_on_B_SpacesuitIncrease_pressed"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_TextureButton_pressed"]
