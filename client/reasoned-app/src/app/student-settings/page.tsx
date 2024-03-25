@@ -61,10 +61,28 @@ const StudentSettings = () => {
             {/**Navbar */}
             <LoggedInStudent />
 
-            {/**Page Body (To be updated later) */}
+            {/**Page Body */}
             <div className="bg-orange h-screen flex justify-center items-center flex-col text-center">
                 <div className="font-bold text-white text-xl flex flex-col gap-1/2">
-                    <h2 className="text-lg font-semibold text-purple">Settings</h2>
+
+                    <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
+                        <div className="px-6 py-8">
+                            <div className="text-center">
+                                <h2 className="text-lg font-semibold text-purple">{'Settings'}</h2>
+                            </div>
+
+                            <p className="mt-4 text-sm text-purple">To customize your experience, adjust settings for your profile, games, and more.</p>
+
+                        </div>
+
+                        {/* Box Footer */}
+                        <div className="bg-gray-200 px-6 py-4">
+                            {/* Edit Account */}
+                            <div className="flex justify-center mt-2">
+                                <a href="/edit-student-account" className="text-sm text-purple hover:underline">Edit Account</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
