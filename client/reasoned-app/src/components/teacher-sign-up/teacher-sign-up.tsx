@@ -189,10 +189,10 @@ export default function CreateTeacherAccount() {
         </div>
 
         <div>
-          {successMessage && <p className="text-green-600">{successMessage}</p>}
+          {successMessage && <p className="text-green-600 text-center">{successMessage}</p>}
         </div>
         <div>
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+          {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
         </div>
       </form>
     </div>

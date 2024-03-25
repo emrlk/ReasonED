@@ -85,8 +85,8 @@ export default function ForgotPassword({ setToken }) {
                     </a>
                 </div>
 
-                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-                {successMessage && <p className="text-green-500">{successMessage}</p>}
+                {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+                {successMessage && <p className="text-green-500 text-center">{successMessage}</p>}
             </form>
         </div>
     );

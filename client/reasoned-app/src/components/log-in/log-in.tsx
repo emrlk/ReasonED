@@ -168,8 +168,8 @@ export default function Login() {
                         </a>
                     </div>
 
-                    {errorMessage && !successMessage && <p className="text-red-500">{errorMessage}</p>}
-                    {successMessage && !errorMessage && <p className="text-green-500">{successMessage}</p>}
+                    {errorMessage && !successMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+                    {successMessage && !errorMessage && <p className="text-green-500 text-center">{successMessage}</p>}
                 </form>
             </div>
         </main>
