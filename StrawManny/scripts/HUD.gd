@@ -1,13 +1,14 @@
 extends Container
 
 var heart_fractions = [ preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/100-percent.png"),
-						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/25-percent.png"),
-						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/50-percent.png"),
-						preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/75-percent.png")]
+						## preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/25-percent.png"),
+						 preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/50-percent.png"),
+						## preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/75-percent.png")
+						]
 var heart_empty = preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/0-percent.png")
 
 onready var health = $VBoxContainer/Top_Bar/Health
-func update_health(value):
+func draw_health(value):
 	for i in health.get_child_count():
 		if value <= i * heart_fractions.size():
 			health.get_child(i).texture = heart_empty
@@ -15,8 +16,6 @@ func update_health(value):
 			health.get_child(i).texture = heart_fractions.front()
 		else:
 			health.get_child(i).texture = heart_fractions[value % heart_fractions.size()]
-
-
 
 
 onready var strength = $VBoxContainer/Top_Bar/Strength
@@ -45,9 +44,10 @@ func enemy_defeated():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_health(15)
+	draw_health(5)
 	
-	for i in range(7):
+	for i in range(4):
 		enemy_defeated()
-	
+		
+
 

@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/UI/medievalbutton/Main_Menu.png" type="Texture" id=1]
 [ext_resource path="res://scripts/mute.gd" type="Script" id=2]
 [ext_resource path="res://HUD.tres" type="Theme" id=3]
 [ext_resource path="res://assets/UI/extralife--134u37401q8c0y3e41/black-border/100-percent.png" type="Texture" id=4]
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=5]
+[ext_resource path="res://assets/UI/HP_Bar/blue.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/HP_Bar/bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/blank.png" type="Texture" id=8]
+[ext_resource path="res://scripts/inventory/inventory.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -41,12 +45,12 @@ script = ExtResource( 5 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 30.0
 margin_top = 30.0
-margin_right = 1446.0
+margin_right = 1278.0
 margin_bottom = 370.0
 size_flags_horizontal = 3
 
 [node name="Top_Bar" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1416.0
+margin_right = 1248.0
 margin_bottom = 142.0
 custom_constants/separation = 0
 
@@ -89,31 +93,35 @@ margin_right = 400.0
 margin_bottom = 142.0
 size_flags_horizontal = 3
 
-[node name="Strength" type="ProgressBar" parent="VBoxContainer/Top_Bar"]
+[node name="Strength" type="TextureProgress" parent="VBoxContainer/Top_Bar"]
 margin_left = 400.0
-margin_right = 1200.0
-margin_bottom = 50.0
+margin_right = 1000.0
+margin_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 800, 50 )
-max_value = 5.0
+rect_min_size = Vector2( 600, 96 )
+max_value = 3.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
 
 [node name="Spacer2" type="CenterContainer" parent="VBoxContainer/Top_Bar"]
-margin_left = 1200.0
-margin_right = 1200.0
+margin_left = 1000.0
+margin_right = 1000.0
 margin_bottom = 142.0
 size_flags_horizontal = 3
 
 [node name="Health" type="HBoxContainer" parent="VBoxContainer/Top_Bar"]
-margin_left = 1200.0
-margin_right = 1416.0
-margin_bottom = 40.0
-size_flags_vertical = 0
+margin_left = 1000.0
+margin_right = 1248.0
+margin_bottom = 142.0
+size_flags_vertical = 3
 
 [node name="1" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
+margin_top = 31.0
+margin_right = 80.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 4 )
@@ -121,10 +129,11 @@ expand = true
 stretch_mode = 1
 
 [node name="2" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
-margin_left = 44.0
-margin_right = 84.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
+margin_left = 84.0
+margin_top = 31.0
+margin_right = 164.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 4 )
@@ -132,32 +141,11 @@ expand = true
 stretch_mode = 1
 
 [node name="3" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
-margin_left = 88.0
-margin_right = 128.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 1
-
-[node name="4" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
-margin_left = 132.0
-margin_right = 172.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 1
-
-[node name="5" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
-margin_left = 176.0
-margin_right = 216.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
+margin_left = 168.0
+margin_top = 31.0
+margin_right = 248.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 4 )
@@ -166,23 +154,23 @@ stretch_mode = 1
 
 [node name="Center Spacer" type="MarginContainer" parent="VBoxContainer"]
 margin_top = 146.0
-margin_right = 1416.0
-margin_bottom = 233.0
+margin_right = 1248.0
+margin_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Bottom_Bar" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 237.0
-margin_right = 1416.0
+margin_top = 212.0
+margin_right = 1248.0
 margin_bottom = 340.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 
 [node name="toggle_sound" type="TextureButton" parent="VBoxContainer/Bottom_Bar"]
 margin_right = 98.0
-margin_bottom = 103.0
+margin_bottom = 128.0
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = SubResource( 1 )
@@ -193,23 +181,75 @@ script = ExtResource( 2 )
 
 [node name="center_abilities" type="CenterContainer" parent="VBoxContainer/Bottom_Bar"]
 margin_left = 102.0
-margin_right = 1314.0
-margin_bottom = 103.0
+margin_right = 1146.0
+margin_bottom = 128.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 
 [node name="Abilities" type="HBoxContainer" parent="VBoxContainer/Bottom_Bar/center_abilities"]
-margin_left = 606.0
-margin_top = 51.0
-margin_right = 606.0
-margin_bottom = 51.0
+margin_left = 260.0
+margin_right = 784.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 9 )
+
+[node name="0" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="1" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="2" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="3" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 396.0
+margin_right = 524.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
 
 [node name="Spacer" type="MarginContainer" parent="VBoxContainer/Bottom_Bar"]
-margin_left = 1318.0
-margin_right = 1416.0
-margin_bottom = 103.0
+margin_left = 1150.0
+margin_right = 1248.0
+margin_bottom = 128.0
 grow_horizontal = 0
 rect_min_size = Vector2( 98, 103 )
 
 [connection signal="pressed" from="VBoxContainer/Bottom_Bar/toggle_sound" to="VBoxContainer/Bottom_Bar/toggle_sound" method="_on_Volume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/0" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "0" ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/1" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "1" ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/2" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "2" ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/3" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "3" ]]
