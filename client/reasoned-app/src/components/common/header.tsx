@@ -24,7 +24,7 @@ export default function Header() {
 
                     {/* Students */}
                     <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
-                    <Link href="students" className="link">Students</Link>
+                    <Link href="/students" className="link">Students</Link>
                     </div>
 
                     {/* Teachers (Dropdown)*/}
