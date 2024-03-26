@@ -32,19 +32,22 @@ func _physics_process(_delta):
 		var velocity = get_velocity_from_input()
 		apply_velocity(velocity)
 	
-func on_tutorial_finished():
-	can_move = true
-	
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
-	setup_signals()
+	setup_initial_signals()
 	initialize_manny()
 
-func setup_signals():
+func setup_initial_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
 	var tutorial_ok_button = get_tree().current_scene.get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
 	if tutorial_ok_button:
 		tutorial_ok_button.connect("pressed", self, "on_tutorial_finished")
+		
+func on_tutorial_finished():
+	can_move = true
+	var tutorial_ok_button = get_tree().current_scene.get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
+	if tutorial_ok_button:
+		tutorial_ok_button.disconnect("pressed", self, "on_tutorial_finished")
 
 func initialize_manny():
 	play_locomotion_animation(idle_animation)
