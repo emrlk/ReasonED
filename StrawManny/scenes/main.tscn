@@ -303,7 +303,7 @@ points = PoolVector2Array( 327.75, 0, 503.75, 0, 503.75, 499, 327.75, 499 )
 } ]
 8/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -40004.0 ]
 }

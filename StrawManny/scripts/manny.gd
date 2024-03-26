@@ -13,6 +13,9 @@ export var move_down_action = String("down")
 export var run_animation = String("run")
 export var idle_animation = String("idle")
 
+export var can_move = false
+
+
 var inputs = {
 	move_right_action: false,
 	move_left_action: false,
@@ -24,17 +27,28 @@ var inputs = {
 # Read user input 60 times/second
 func _physics_process(_delta):
 	read_input()
-	play_locomotion_animation(run_animation if is_any_input_down() else idle_animation)		
-	var velocity = get_velocity_from_input()
-	apply_velocity(velocity)
+	if can_move:
+		play_locomotion_animation(run_animation if is_any_input_down() else idle_animation)		
+		var velocity = get_velocity_from_input()
+		apply_velocity(velocity)
 	
+func on_tutorial_finished():
+	can_move = true
 	
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
+	setup_signals()
+	initialize_manny()
+
+func setup_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
+	var tutorial_ok_button = get_tree().current_scene.get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
+	if tutorial_ok_button:
+		tutorial_ok_button.connect("pressed", self, "on_tutorial_finished")
 
-
-
+func initialize_manny():
+	play_locomotion_animation(idle_animation)
+	
 func is_any_input_down() -> bool:
 	return inputs.get(move_right_action) or inputs.get(move_left_action) or inputs.get(move_up_action) or inputs.get(move_down_action)
 
