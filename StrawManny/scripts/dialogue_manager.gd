@@ -47,6 +47,7 @@ func _cleanup_text_obj():
 	cur_text_obj.queue_free()
 	cur_text_obj = null
 	cur_textbox = null
+	emit_signal("dialogue_finished")
 
 func _unhandled_input(event):
 	if (!is_active()):

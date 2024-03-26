@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/Hedges/Hedge_B_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/manny.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Props/Rock_02.png" type="Texture" id=3]
 [ext_resource path="res://assets/Props/Tree_04.png" type="Texture" id=4]
 [ext_resource path="res://assets/Tiles/500x500grass_tile.png" type="Texture" id=5]
+[ext_resource path="res://scenes/tutorial.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Hedges/Hedge_B_02.png" type="Texture" id=7]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=9]
 [ext_resource path="res://assets/Hedges/Hedge_B_02LeftVert.png" type="Texture" id=10]
@@ -332,3 +333,10 @@ position = Vector2( 261, 228 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Manny" parent="Node2D" instance=ExtResource( 2 )]
+
+[node name="Tutorial" parent="." instance=ExtResource( 6 )]
+margin_left = 471.0
+margin_top = -226.0
+margin_right = 472.0
+margin_bottom = -222.0
+rect_scale = Vector2( 0.55, 0.55 )

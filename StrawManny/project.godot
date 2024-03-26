@@ -14,13 +14,13 @@ config/name="Straw Manny"
 run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://assets/Straw_Manny_Logo-no-background.png"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
-
 [autoload]
 
 DialogueManager="*res://scripts/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
 
 [gui]
 
