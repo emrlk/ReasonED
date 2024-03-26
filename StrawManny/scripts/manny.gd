@@ -72,11 +72,17 @@ func get_velocity_from_input() -> Vector2:
 
 
 func read_input():
+	# Do not allow input if a dialogue is active
+	if DialogueManager.is_active():
+		return
+
 	inputs[move_right_action] = Input.is_action_pressed(move_right_action)
 	inputs[move_left_action] = Input.is_action_pressed(move_left_action)
 	inputs[move_up_action] = Input.is_action_pressed(move_up_action)
 	inputs[move_down_action] = Input.is_action_pressed(move_down_action)
 
+	if (Input.is_action_pressed("ui_accept")):
+		DialogueManager.open_textbox(["Test!", "Test 2!"], global_position)
 
 # This gets called when an item is added to the inventory script on manny incase we need to use it for something
 func _on_Inventory_item_added(item):
