@@ -14,7 +14,7 @@ export default function PrototypePage() {
 
           {/* Left column */}
           <div className="flex justify-center ">
-            <p className="text-white mb-4 text-xl font-semibold">
+            <p className="text-white mb-4 text-xl">
               ReasonED aims to support teachers in educating their students
               about logical fallacies. Our age-curated games introduce students
               to logical fallacies in a fun, interactive way. Each of our

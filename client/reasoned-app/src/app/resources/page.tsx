@@ -14,7 +14,7 @@ export default function AboutReasonED() {
 
 
           <div className="flex justify-center ">
-            <p className="text-white mb-4 text-xl font-semibold">
+            <p className="text-white mb-4 text-xl">
             Use these additional resources to reinforce logical fallacy education in your classroom!
             Have resources of your own to offer? 
             <Link href="contact-us" className="link text-purple font-bold"> Contact Us!</Link>
