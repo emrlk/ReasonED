@@ -1,6 +1,33 @@
 "use client";
 import React, { useState } from "react";
 
+// Function to validate password
+function validatePassword(password) {
+  const passwordRegex =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{6,}$/;
+  const missingValidations = [];
+  if (!passwordRegex.test(password)) {
+    if (!/(?=.*\d)/.test(password)) {
+      missingValidations.push("at least one number");
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      missingValidations.push("at least one lowercase letter");
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      missingValidations.push("at least one uppercase letter");
+    }
+    if (!/(?=.*[!@#$%^&*()_+}{"':;?/>.<,])/.test(password)) {
+      missingValidations.push("at least one special character");
+    }
+    if (password.length < 6) {
+      missingValidations.push("at least 6 characters long");
+    }
+    return `Password must contain ${missingValidations.join(", ")}`;
+  }
+  // No validation error
+  return "";
+}
+
 export default function CreateAccount() {
   // Define initial form data
   const initialFormData = {
@@ -32,28 +59,10 @@ export default function CreateAccount() {
       }
 
       // Password validation
-      const passwordRegex =
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,]).{6,}$/;
-      const missingValidations = [];
-      if (!passwordRegex.test(formData.password)) {
-        if (!/(?=.*\d)/.test(formData.password)) {
-          missingValidations.push("at least one number");
-        }
-        if (!/(?=.*[a-z])/.test(formData.password)) {
-          missingValidations.push("at least one lowercase letter");
-        }
-        if (!/(?=.*[A-Z])/.test(formData.password)) {
-          missingValidations.push("at least one uppercase letter");
-        }
-        if (!/(?=.*[!@#$%^&*()_+}{"':;?/>.<,])/.test(formData.password)) {
-          missingValidations.push("at least one special character");
-        }
-        if (formData.password.length < 6) {
-          missingValidations.push("at least 6 characters long");
-        }
-        setErrorMessage(
-          `Password must contain ${missingValidations.join(", ")}`
-        );
+      const passwordError = validatePassword(formData.password);
+      if (passwordError) {
+        setErrorMessage(passwordError);
+        setSuccessMessage("");
         return;
       }
 
@@ -216,7 +225,7 @@ export default function CreateAccount() {
           </div>
         </div>
 
-        {}
+        { }
 
         <div className="flex justify-between space-x-4">
           <button
