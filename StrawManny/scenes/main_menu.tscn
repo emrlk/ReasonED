@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/manny-trimmed.png" type="Texture" id=1]
 [ext_resource path="res://assets/Straw_Manny_Logo-no-background-400x424.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/Tiles/Ground_Tile_02_B.png" type="Texture" id=14]
 [ext_resource path="res://scripts/mute.gd" type="Script" id=15]
 [ext_resource path="res://scripts/menu_buttons.gd" type="Script" id=16]
+[ext_resource path="res://music/main-menu.mp3" type="AudioStream" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Decor_Tile_B_01.png 0"
@@ -814,6 +815,11 @@ size_flags_vertical = 8
 texture_normal = SubResource( 7 )
 texture_hover = SubResource( 8 )
 stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
+stream = ExtResource( 17 )
+volume_db = -20.0
+autoplay = true
 
 [node name="Manny" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 562.0
