@@ -17,6 +17,14 @@ const handleUsernameChange = async (req, res, client) => {
             return res.status(404).json({ message: 'User not found.' });
         }
 
+        // Check if the new username already exists in the database
+        const usernameCheckResult = await client.query('SELECT * FROM users WHERE username = $1', [newUsername]);
+        
+        // If the user's username already exists, return an error message
+        if (usernameCheckResult.rows.length > 0) {
+            return res.status(400).json({ message: 'Username already exists' });
+        }
+
         // If new username and confirm username do not match, return an error response
         if (newUsername !== confirmUsername) {
             return res.status(400).json({ message: 'Usernames do not match.' });

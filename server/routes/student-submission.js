@@ -17,8 +17,18 @@ const handleStudentSignUp = async (req, res, client) => {
     try {
         // Check if the email address already exists in the database
         const existingUser = await client.query('SELECT * FROM users WHERE email = $1', [email]);
+
+        // If the student's email already exists, return an error message
         if (existingUser.rows.length > 0) {
             return res.status(400).json({ error: 'Email address already registered' });
+        }
+
+        // Check if the username already exists in the database
+        const existingUserWithUsername = await client.query('SELECT * FROM users WHERE username = $1', [username]);
+
+        // If the student's username already exists, return an error message
+        if (existingUserWithUsername.rows.length > 0) {
+            return res.status(400).json({ error: 'Username already taken' });
         }
 
         // Encrypt the password

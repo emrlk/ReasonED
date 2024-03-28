@@ -83,16 +83,20 @@ export default function CreateAccount() {
         // Parse response body as JSON
         const responseData = await response.json();
 
-        // Check if the error message indicates a duplicate email
+        // Check if the error message indicates a duplicate email or username
         if (responseData.error === "Email address already registered") {
-          // Set error message
+          // Set error message for duplicate email
           setErrorMessage("This email address is already registered");
-
-          // Reset success message
-          setSuccessMessage("");
+        } else if (responseData.error === "Username already taken") {
+          // Set error message for duplicate username
+          setErrorMessage("This username is already taken");
         } else {
+          // Set generic error message
           throw new Error("Failed to create account");
         }
+
+        // Reset success message
+        setSuccessMessage("");
       } else {
         // Set success message
         console.log("Account created successfully");

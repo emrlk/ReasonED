@@ -17,6 +17,8 @@ const handleTeacherSignUp = async (req, res, client) => {
     try {
         // Check if the email address already exists in the database
         const existingTeacher = await client.query('SELECT * FROM teachers WHERE email = $1', [email]);
+
+        // If the teacher's email already exists, return an error message
         if (existingTeacher.rows.length > 0) {
             return res.status(400).json({ error: 'Email address already registered' });
         }

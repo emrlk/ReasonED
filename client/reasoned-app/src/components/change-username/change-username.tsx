@@ -81,13 +81,20 @@ export default function ChangeUsername() {
                 body: JSON.stringify({ email: currentUser.email, newUsername, confirmUsername })
             });
 
+            // Parse response as JSON
+            const responseData = await response.json();
+
             // If response is not okay
             if (!response.ok) {
-                // Parse error response as JSON
-                const errorData = await response.json();
-
-                // Set error message and clear success message
-                setErrorMessage(errorData.message);
+                // If the error message indicates a duplicate username
+                if (responseData.message === 'Username already exists') {
+                    // Set error message for duplicate username
+                    setErrorMessage('Username already exists. Please choose a different one.');
+                } else {
+                    // Set error message from response data
+                    setErrorMessage(responseData.message);
+                }
+                // Clear success message
                 setSuccessMessage('');
             } else {
                 // Clear error message and set success message
