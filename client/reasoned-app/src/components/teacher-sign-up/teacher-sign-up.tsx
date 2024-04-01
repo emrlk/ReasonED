@@ -28,6 +28,7 @@ function validatePassword(password) {
   return "";
 }
 
+// Client-side component for teacher sign-up
 export default function CreateTeacherAccount() {
   // Define initial form data
   const initialFormData = {

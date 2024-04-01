@@ -1,6 +1,7 @@
 import React from "react";
 import CreateTeacherAccount from "@/components/teacher-sign-up/teacher-sign-up";
 
+// Client-side page to allow teachers to view sign-up page
 export default function CreateTeacherAccountPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

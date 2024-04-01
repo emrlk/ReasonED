@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Default navigation bar for students
 export default function LoggedInStudent() {
     return (
         <div className={"constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-2 h-24"}>

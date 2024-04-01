@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "@/components/log-in/log-in";
 
+// Client-side page to allow users to view the log-in page
 export default function LoginPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Default navigation bar before a user logs in
 export default function Header() {
     return (
         <div className={"constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-2 h-24"}>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+// Client-side component for students to change their username
 export default function ChangeUsername() {
     // State variables 
     const [newUsername, setNewUsername] = useState('');

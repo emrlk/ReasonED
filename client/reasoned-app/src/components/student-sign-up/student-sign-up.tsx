@@ -28,6 +28,7 @@ function validatePassword(password) {
   return "";
 }
 
+// Client-side component for student sign-up
 export default function CreateAccount() {
   // Define initial form data
   const initialFormData = {

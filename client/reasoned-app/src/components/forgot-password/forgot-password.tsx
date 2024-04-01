@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 
+// Client-side component for forgot password page
 export default function ForgotPassword({ setToken }) {
     // State variables to manage email input, error message, and success message
     const [email, setEmail] = useState('');

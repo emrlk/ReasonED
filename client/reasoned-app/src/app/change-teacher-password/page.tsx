@@ -2,6 +2,7 @@
 import React from "react";
 import ChangeTeacherPassword from "@/components/change-teacher-password/change-teacher-password";
 
+// Client-side page to allow teachers to view change password page
 export default function ChangeTeacherPasswordPage() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">

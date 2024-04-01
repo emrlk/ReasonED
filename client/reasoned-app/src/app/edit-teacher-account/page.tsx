@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "@/components/common/footer";
 import LoggedInTeacher from "@/components/common/logged-in-teacher";
 
+// Client-side page to allow teachers to view their settings
 const EditTeacherAccount = () => {
     // Define state variables for currentUser and loading
     const [currentUser, setCurrentUser] = useState(null);

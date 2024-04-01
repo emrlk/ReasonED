@@ -1,6 +1,7 @@
 import React from "react";
 import CreateAccount from "@/components/student-sign-up/student-sign-up";
 
+// Client-side page to allow students to view sign-up page
 export default function CreateAccountPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

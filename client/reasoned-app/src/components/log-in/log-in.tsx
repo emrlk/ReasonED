@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 
+// Client-side component for log-in page
 export default function Login() {
     // State variables for form data and error message
     const [formData, setFormData] = useState({

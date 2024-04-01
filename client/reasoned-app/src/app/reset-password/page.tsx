@@ -4,6 +4,7 @@ import { isClient } from "@/utils/helpers";
 import ForgotPassword from "@/components/forgot-password/forgot-password";
 import ResetPassword from "@/components/reset-password/reset-password";
 
+// Client-side page to allow users to view the reset password page
 export default function ResetPasswordPage() {
   // State variable to hold the token value
   const [token, setToken] = useState(null);

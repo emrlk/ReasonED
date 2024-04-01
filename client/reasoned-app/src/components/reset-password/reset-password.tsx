@@ -28,6 +28,7 @@ function validatePassword(password) {
     return '';
 }
 
+// Client-side component for reset password page
 export default function ResetPassword({ token }) {
     // State variables to manage password input, confirm password input, error message, and success message
     const [password, setPassword] = useState('');

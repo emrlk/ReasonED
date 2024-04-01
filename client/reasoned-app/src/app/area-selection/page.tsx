@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Function to display area selection to teachers
 export default function DescribeYourAreaPage() {
     return (
         <div className="flex flex-col items-center justify-center h-screen">

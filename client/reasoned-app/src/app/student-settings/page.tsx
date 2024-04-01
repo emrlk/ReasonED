@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import LoggedInStudent from "@/components/common/logged-in-student";
 import Footer from "@/components/common/footer";
 
+// Client-side page to allow students to view their settings
 const StudentSettings = () => {
   // Define state variables for currentUser and loading
   const [currentUser, setCurrentUser] = useState(null);

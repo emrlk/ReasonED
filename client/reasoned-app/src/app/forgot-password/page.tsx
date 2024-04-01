@@ -2,11 +2,13 @@
 import React from "react";
 import ForgotPassword from "@/components/forgot-password/forgot-password";
 
+// Client-side page to allow users to view the forgot password page
 export default function ForgotPasswordPage() {
   const setToken = (token) => {
     // Logic to set the token???
   };
 
+  // TSX Structure
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">

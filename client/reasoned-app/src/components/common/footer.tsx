@@ -1,4 +1,5 @@
 
+// Default footer
 export default function Footer() {
     return (
         <footer className="bg-purple-shades-900 text-white font-medium py-10">

@@ -2,6 +2,7 @@
 import React from "react";
 import ChangeUsername from "@/components/change-username/change-username";
 
+// Client-side page to allow students to view change username page
 export default function ChangeUsernamePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
