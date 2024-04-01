@@ -4,10 +4,12 @@
 font_path = "res://assets/immortal.regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 56
-outline_size = 4
+size = 61
+outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = 6
+use_filter = true
+extra_spacing_char = 4
+extra_spacing_space = 5
 font_data = SubResource( 1 )
 
 [resource]
