@@ -102,8 +102,15 @@ export default function Verification() {
                 //const { usertype } = responseData;
 
                 // Redirect user to the appropriate page based on userType
+
+                // If the user is a student
                 if (currentUser.usertype === 'student') {
+                    // Redirect the user to the student home page
                     window.location.href = '/student-home-page';
+                    // Otherwise if the user is a teacher
+                } else if (currentUser.usertype === 'teacher') {
+                    // Redirect the teacher to the teacher home page
+                    window.location.href = '/teacher-home-page';
                 }
             }
         } catch (error) {
