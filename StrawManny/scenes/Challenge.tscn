@@ -34,6 +34,7 @@ atlas = ExtResource( 3 )
 region = Rect2( 111, 268, 98, 103 )
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2( 1.72175, 1.72175 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -41,10 +42,11 @@ margin_bottom = 40.0
 script = ExtResource( 8 )
 
 [node name="Background" type="TextureRect" parent="Control"]
-margin_left = -512.0
-margin_top = -481.0
-margin_right = 512.0
-margin_bottom = 572.0
+margin_left = -556.412
+margin_top = -570.351
+margin_right = 467.588
+margin_bottom = 482.649
+rect_scale = Vector2( 1.1005, 0.997924 )
 texture = ExtResource( 1 )
 
 [node name="KnightImage" type="TextureRect" parent="Control"]

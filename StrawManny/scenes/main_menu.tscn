@@ -759,8 +759,11 @@ tile_data = PoolIntArray( -458763, 16, 0, -458762, 16, 0, -458761, 16, 0, -45876
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 32.0
-margin_top = 32.0
+margin_left = -253.0
+margin_top = -136.0
+margin_right = 677.0
+margin_bottom = 406.0
+rect_scale = Vector2( 1.60112, 1.60112 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_right = 970.0
@@ -841,10 +844,10 @@ size_flags_vertical = 0
 texture = ExtResource( 1 )
 
 [node name="toggle_sound" type="TextureButton" parent="."]
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 130.0
-margin_bottom = 135.0
+margin_left = -419.0
+margin_top = -211.0
+margin_right = -321.0
+margin_bottom = -108.0
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = SubResource( 9 )

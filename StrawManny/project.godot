@@ -18,6 +18,12 @@ config/icon="res://assets/Straw_Manny_Logo-no-background.png"
 
 DialogueManager="*res://scripts/dialogue_manager.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/dpi/allow_hidpi=true
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
