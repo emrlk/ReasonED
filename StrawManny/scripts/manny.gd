@@ -39,13 +39,13 @@ func _ready():
 
 func setup_initial_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
-	var tutorial_ok_button = get_tree().current_scene.get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
+	var tutorial_ok_button = get_tree().current_scene.get_node("Node2D2").get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
 	if tutorial_ok_button:
 		tutorial_ok_button.connect("pressed", self, "on_tutorial_finished")
 		
 func on_tutorial_finished():
 	can_move = true
-	var tutorial_ok_button = get_tree().current_scene.get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
+	var tutorial_ok_button = get_tree().current_scene.get_node("Node2D2").get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
 	if tutorial_ok_button:
 		tutorial_ok_button.disconnect("pressed", self, "on_tutorial_finished")
 
@@ -63,7 +63,7 @@ func apply_velocity(velocity : Vector2):
 		#Normalize vector to prevent diagonal movement from being faster
 		velocity = velocity.normalized()
 		#Speed of sprite:
-		velocity = move_and_slide(velocity * 800)
+		velocity = move_and_slide(velocity * 1200)
 
 
 func play_locomotion_animation(animation_to_play : String):

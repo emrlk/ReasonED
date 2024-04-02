@@ -80,6 +80,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" groups=["Knight"]]
 frames = SubResource( 162 )
 animation = "Idle"
+frame = 9
 speed_scale = 0.5
 playing = true
 

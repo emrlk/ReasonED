@@ -42,6 +42,8 @@ margin_bottom = 1256.0
 margin_right = 783.0
 margin_bottom = 1001.0
 theme = ExtResource( 1 )
+custom_colors/default_color = Color( 0.188235, 0.168627, 0.168627, 1 )
+custom_colors/font_color_shadow = Color( 0.188235, 0.168627, 0.168627, 1 )
 text = "Welcome to Straw Manny!
 
 Enemy knights are scattered around the map. Find them and contest their logical assertions. Use ability powerups you find to defeat them in combat and level up.

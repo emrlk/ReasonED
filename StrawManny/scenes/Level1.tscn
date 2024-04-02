@@ -342,7 +342,10 @@ script = ExtResource( 14 )
 [node name="PickupTest" parent="." instance=ExtResource( 11 )]
 position = Vector2( 261, 228 )
 
-[node name="Tutorial" parent="." instance=ExtResource( 13 )]
+[node name="Node2D2" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Tutorial" parent="Node2D2" instance=ExtResource( 13 )]
 margin_left = 319.0
 margin_top = -293.0
 margin_right = 320.0
