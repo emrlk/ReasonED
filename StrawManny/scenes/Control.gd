@@ -2,6 +2,8 @@ extends Control
 
 var text_display_scene
 var current_question
+var current_level
+var random_question
 
 # Define Question class
 class Question:
@@ -109,9 +111,6 @@ func get_random_question(difficulty):
 	else:
 		return null
 
-#Signal function for Timer end
-func _on_AnswerChoicesTimer_timeout():
-	show_answer_choices()
 
 # Called when the node enters the scene tree for the first time
 func _ready():
@@ -121,13 +120,16 @@ func _ready():
 	text_display_scene = preload("res://scenes/textbox.tscn")
 	
 	# Set the text of the text box to a random question based on the current level
-	var current_level = "easy" # Change this based on the current level
-	var random_question = get_random_question(current_level)
+	current_level = "easy" # Change this based on the current level
+	random_question = get_random_question(current_level)
 	
 	if random_question:
 		display_question(random_question) #Begin question display
-		answer_choices_timer.start() # Start timer to show answer choices
-		display_answers(random_question) #Begin Answer choice display
 	else:
 		question_label.text = "No question available for this difficulty."
 
+
+
+func _on_Continue_Button_pressed():
+	display_answers(random_question) #Begin Answer choice display
+	show_answer_choices()

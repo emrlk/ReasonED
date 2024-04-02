@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/Background Elements/Samples/uncolored_castle.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__WALK_009.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/yellow-tinge/long-small-tag-above.png" type="Texture" id=9]
 [ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/greyscale/long-small-tag-above.png" type="Texture" id=10]
 [ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/UI/medievalbutton/Button-65.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=4]
 size = 281
@@ -32,6 +33,18 @@ region = Rect2( 231, 268, 98, 103 )
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 111, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 71.5625, 1701.26, 150.1, 158.65 )
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 223.562, 1698.41, 166.25, 167.2 )
+filter_clip = true
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 1.72175, 1.72175 )
@@ -166,9 +179,15 @@ margin_bottom = 783.048
 rect_scale = Vector2( 0.975461, 0.208349 )
 script = null
 
-[node name="AnswerChoicesTimer" type="Timer" parent="Control"]
-wait_time = 5.0
-autostart = true
+[node name="Continue Button" type="TextureButton" parent="Control"]
+margin_left = 373.458
+margin_top = 66.2119
+margin_right = 532.458
+margin_bottom = 232.212
+rect_scale = Vector2( 0.625684, 0.625684 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
 
 [connection signal="pressed" from="Control/toggle_sound" to="Control/toggle_sound" method="_on_Volume_pressed"]
-[connection signal="timeout" from="Control/AnswerChoicesTimer" to="Control" method="_on_AnswerChoicesTimer_timeout"]
+[connection signal="pressed" from="Control/Continue Button" to="Control" method="_on_Continue_Button_pressed"]
