@@ -12,6 +12,12 @@
 [ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/greyscale/long-small-tag-above.png" type="Texture" id=10]
 [ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=11]
 
+[sub_resource type="DynamicFont" id=4]
+size = 281
+use_filter = true
+extra_spacing_space = -54
+font_data = ExtResource( 11 )
+
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
@@ -26,12 +32,6 @@ region = Rect2( 231, 268, 98, 103 )
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 111, 268, 98, 103 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 281
-use_filter = true
-extra_spacing_space = -54
-font_data = ExtResource( 11 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -54,46 +54,6 @@ margin_right = 521.0
 margin_bottom = 451.0
 rect_scale = Vector2( 1.17363, 1.17363 )
 texture = ExtResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Control"]
-position = Vector2( 0, -89 )
-current = true
-
-[node name="toggle_sound" type="TextureButton" parent="Control"]
-margin_left = -508.0
-margin_top = 137.0
-margin_right = -410.0
-margin_bottom = 240.0
-grow_horizontal = 0
-rect_scale = Vector2( 0.679985, 0.679985 )
-toggle_mode = true
-texture_normal = SubResource( 1 )
-texture_pressed = SubResource( 2 )
-texture_hover = SubResource( 3 )
-stretch_mode = 4
-script = ExtResource( 4 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource( 5 )
-volume_db = -20.0
-autoplay = true
-
-[node name="TextBoxContainer" parent="Control" instance=ExtResource( 6 )]
-margin_left = -346.0
-margin_top = 55.0
-margin_right = 506.0
-margin_bottom = 780.0
-rect_scale = Vector2( 0.975461, 0.208349 )
-script = null
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = -416.0
-margin_top = 43.0
-margin_right = 3628.0
-margin_bottom = 768.0
-rect_scale = Vector2( 0.212497, 0.206724 )
-texture = ExtResource( 7 )
-expand = true
 
 [node name="AnswerButton1" type="TextureButton" parent="Control"]
 margin_left = 55.0
@@ -161,4 +121,49 @@ custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 custom_fonts/font = SubResource( 4 )
 autowrap = true
 
+[node name="Camera2D" type="Camera2D" parent="Control"]
+position = Vector2( 0, -89 )
+current = true
+
+[node name="toggle_sound" type="TextureButton" parent="Control"]
+margin_left = -508.0
+margin_top = 137.0
+margin_right = -410.0
+margin_bottom = 240.0
+grow_horizontal = 0
+rect_scale = Vector2( 0.679985, 0.679985 )
+toggle_mode = true
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+stretch_mode = 4
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 5 )
+volume_db = -20.0
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = -416.0
+margin_top = 43.0
+margin_right = 3628.0
+margin_bottom = 768.0
+rect_scale = Vector2( 0.212497, 0.206724 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="TextBoxContainer" parent="Control/TextureRect" instance=ExtResource( 6 )]
+margin_left = 329.417
+margin_top = 58.0484
+margin_right = 1181.42
+margin_bottom = 783.048
+rect_scale = Vector2( 0.975461, 0.208349 )
+script = null
+
+[node name="AnswerChoicesTimer" type="Timer" parent="Control"]
+wait_time = 5.0
+autostart = true
+
 [connection signal="pressed" from="Control/toggle_sound" to="Control/toggle_sound" method="_on_Volume_pressed"]
+[connection signal="timeout" from="Control/AnswerChoicesTimer" to="Control" method="_on_AnswerChoicesTimer_timeout"]

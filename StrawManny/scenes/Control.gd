@@ -1,5 +1,8 @@
 extends Control
+
 var text_display_scene
+var current_question
+
 # Define Question class
 class Question:
 	var text: String
@@ -11,7 +14,7 @@ class Question:
 		self.difficulty = difficulty
 		self.answers =  answers
 
-# Initialize question list
+# Initialize question list (TBC)
 var questions = [
 	Question.new("Wheat is an effective crop for our farmers to grow.", "easy", 
 		["How could you think it's the most effective crop?",
@@ -51,26 +54,49 @@ var questions = [
 		 ""])
 ]
 
-
-
 # Reference to the Label node for displaying questions
 onready var question_label = get_node("TextBoxContainer/MarginContainer/Label")
 
-# Reference to the Button nodes for answer choices
-onready var answer_buttons = [get_node("AnswerButton1/Label"), get_node("AnswerButton2/Label"), get_node("AnswerButton3/Label")]
+# Reference to the Labels of the Button nodes for answer choices
+onready var answer_buttons = [
+	get_node("AnswerButton1").get_node("Label"),
+	get_node("AnswerButton2").get_node("Label"),
+	get_node("AnswerButton3").get_node("Label")
+]
+
+# Timer to wait before showing answer choices
+onready var answer_choices_timer = $AnswerChoicesTimer
+
+
+
 
 # Function to display a question and its answer choices
 func display_question(question: Question):
-	#question_label.text = question.text
-	#for i in range(answer_buttons.size()):
-		#answer_buttons[i].text = question.answers[i]
+	current_question = question
 	var text_display = text_display_scene.instance()
 	add_child(text_display)
 	text_display.start_text_display(question.text)
 	
-	# Display answer choices in buttons 
+	
+func display_answers(question: Question):
 	for i in range(answer_buttons.size()):
 		answer_buttons[i].text = question.answers[i]
+
+	
+
+# Hide answer choices
+func hide_answer_choices():
+	for button in answer_buttons:
+		button.get_parent().visible = false
+		button.visible = false
+
+# Show answer choices
+func show_answer_choices():
+	for button in answer_buttons:
+		button.get_parent().visible = true;
+		button.visible = true
+		print("Label visibility:", button.visible)
+
 
 # Function to get a random question of a specific difficulty
 func get_random_question(difficulty):
@@ -84,14 +110,25 @@ func get_random_question(difficulty):
 	else:
 		return null
 
+#Signal function for Timer end
+func _on_AnswerChoicesTimer_timeout():
+	show_answer_choices()
+
 # Called when the node enters the scene tree for the first time
 func _ready():
+	# Hide answer choices initially
+	hide_answer_choices()
+	
 	text_display_scene = preload("res://scenes/textbox.tscn")
+	
 	# Set the text of the text box to a random question based on the current level
-	var current_level = "easy" # Change this based on the player's current level
+	var current_level = "easy" # Change this based on the current level
 	var random_question = get_random_question(current_level)
+	
 	if random_question:
-		display_question(random_question)
+		display_question(random_question) #Begin question display
+		answer_choices_timer.start() # Start timer to show answer choices
+		display_answers(random_question) #Begin Answer choice display
 	else:
 		question_label.text = "No question available for this difficulty."
 
