@@ -56,8 +56,8 @@ var questions = [
 		 ""])
 ]
 
-# Reference to the Label node for displaying questions
-onready var question_label = get_node("TextBoxContainer/MarginContainer/Label")
+# Reference to the Label node for displaying the claims
+onready var question_label = get_node("TextureRect/TextBoxContainer/MarginContainer/Label")
 
 # Reference to the Labels of the Button nodes for answer choices
 onready var answer_buttons = [
@@ -65,9 +65,6 @@ onready var answer_buttons = [
 	get_node("AnswerButton2").get_node("Label"),
 	get_node("AnswerButton3").get_node("Label")
 ]
-
-# Timer to wait before showing answer choices
-onready var answer_choices_timer = $AnswerChoicesTimer
 
 
 
@@ -81,10 +78,23 @@ func display_question(question: Question):
 	
 	
 func display_answers(question: Question):
-	for i in range(answer_buttons.size()):
-		answer_buttons[i].text = question.answers[i]
-
+	var answers = question.answers
+	var correct_answer_index = answers.size() - 1  # Index of the correct answer
 	
+	# Remove the correct answer from the array
+	var shuffled_answers = answers.slice(0, correct_answer_index).duplicate()
+	
+	# Randomly select a position for the correct answer
+	var correct_position = randi() % (shuffled_answers.size() + 1)
+	
+	# Insert the correct answer at the selected position
+	shuffled_answers.insert(correct_position, answers[correct_answer_index])
+	
+	# Assign the shuffled answers to the buttons
+	for i in range(answer_buttons.size()):
+		answer_buttons[i].text = shuffled_answers[i]
+
+
 
 # Hide answer choices
 func hide_answer_choices():
@@ -116,15 +126,19 @@ func get_random_question(difficulty):
 func _ready():
 	# Hide answer choices initially
 	hide_answer_choices()
-	
 	text_display_scene = preload("res://scenes/textbox.tscn")
 	
 	# Set the text of the text box to a random question based on the current level
 	current_level = "easy" # Change this based on the current level
 	random_question = get_random_question(current_level)
 	
+	# Connect signals for answer buttons
+	for button in answer_buttons:
+		button.get_parent().connect("pressed", self, "_on_answer_button_pressed")
+	
 	if random_question:
 		display_question(random_question) #Begin question display
+		$"Continue Button".show()
 	else:
 		question_label.text = "No question available for this difficulty."
 
@@ -133,3 +147,24 @@ func _ready():
 func _on_Continue_Button_pressed():
 	display_answers(random_question) #Begin Answer choice display
 	show_answer_choices()
+	$"Continue Button".hide()
+
+# Function to handle button press
+func _on_answer_button_pressed():
+	var selected_answer = get_selected_answer()
+	var correct_answer = current_question.answers[current_question.answers.size() - 1]
+	
+	if selected_answer == correct_answer:
+		#Switch to combat scene
+		get_tree().change_scene("res://scenes/Combat.tscn")
+	else:
+		#Switch to straw man scene
+		get_tree().change_scene("res://scenes/StrawMan.tscn")
+
+# Function to get the selected answer from the buttons
+func get_selected_answer():
+	for button in answer_buttons:
+		if button.get_parent().pressed:
+			return button.text
+	return ""  # Return an empty string if no answer is selected
+
