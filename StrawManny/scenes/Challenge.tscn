@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Background Elements/Samples/uncolored_castle.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__WALK_009.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI/medievalbutton/Main_Menu.png" type="Texture" id=3]
 [ext_resource path="res://scripts/mute.gd" type="Script" id=4]
 [ext_resource path="res://music/challenge-scene.mp3" type="AudioStream" id=5]
+[ext_resource path="res://scenes/textbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_681_x_150.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Control.gd" type="Script" id=8]
+[ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/yellow-tinge/long-small-tag-above.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/greyscale/long-small-tag-above.png" type="Texture" id=10]
+[ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -21,11 +27,18 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 111, 268, 98, 103 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 281
+use_filter = true
+extra_spacing_space = -54
+font_data = ExtResource( 11 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 8 )
 
 [node name="Background" type="TextureRect" parent="Control"]
 margin_left = -512.0
@@ -64,5 +77,88 @@ script = ExtResource( 4 )
 stream = ExtResource( 5 )
 volume_db = -20.0
 autoplay = true
+
+[node name="TextBoxContainer" parent="Control" instance=ExtResource( 6 )]
+margin_left = -346.0
+margin_top = 55.0
+margin_right = 506.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.975461, 0.208349 )
+script = null
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = -416.0
+margin_top = 43.0
+margin_right = 3628.0
+margin_bottom = 768.0
+rect_scale = Vector2( 0.212497, 0.206724 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="AnswerButton1" type="TextureButton" parent="Control"]
+margin_left = 55.0
+margin_top = -370.0
+margin_right = 575.0
+margin_bottom = -205.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton1"]
+margin_left = 36.68
+margin_top = 9.93994
+margin_right = 4114.34
+margin_bottom = 1059.94
+rect_scale = Vector2( 0.11355, 0.109413 )
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
+
+[node name="AnswerButton2" type="TextureButton" parent="Control"]
+margin_left = 56.0
+margin_top = -242.0
+margin_right = 576.0
+margin_bottom = -77.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton2"]
+margin_left = 36.68
+margin_top = 9.93994
+margin_right = 4114.34
+margin_bottom = 1059.94
+rect_scale = Vector2( 0.11355, 0.109413 )
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
+
+[node name="AnswerButton3" type="TextureButton" parent="Control"]
+margin_left = 56.0
+margin_top = -113.0
+margin_right = 576.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton3"]
+margin_left = 36.68
+margin_top = 9.93994
+margin_right = 4114.34
+margin_bottom = 1059.94
+rect_scale = Vector2( 0.11355, 0.109413 )
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
 
 [connection signal="pressed" from="Control/toggle_sound" to="Control/toggle_sound" method="_on_Volume_pressed"]
