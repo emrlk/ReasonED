@@ -46,7 +46,7 @@ script = ExtResource( 5 )
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 1278.0
-margin_bottom = 370.0
+margin_bottom = 689.0
 size_flags_horizontal = 3
 
 [node name="Top_Bar" type="HBoxContainer" parent="VBoxContainer"]
@@ -155,16 +155,16 @@ stretch_mode = 1
 [node name="Center Spacer" type="MarginContainer" parent="VBoxContainer"]
 margin_top = 158.0
 margin_right = 1248.0
-margin_bottom = 208.0
+margin_bottom = 527.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Bottom_Bar" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 212.0
+margin_top = 531.0
 margin_right = 1248.0
-margin_bottom = 340.0
+margin_bottom = 659.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 

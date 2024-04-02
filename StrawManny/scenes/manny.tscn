@@ -411,6 +411,7 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
+z_index = 2
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 2
@@ -430,6 +431,13 @@ current = true
 zoom = Vector2( 2, 2 )
 smoothing_speed = 8.0
 
+[node name="HUD" parent="KinematicBody2D" instance=ExtResource( 5 )]
+margin_left = -1020.0
+margin_top = -600.0
+margin_right = 1020.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 2040, 1200 )
+
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]
 visible = false
 
@@ -438,13 +446,6 @@ visible = false
 position = Vector2( -111, 94 )
 scale = Vector2( 5.68764, 5.08333 )
 polygon = PoolVector2Array( 35, -25, 37.2738, -16.3279, 38.8562, -8.85247, 36.2189, 0.786886, 34, 8, 32.7025, 14.7541, 35.3398, 22.2295, 36.0431, 27.9345, 34, 31, 28, 31, 23, 26, 25, 18, 13, 17, 15, 24, 12, 26, -2, 24, -2.81312, 20.459, -1.93402, 18.2951, 2, 16, 0, -7, -7.03279, -7.08198, -7.91189, -15.3443, -2.28566, -21.4427, -2.28566, -49.3771, 6.32952, -59.8034, 14.593, -65.1149, 19.3402, -67.869, 21.9775, -63.9345, 27.0763, -57.0493, 32.5267, -46.0329, 34, -41, 41, -41, 40, -35 )
-
-[node name="HUD" parent="KinematicBody2D" instance=ExtResource( 5 )]
-margin_left = -1020.0
-margin_top = -600.0
-margin_right = 1020.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 2040, 1200 )
 
 [connection signal="item_added" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_added"]
 [connection signal="item_received_for_instant_use" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_received_for_instant_use"]
