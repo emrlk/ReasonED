@@ -33,11 +33,11 @@ var questions = [
 		 "You completely ignore the existence of other instruments, like drums or flutes!",
 		 "Do you think more songs should incorporate lutes and harps?"]),
 	Question.new("Knights are the epitome of nobility and honor in a kingdom.", "easy", 
-		["You must believe that knights are the only noble people in a kingdom!",
-		 "There are many ways to gain nobility in society, not just knighthood!",
+		["Hey, knights are not the only noble people in a kingdom!",
+		 "Regular citizens are not dishonorable!",
 		 "Being knighted does not stop someone from acting dishonorable."]),
 	Question.new("Witch hunts allowed societies to unite together to defend itself from perceived threats.", "intermediate", 
-		["So you must think that it’s ok to hunt people without evidence?",
+		["Why do you think that it’s ok to hunt people without evidence?",
 		 "Anyone who agrees with witch hunts thinks it’s ok to punish those who are simply suspected of a crime.",
 		 "Although hunts could unite a society, it is important to justify evidential reasons before enacting punishment. "]),
 	Question.new("Trial by combat allows people to quickly settle disputes between themselves.", "intermediate",
@@ -95,7 +95,6 @@ func show_answer_choices():
 	for button in answer_buttons:
 		button.get_parent().visible = true;
 		button.visible = true
-		print("Label visibility:", button.visible)
 
 
 # Function to get a random question of a specific difficulty
