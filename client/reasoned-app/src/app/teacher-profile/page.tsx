@@ -84,10 +84,18 @@ const TeacherProfile = () => {
                                     {/* <h2 className="text-lg font-semibold text-gray-800">{currentUser ? 'Profile' : 'Welcome User!'}</h2> */}
                                     {currentUser && (
                                         <>
+
+                                            {/* Display teacher's email */}
                                             <p className="mt-2 text-sm text-purple">
                                                 {currentUser.email}
                                             </p>
+
                                             {/* <p className="mt-2 text-sm text-purple">{currentUser.usertype}</p> */}
+
+                                            {/* Display teacher's area */}
+                                            <p className="mt-2 text-sm text-purple">
+                                                Area: {currentUser.area_selection}
+                                            </p>
 
                                             {/* Add other user information here */}
                                         </>

@@ -17,8 +17,8 @@ const fetchUserData = (req, res, client) => {
             // Student: fetch email and username
             query = 'SELECT email, username, \'student\' AS userType FROM users WHERE id = $1';
         } else {
-            // Teacher: fetch email only
-            query = 'SELECT email, \'teacher\' AS userType FROM teachers WHERE id = $1';
+            // Teacher: fetch email and area selection
+            query = 'SELECT email, area_selection, \'teacher\' AS userType FROM teachers WHERE id = $1';
         }
 
         // Query the database to fetch user data
