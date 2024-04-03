@@ -67,7 +67,7 @@ animations = [ {
 "frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ), SubResource( 160 ), SubResource( 161 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 30.0
+"speed": 12.0
 } ]
 
 [node name="Node2D" type="Node2D" groups=["Knight"]]
@@ -80,8 +80,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" groups=["Knight"]]
 frames = SubResource( 162 )
 animation = "Idle"
-frame = 9
-speed_scale = 0.5
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]
