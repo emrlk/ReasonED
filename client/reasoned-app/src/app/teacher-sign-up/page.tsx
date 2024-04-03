@@ -1,8 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import CreateTeacherAccount from "@/components/teacher-sign-up/teacher-sign-up";
 
 // Client-side page to allow teachers to view sign-up page
 export default function CreateTeacherAccountPage() {
+  // State variables for area selection
+  const [area, setArea] = useState(null);
+
+  // Extract area from URL when the component mounts
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const areaFromUrl = urlParams.get('area');
+    const decodedArea = areaFromUrl ? decodeURIComponent(areaFromUrl) : null;
+    setArea(decodedArea);
+  }, []);
+
+  // Debugging
+  // console.log("Extracted Area:", area);
+
+  // TSX Structure
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">
@@ -17,7 +33,8 @@ export default function CreateTeacherAccountPage() {
           </h2>
         </div>
 
-        <CreateTeacherAccount />
+        {/* Pass area selection into CreateTeacherAccount component */}
+        {area && <CreateTeacherAccount area={area} />}
       </div>
     </main>
   );

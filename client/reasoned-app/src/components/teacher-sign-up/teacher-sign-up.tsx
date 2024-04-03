@@ -29,13 +29,17 @@ function validatePassword(password) {
 }
 
 // Client-side component for teacher sign-up
-export default function CreateTeacherAccount() {
+export default function CreateTeacherAccount({ area }) {
   // Define initial form data
   const initialFormData = {
     email: "",
     password: "",
     confirmPassword: "",
+    areaSelection: area || "",
   };
+
+  // Debugging
+  // console.log("Current initialFormData:", initialFormData);
 
   // State variables for form data, success message, and error message
   const [formData, setFormData] = useState(initialFormData);

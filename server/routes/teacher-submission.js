@@ -7,7 +7,8 @@ const bcrypt = require('bcrypt');
  * @param {object} client - The database client object used to execute queries.
  */
 const handleTeacherSignUp = async (req, res, client) => {
-    const { email, password, confirmPassword } = req.body;
+    // Destructuring the request body to extract user information
+    const { email, password, confirmPassword, areaSelection } = req.body;
 
     // Check if password and confirmPassword match
     if (password !== confirmPassword) {
@@ -27,9 +28,13 @@ const handleTeacherSignUp = async (req, res, client) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Insert the new teacher into the teachers table
-        const result = await client.query('INSERT INTO teachers (email, password) VALUES ($1, $2) RETURNING id', [email, hashedPassword]);
+        const result = await client.query(
+            'INSERT INTO teachers (email, password, area_selection) VALUES ($1, $2, $3) RETURNING id',
+            [email, hashedPassword, areaSelection]
+        );
         const newTeacherId = result.rows[0].id;
 
+        // Log teacher's ID
         console.log('New teacher created with ID:', newTeacherId);
 
         // Send the new teacher's ID back to the client
