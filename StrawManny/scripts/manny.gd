@@ -4,6 +4,7 @@ onready var animation = $AnimatedSprite
 onready var inventory = $Inventory
 onready var collision = $Area2D
 
+export var movement_speed = float(1400)
 
 export var move_right_action = String("right")
 export var move_left_action = String("left")
@@ -14,6 +15,8 @@ export var run_animation = String("run")
 export var idle_animation = String("idle")
 
 export var can_move = false
+
+var movement_ability_multiplier = float(1)
 
 
 var inputs = {
@@ -36,6 +39,12 @@ func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
 	setup_initial_signals()
 	initialize_manny()
+	
+func set_movement_ability_multiplier(multiplier : float):
+	movement_ability_multiplier = multiplier
+	
+func get_movement_speed() -> float:
+	return movement_speed * movement_ability_multiplier
 
 func setup_initial_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
@@ -63,7 +72,7 @@ func apply_velocity(velocity : Vector2):
 		#Normalize vector to prevent diagonal movement from being faster
 		velocity = velocity.normalized()
 		#Speed of sprite:
-		velocity = move_and_slide(velocity * 1200)
+		velocity = move_and_slide(velocity * get_movement_speed())
 
 
 func play_locomotion_animation(animation_to_play : String):

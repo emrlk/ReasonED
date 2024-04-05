@@ -12,7 +12,7 @@ var picked_up = bool(false)
 func _ready():
 	pass
 
-func get_ability() -> Node:
+func _get_ability() -> Node:
 	return get_parent()
 
 func is_picked_up() -> bool:

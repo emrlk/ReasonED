@@ -1,9 +1,7 @@
 extends "res://scripts/abilities/ability.gd"
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var movement_speed_multiplier = float(1.5)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +10,4 @@ func _ready():
 
 
 func _use_ability(_manny):
-	print("manny: ", _manny)
+	_manny.set_movement_ability_multiplier(movement_speed_multiplier)
