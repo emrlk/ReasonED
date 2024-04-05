@@ -11,5 +11,5 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _use_powerup(_manny):
+func _use_ability(_manny):
 	print("manny: ", _manny)

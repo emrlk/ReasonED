@@ -12,5 +12,5 @@ func is_powerup() -> bool:
 	return is_instant_powerup
 
 # overrideable function to be used on all child scripts
-func _use_powerup(_manny):
+func _use_ability(_manny):
 	print("OVERRIDE ME IN THE CHILD SCRIPTS: " + _manny)
