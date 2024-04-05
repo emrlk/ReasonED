@@ -11,27 +11,39 @@ export var move_left_action = String("left")
 export var move_up_action = String("up")
 export var move_down_action = String("down")
 
+export var ability_1_action = String("use_ability_1")
+export var ability_2_action = String("use_ability_2")
+export var ability_3_action = String("use_ability_3")
+export var ability_4_action = String("use_ability_4")
+
 export var run_animation = String("run")
 export var idle_animation = String("idle")
+
 
 export var can_move = false
 
 var movement_ability_multiplier = float(1)
 
 
-var inputs = {
+var movement_inputs = {
 	move_right_action: false,
 	move_left_action: false,
 	move_up_action: false,
 	move_down_action: false,
 }
 
+var ability_inputs = {
+	ability_1_action: false,
+	ability_2_action: false,
+	ability_3_action: false,
+	ability_4_action: false,
+}
 
 # Read user input 60 times/second
 func _physics_process(_delta):
 	read_input()
 	if can_move:
-		play_locomotion_animation(run_animation if is_any_input_down() else idle_animation)		
+		play_locomotion_animation(run_animation if is_any_movement_input_down() else idle_animation)		
 		var velocity = get_velocity_from_input()
 		apply_velocity(velocity)
 	
@@ -60,9 +72,21 @@ func on_tutorial_finished():
 
 func initialize_manny():
 	play_locomotion_animation(idle_animation)
-	
+
+func is_any_movement_input_down() -> bool:
+	for input in movement_inputs:
+		if movement_inputs[input]:
+			return true
+	return false
+
+func is_any_ability_input_down() -> bool:
+	for input in ability_inputs:
+		if ability_inputs[input]:
+			return true
+	return false
+
 func is_any_input_down() -> bool:
-	return inputs.get(move_right_action) or inputs.get(move_left_action) or inputs.get(move_up_action) or inputs.get(move_down_action)
+	return is_any_movement_input_down() || is_any_ability_input_down()
 
 
 # applies the given velocity to the character.
@@ -82,15 +106,15 @@ func play_locomotion_animation(animation_to_play : String):
 func get_velocity_from_input() -> Vector2:
 	var velocity = Vector2()
 	#separate conditionals for actual motion and direction:
-	if inputs.get(move_up_action):
+	if movement_inputs.get(move_up_action):
 		velocity.y -= 1
-	elif inputs.get(move_down_action):
+	elif movement_inputs.get(move_down_action):
 		velocity.y += 1
 
-	if inputs.get(move_right_action):
+	if movement_inputs.get(move_right_action):
 		$AnimatedSprite.flip_h = true
 		velocity.x += 1
-	elif inputs.get(move_left_action):
+	elif movement_inputs.get(move_left_action):
 		$AnimatedSprite.flip_h = false
 		velocity.x -= 1
 	
@@ -102,10 +126,10 @@ func read_input():
 	if DialogueManager.is_active():
 		return
 
-	inputs[move_right_action] = Input.is_action_pressed(move_right_action)
-	inputs[move_left_action] = Input.is_action_pressed(move_left_action)
-	inputs[move_up_action] = Input.is_action_pressed(move_up_action)
-	inputs[move_down_action] = Input.is_action_pressed(move_down_action)
+	movement_inputs[move_right_action] = Input.is_action_pressed(move_right_action)
+	movement_inputs[move_left_action] = Input.is_action_pressed(move_left_action)
+	movement_inputs[move_up_action] = Input.is_action_pressed(move_up_action)
+	movement_inputs[move_down_action] = Input.is_action_pressed(move_down_action)
 
 	if (Input.is_action_pressed("ui_accept")):
 		DialogueManager.open_textbox(["Test!", "Test 2!"], global_position)
