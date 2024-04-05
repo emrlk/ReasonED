@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "AudioStreamPlayer",
+"class": "TextToSpeech",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech.gd"
+}, {
+"base": "AudioStreamPlayer2D",
+"class": "TextToSpeech2D",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech2D.gd"
+}, {
+"base": "AudioStreamPlayer3D",
+"class": "TextToSpeech3D",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech3D.gd"
+} ]
+_global_script_class_icons={
+"TextToSpeech": "",
+"TextToSpeech2D": "",
+"TextToSpeech3D": ""
+}
+
 [application]
 
 config/name="Straw Manny"

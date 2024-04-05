@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/Blocks/Block_C_01.png" type="Texture" id=1]
 [ext_resource path="res://music/training-ground.mp3" type="AudioStream" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/tutorial.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=14]
 [ext_resource path="res://assets/Hedges/Hedge_B_01.png" type="Texture" id=15]
+[ext_resource path="res://scripts/abilities/powerups/speed_modifier_powerup.gd" type="Script" id=16]
 
 [sub_resource type="TileSet" id=1]
 32/name = "500x500grass_tile.png 32"
@@ -340,6 +341,9 @@ script = ExtResource( 14 )
 
 [node name="PickupTest" parent="." instance=ExtResource( 11 )]
 position = Vector2( 261, 228 )
+script = ExtResource( 16 )
+is_instant_powerup = true
+movement_speed_multiplier = 5.0
 
 [node name="Node2D2" type="Node2D" parent="."]
 z_index = 3

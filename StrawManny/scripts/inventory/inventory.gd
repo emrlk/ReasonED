@@ -19,15 +19,14 @@ func get_item(item_to_find):
 
 func add_item(item):
 	print("adding item: ", item)
+	var should_add_to_inventory = bool(true)
 	var ability = item._get_ability()
 	if ability != null:
 		if ability.is_powerup(): #item.is_powerup():
 			emit_signal("item_received_for_instant_use", ability)
-		else:
-			items.append(item)
-			update_inventory(items)
-			emit_signal("item_added", item)
-	else:
+			should_add_to_inventory = false
+
+	if should_add_to_inventory:
 		items.append(item)
 		update_inventory(items)
 		emit_signal("item_added", item)

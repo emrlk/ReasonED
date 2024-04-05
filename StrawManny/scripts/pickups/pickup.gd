@@ -13,7 +13,8 @@ func _ready():
 	pass
 
 func _get_ability() -> Node:
-	return get_parent()
+	return get_parent() if get_parent().has_method("_use_ability") else null
+
 
 func is_picked_up() -> bool:
 	return picked_up
