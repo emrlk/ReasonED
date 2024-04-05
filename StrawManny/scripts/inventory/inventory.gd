@@ -19,8 +19,14 @@ func get_item(item_to_find):
 
 func add_item(item):
 	print("adding item: ", item)
-	if false: #item.is_powerup():
-		emit_signal("item_received_for_instant_use", item)
+	var ability = item.get_ability()
+	if ability != null:
+		if ability.is_powerup(): #item.is_powerup():
+			emit_signal("item_received_for_instant_use", ability)
+		else:
+			items.append(item)
+			update_inventory(items)
+			emit_signal("item_added", item)
 	else:
 		items.append(item)
 		update_inventory(items)
@@ -68,8 +74,8 @@ func call_ability(button_name):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_item("item2")
-	add_item("item1")
-	add_item("item2")
-	
+	#add_item("item2")
+	#add_item("item1")
+	#add_item("item2")
+	pass
 
