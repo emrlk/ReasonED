@@ -24,6 +24,7 @@ export var can_move = false
 
 var movement_ability_multiplier = float(1)
 
+const INDEX_NONE = int(-1)
 
 var movement_inputs = {
 	move_right_action: false,
@@ -46,6 +47,19 @@ func _physics_process(_delta):
 		play_locomotion_animation(run_animation if is_any_movement_input_down() else idle_animation)		
 		var velocity = get_velocity_from_input()
 		apply_velocity(velocity)
+	
+	var ability_index = get_ability_input_down_index()
+	if ability_index != INDEX_NONE:
+		execute_ability(ability_index)
+	
+func execute_ability(index : int):
+	var inventory_item = inventory.get_item_at_index(index)
+	if inventory_item != null:
+		var ability = inventory_item._get_ability()
+		if ability != null:
+			ability._use_ability(self)
+			print("Ability")
+			inventory.remove_item(inventory_item)
 	
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
@@ -79,14 +93,16 @@ func is_any_movement_input_down() -> bool:
 			return true
 	return false
 
-func is_any_ability_input_down() -> bool:
+func get_ability_input_down_index() -> int:
+	var index = 0
 	for input in ability_inputs:
 		if ability_inputs[input]:
-			return true
-	return false
+			return index
+		index = index + 1
+	return INDEX_NONE
 
 func is_any_input_down() -> bool:
-	return is_any_movement_input_down() || is_any_ability_input_down()
+	return is_any_movement_input_down() || get_ability_input_down_index() != INDEX_NONE
 
 
 # applies the given velocity to the character.
@@ -130,6 +146,11 @@ func read_input():
 	movement_inputs[move_left_action] = Input.is_action_pressed(move_left_action)
 	movement_inputs[move_up_action] = Input.is_action_pressed(move_up_action)
 	movement_inputs[move_down_action] = Input.is_action_pressed(move_down_action)
+	
+	ability_inputs[ability_1_action] = Input.is_action_just_pressed(ability_1_action)
+	ability_inputs[ability_2_action] = Input.is_action_just_pressed(ability_2_action)
+	ability_inputs[ability_3_action] = Input.is_action_just_pressed(ability_3_action)
+	ability_inputs[ability_4_action] = Input.is_action_just_pressed(ability_4_action)
 
 	if (Input.is_action_pressed("ui_accept")):
 		DialogueManager.open_textbox(["Test!", "Test 2!"], global_position)

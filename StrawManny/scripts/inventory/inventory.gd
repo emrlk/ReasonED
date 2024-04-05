@@ -2,6 +2,7 @@ extends Node
 
 signal item_added(item)
 signal item_received_for_instant_use(item)
+signal inventory_changed()
 
 signal use_ability_1()
 signal use_ability_2()
@@ -30,11 +31,27 @@ func add_item(item):
 		items.append(item)
 		update_inventory(items)
 		emit_signal("item_added", item)
+		on_inventory_changed()
 	
 func get_num_of_items():
 	return items.size()
 	
-	
+func get_item_at_index(index : int):
+	if items.size() > index:
+		return items[index]
+	return null
+
+func remove_item(item):
+	items.erase(item)
+	on_inventory_changed()
+
+func remove_item_at_index(index : int):
+	items.remove(index)
+	on_inventory_changed()
+
+func on_inventory_changed():
+	emit_signal("inventory_changed")
+	update_inventory(items)
 
 var ability_textures = {"item1": preload("res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/fire.png"),
 					"item2":  preload("res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/water-drop.png")
@@ -65,7 +82,7 @@ func call_ability(button_name):
 	print_debug("items: ", items)
 	
 	emit_signal(ability_actions[items[index]])
-	items.remove(index)
+	remove_item_at_index(index)
 	print_debug("after removal: ", items)
 	
 	update_inventory(items)

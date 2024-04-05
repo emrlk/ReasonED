@@ -342,8 +342,7 @@ script = ExtResource( 14 )
 [node name="PickupTest" parent="." instance=ExtResource( 11 )]
 position = Vector2( 261, 228 )
 script = ExtResource( 16 )
-is_instant_powerup = true
-movement_speed_multiplier = 5.0
+movement_speed_multiplier = 2.25
 
 [node name="Node2D2" type="Node2D" parent="."]
 z_index = 3
