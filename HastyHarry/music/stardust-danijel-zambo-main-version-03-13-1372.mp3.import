@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/stardust-danijel-zambo-main-version-03-13-1372.mp3-23dcf418b96257b831c64b4456310c4f.mp3str"
+
+[deps]
+
+source_file="res://music/stardust-danijel-zambo-main-version-03-13-1372.mp3"
+dest_files=[ "res://.import/stardust-danijel-zambo-main-version-03-13-1372.mp3-23dcf418b96257b831c64b4456310c4f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

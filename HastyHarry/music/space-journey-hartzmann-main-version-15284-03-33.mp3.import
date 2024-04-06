@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/space-journey-hartzmann-main-version-15284-03-33.mp3-009eb63e386e52f3dda12f5aa7931631.mp3str"
+
+[deps]
+
+source_file="res://music/space-journey-hartzmann-main-version-15284-03-33.mp3"
+dest_files=[ "res://.import/space-journey-hartzmann-main-version-15284-03-33.mp3-009eb63e386e52f3dda12f5aa7931631.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
