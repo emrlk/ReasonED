@@ -88,9 +88,8 @@ fit_content_height = true
 scroll_active = false
 
 [node name="Spacer" type="CenterContainer" parent="VBoxContainer/Top_Bar"]
-margin_left = 363.0
-margin_top = 24.0
-margin_right = 377.0
+margin_left = 400.0
+margin_right = 400.0
 margin_bottom = 154.0
 size_flags_horizontal = 3
 

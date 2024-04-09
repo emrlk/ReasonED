@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://assets/Background Elements/Samples/colored_talltrees.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Knight.tscn" type="PackedScene" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://assets/run-manny.png" type="Texture" id=10]
 [ext_resource path="res://assets/UI/UI Adventure Pack/PNG/barRed_horizontalMid.png" type="Texture" id=11]
 [ext_resource path="res://assets/UI/UI Adventure Pack/PNG/barBack_horizontalMid.png" type="Texture" id=12]
+[ext_resource path="res://scenes/Knight.gd" type="Script" id=13]
+[ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_617_x_342.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Continue Button.gd" type="Script" id=16]
+[ext_resource path="res://assets/UI/medievalbutton/Button-65.png" type="Texture" id=17]
 
 [sub_resource type="AtlasTexture" id=126]
 flags = 4
@@ -417,6 +422,30 @@ animations = [ {
 "speed": 40.0
 } ]
 
+[sub_resource type="DynamicFont" id=153]
+size = 229
+outline_size = 24
+outline_color = Color( 0.0941176, 0.0901961, 0.0901961, 1 )
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=154]
+size = 470
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="AtlasTexture" id=155]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 71.5625, 1701.26, 150.1, 158.65 )
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id=156]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 223.562, 1698.41, 166.25, 167.2 )
+filter_clip = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -425,6 +454,7 @@ margin_top = -19.0
 margin_right = 1008.0
 margin_bottom = 1006.0
 rect_scale = Vector2( 1.93897, 1.08581 )
+mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
@@ -459,22 +489,6 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
-[node name="Knight" parent="." instance=ExtResource( 2 )]
-position = Vector2( 398, 695 )
-scale = Vector2( 1.48892, 1.35827 )
-
-[node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
-margin_left = -129.624
-margin_top = -381.366
-margin_right = -89.6241
-margin_bottom = -341.366
-rect_scale = Vector2( 7.22437, 0.982083 )
-value = 100.0
-texture_under = ExtResource( 12 )
-texture_progress = ExtResource( 11 )
-tint_progress = Color( 0.713726, 0, 0, 1 )
-nine_patch_stretch = true
-
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
@@ -498,5 +512,120 @@ margin_bottom = 1160.0
 rect_min_size = Vector2( 2040, 1200 )
 rect_scale = Vector2( 0.950384, 0.950384 )
 
+[node name="Knight" parent="." instance=ExtResource( 2 )]
+position = Vector2( 398, 695 )
+scale = Vector2( 1.48892, 1.35827 )
+script = ExtResource( 13 )
+
+[node name="KinematicBody2D" parent="Knight" index="0"]
+input_pickable = true
+
+[node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
+frame = 7
+
+[node name="Area2D" parent="Knight/KinematicBody2D" index="1"]
+position = Vector2( 0.895508, 7.3623 )
+scale = Vector2( 1.03078, 1.01017 )
+
+[node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
+margin_left = -129.624
+margin_top = -381.366
+margin_right = -89.6241
+margin_bottom = -341.366
+rect_scale = Vector2( 7.22437, 0.982083 )
+mouse_filter = 2
+max_value = 500.0
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+tint_progress = Color( 0.713726, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="HealthValue" type="Label" parent="Knight/KnightHealthBar"]
+margin_left = 16.1763
+margin_top = -8.99747
+margin_right = 441.176
+margin_bottom = 275.003
+rect_scale = Vector2( 0.0166885, 0.203171 )
+custom_fonts/font = SubResource( 153 )
+text = "Test"
+
+[node name="Knight_defeated" type="TextureRect" parent="Knight"]
+margin_left = -142.385
+margin_top = -391.675
+margin_right = 474.615
+margin_bottom = -49.6747
+rect_scale = Vector2( 1.67828, 1.6179 )
+mouse_filter = 2
+texture = ExtResource( 15 )
+
+[node name="KnightDefeatedLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 20.8098
+margin_top = 53.2411
+margin_right = 3792.81
+margin_bottom = 634.241
+rect_scale = Vector2( 0.15079, 0.15079 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "Knight Defeated!"
+align = 1
+
+[node name="StrengthRewardLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = -425.0
+margin_top = -144.252
+margin_right = 3806.0
+margin_bottom = 436.748
+rect_scale = Vector2( 0.0689196, 0.0689196 )
+rect_pivot_offset = Vector2( 631.368, 309.896 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "+ 500 Strength"
+align = 1
+
+[node name="AbilityPointUseLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 121.657
+margin_top = 184.751
+margin_right = 5520.66
+margin_bottom = 765.751
+rect_scale = Vector2( 0.0686137, 0.0686137 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "+ 0 Ability Use Bonus"
+align = 1
+
+[node name="AbilityPointUseLabel2" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 39.6187
+margin_top = 257.56
+margin_right = 5438.62
+margin_bottom = 838.56
+rect_scale = Vector2( 0.0988003, 0.0988003 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "Score: +0000"
+align = 1
+
+[node name="Continue Button" type="TextureButton" parent="Knight/Knight_defeated"]
+margin_left = 537.453
+margin_top = 249.824
+margin_right = 696.453
+margin_bottom = 415.824
+rect_scale = Vector2( 0.435572, 0.435572 )
+texture_normal = SubResource( 155 )
+texture_pressed = SubResource( 155 )
+texture_hover = SubResource( 156 )
+script = ExtResource( 16 )
+
 [connection signal="item_added" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_added"]
 [connection signal="item_received_for_instant_use" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_received_for_instant_use"]
+[connection signal="mouse_entered" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_exited"]
+
+[editable path="Knight"]
