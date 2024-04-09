@@ -1,4 +1,4 @@
-extends "res://scripts/abilities/ability.gd"
+extends "res://scripts/pickups/ability.gd"
 
 export var extra_life_count = int(1)
 
@@ -7,5 +7,5 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _use_ability(_manny):
-	_manny.add_extra_lives(extra_life_count)
+func _use_ability(ability_receiver):
+	ability_receiver.add_extra_lives(extra_life_count)

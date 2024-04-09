@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 onready var animation = $AnimatedSprite
-onready var inventory = $Inventory
 onready var collision = $Area2D
 
 export var movement_speed = float(1400)
@@ -61,12 +60,12 @@ func _ready():
 
 func execute_ability(index : int):
 	print("execute_ability index: ", index)
-	var inventory_item = inventory.get_item_at_index(index)
+	var inventory_item = Inventory.get_item_at_index(index)
 	if inventory_item != null:
 		var ability = inventory_item._get_ability()
 		if ability != null:
 			ability._use_ability(self)
-			inventory.remove_item(inventory_item)
+			Inventory.remove_item(inventory_item)
 			inventory_item.destroy_pickup()
 
 func get_inventory():
@@ -90,6 +89,7 @@ func setup_initial_signals():
 	var tutorial_ok_button = get_tree().current_scene.get_node("Node2D2").get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
 	if tutorial_ok_button:
 		tutorial_ok_button.connect("pressed", self, "on_tutorial_finished")
+	Inventory.connect("item_received_for_instant_use", self, "_on_Inventory_item_received_for_instant_use")
 		
 func on_tutorial_finished():
 	can_move = true
@@ -168,10 +168,6 @@ func read_input():
 	if (Input.is_action_pressed("ui_accept")):
 		DialogueManager.open_textbox(["Test!", "Test 2!"], global_position)
 
-# This gets called when an item is added to the inventory script on manny incase we need to use it for something
-func _on_Inventory_item_added(item):
-	print("Ability Power: ", item)
-
 
 # This gets called when an item that is a powerup is being picked up so abilities from the powerup should be added here
 func _on_Inventory_item_received_for_instant_use(ability):
@@ -181,4 +177,11 @@ func _on_Inventory_item_received_for_instant_use(ability):
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("Knight"):
+		for i in Inventory.get_num_of_items():
+			var item = Inventory.get_item_at_index(i)
+			if item != null:
+				var node_to_remove = item.get_parent()
+				print("Removing Item: ", node_to_remove)
+				var item_parent = node_to_remove.get_parent()
+				item_parent.remove_child(node_to_remove)
 		get_tree().change_scene("res://scenes/Challenge.tscn")

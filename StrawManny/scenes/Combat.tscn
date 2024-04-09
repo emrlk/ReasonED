@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://assets/Background Elements/Samples/colored_talltrees.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Knight.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/Background Elements/PNG/cloud7.png" type="Texture" id=4]
 [ext_resource path="res://assets/Background Elements/PNG/cloud2.png" type="Texture" id=5]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/inventory/inventory.gd" type="Script" id=7]
 [ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=8]
 [ext_resource path="res://assets/idle-manny.png" type="Texture" id=9]
 [ext_resource path="res://assets/run-manny.png" type="Texture" id=10]
@@ -502,7 +501,6 @@ animation = "run"
 frame = 27
 
 [node name="Inventory" type="Node" parent="KinematicBody2D"]
-script = ExtResource( 7 )
 
 [node name="HUD" parent="KinematicBody2D" instance=ExtResource( 6 )]
 margin_left = -15.0
@@ -521,7 +519,7 @@ script = ExtResource( 13 )
 input_pickable = true
 
 [node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
-frame = 7
+frame = 9
 
 [node name="Area2D" parent="Knight/KinematicBody2D" index="1"]
 position = Vector2( 0.895508, 7.3623 )
@@ -623,8 +621,6 @@ texture_pressed = SubResource( 155 )
 texture_hover = SubResource( 156 )
 script = ExtResource( 16 )
 
-[connection signal="item_added" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_added"]
-[connection signal="item_received_for_instant_use" from="KinematicBody2D/Inventory" to="KinematicBody2D" method="_on_Inventory_item_received_for_instant_use"]
 [connection signal="mouse_entered" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_exited"]
 

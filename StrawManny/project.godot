@@ -39,6 +39,7 @@ config/icon="res://assets/Straw_Manny_Logo-no-background.png"
 [autoload]
 
 DialogueManager="*res://scripts/dialogue_manager.gd"
+Inventory="*res://scripts/inventory/inventory.gd"
 
 [display]
 

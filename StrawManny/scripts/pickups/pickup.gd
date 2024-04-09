@@ -33,9 +33,9 @@ func destroy_pickup():
 
 
 func pickup(player_inventory):
-	if allowed_to_be_picked_up() and player_inventory != null:
-		if player_inventory.add_item(self):
-			emit_signal("picked_up", player_inventory)
+	if allowed_to_be_picked_up() and Inventory != null:
+		if Inventory.add_item(self):
+			emit_signal("picked_up", Inventory)
 			picked_up = true
 
 

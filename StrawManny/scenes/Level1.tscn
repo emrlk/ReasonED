@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Blocks/Block_C_01.png" type="Texture" id=1]
 [ext_resource path="res://music/training-ground.mp3" type="AudioStream" id=2]
@@ -15,10 +15,10 @@
 [ext_resource path="res://scenes/tutorial.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=14]
 [ext_resource path="res://assets/Hedges/Hedge_B_01.png" type="Texture" id=15]
-[ext_resource path="res://scripts/abilities/powerups/speed_modifier_powerup.gd" type="Script" id=16]
-[ext_resource path="res://scripts/abilities/powerups/extra_life_powerup.gd" type="Script" id=17]
+[ext_resource path="res://scripts/pickups/powerups/speed_modifier_powerup.gd" type="Script" id=16]
+[ext_resource path="res://scripts/pickups/powerups/extra_life_powerup.gd" type="Script" id=17]
 [ext_resource path="res://assets/UI/pickup_icons/super_speed.png" type="Texture" id=18]
-[ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/heart.png" type="Texture" id=19]
+[ext_resource path="res://scripts/pickups/abilities/extra_damage_ability.gd" type="Script" id=19]
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/upg_shieldSmall.png" type="Texture" id=20]
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/wand.png" type="Texture" id=21]
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/upg_sword.png" type="Texture" id=22]
@@ -26,6 +26,7 @@
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/tome.png" type="Texture" id=24]
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/helmet.png" type="Texture" id=25]
 [ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/hammer.png" type="Texture" id=26]
+[ext_resource path="res://assets/Sprites/RavenmoreIconPack.02.2014/64/potionBlue.png" type="Texture" id=27]
 
 [sub_resource type="TileSet" id=1]
 32/name = "500x500grass_tile.png 32"
@@ -315,7 +316,7 @@ points = PoolVector2Array( 327.75, 0, 503.75, 0, 503.75, 499, 327.75, 499 )
 } ]
 8/z_index = 0
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D2dfdf" type="Node2D"]
 scale = Vector2( 1.75551, 1.75551 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -40004.0 ]
@@ -363,45 +364,53 @@ is_instant_powerup = true
 ability_texture = ExtResource( 18 )
 movement_speed_multiplier = 3.0
 
-[node name="ExtraLifePowerup" parent="." instance=ExtResource( 11 )]
+[node name="ExtraDamageAbility" parent="." instance=ExtResource( 11 )]
 position = Vector2( 96.2683, -360.009 )
-script = ExtResource( 17 )
-ability_texture = ExtResource( 19 )
+script = ExtResource( 19 )
+ability_texture = ExtResource( 27 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 192.537, -720.019 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 23 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup3" parent="." instance=ExtResource( 11 )]
 position = Vector2( -181.714, -367.414 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 24 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup4" parent="." instance=ExtResource( 11 )]
 position = Vector2( -85.4449, -727.424 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 21 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup5" parent="." instance=ExtResource( 11 )]
 position = Vector2( -472.797, -365.705 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 20 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup6" parent="." instance=ExtResource( 11 )]
 position = Vector2( -376.528, -725.715 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 22 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup7" parent="." instance=ExtResource( 11 )]
 position = Vector2( -838.503, -363.996 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 26 )
+use_on_knight = true
 
 [node name="ExtraLifePowerup8" parent="." instance=ExtResource( 11 )]
 position = Vector2( -742.234, -724.006 )
 script = ExtResource( 17 )
 ability_texture = ExtResource( 25 )
+use_on_knight = true
 
 [node name="Node2D2" type="Node2D" parent="."]
 z_index = 3
