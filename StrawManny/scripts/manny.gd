@@ -20,9 +20,11 @@ export var run_animation = String("run")
 export var idle_animation = String("idle")
 
 
-export var can_move = false
+export var can_move = bool(false)
+export var life_count = int(1)
 
 var movement_ability_multiplier = float(1)
+
 
 const INDEX_NONE = int(-1)
 
@@ -51,24 +53,35 @@ func _physics_process(_delta):
 	var ability_index = get_ability_input_down_index()
 	if ability_index != INDEX_NONE:
 		execute_ability(ability_index)
-	
+
+func _ready():
+	Engine.set_target_fps(Engine.get_iterations_per_second())
+	setup_initial_signals()
+	initialize_manny()
+
 func execute_ability(index : int):
+	print("execute_ability index: ", index)
 	var inventory_item = inventory.get_item_at_index(index)
 	if inventory_item != null:
 		var ability = inventory_item._get_ability()
 		if ability != null:
 			ability._use_ability(self)
-			print("Ability")
 			inventory.remove_item(inventory_item)
-	
-func _ready():
-	Engine.set_target_fps(Engine.get_iterations_per_second())
-	setup_initial_signals()
-	initialize_manny()
-	
+			inventory_item.destroy_pickup()
+
+func get_inventory():
+	return get_node("Inventory")
+
 func set_movement_ability_multiplier(multiplier : float):
 	movement_ability_multiplier = multiplier
+
+func add_extra_lives(count : int):
+	life_count += count
+	print("Lives: ", life_count)
 	
+func get_live_count() -> int:
+	return life_count
+
 func get_movement_speed() -> float:
 	return movement_speed * movement_ability_multiplier
 

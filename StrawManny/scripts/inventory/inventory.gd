@@ -1,37 +1,63 @@
 extends Node
 
-signal item_added(item)
+signal item_added(item, index)
 signal item_received_for_instant_use(item)
-signal inventory_changed()
+signal item_removed(item, index)
 
-signal use_ability_1()
-signal use_ability_2()
+export var max_item_count = int(4)
+export var allow_array_resize = bool(false)
 
 var items = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if !allow_array_resize:
+		items.resize(max_item_count)
+		for i in items.size():
+			items[i] = null
+
 
 func get_items():
 	return items
 
 func get_item(item_to_find):
-	for item in items:
-		if item == item_to_find:
-			return item
+	var index = items.find(item_to_find)
+	if index > 0:
+		return items[index]
 	return null
 
-func add_item(item):
-	print("adding item: ", item)
-	var should_add_to_inventory = bool(true)
-	var ability = item._get_ability()
-	if ability != null:
-		if ability.is_powerup(): #item.is_powerup():
-			emit_signal("item_received_for_instant_use", ability)
-			should_add_to_inventory = false
+func add_item_at_null_index(item) -> int:
+	for i in max_item_count:
+		if items[i] == null:
+			items[i] = item
+			return i
+	return -1
 
-	if should_add_to_inventory:
-		items.append(item)
-		update_inventory(items)
-		emit_signal("item_added", item)
-		on_inventory_changed()
+func add_item(item) -> bool:
+	if (allow_array_resize && items.size() < max_item_count - 1) || !allow_array_resize:
+		var should_add_to_inventory = bool(true)
+		var ability = item._get_ability()
+		if ability != null:
+			if ability.is_powerup(): #item.is_powerup():
+				emit_signal("item_received_for_instant_use", ability)
+				item.destroy_pickup()
+				should_add_to_inventory = false
+
+		if should_add_to_inventory:
+			if allow_array_resize:
+				items.append(item)
+				item.hide_pickup()
+				emit_signal("item_added", item, items.size() - 1)
+				on_inventory_changed()
+				return true
+			else:
+				var index = add_item_at_null_index(item)
+				if index > -1:
+					item.hide_pickup()
+					emit_signal("item_added", item, index)
+					on_inventory_changed()
+					return true
+	return false
 	
 func get_num_of_items():
 	return items.size()
@@ -41,17 +67,28 @@ func get_item_at_index(index : int):
 		return items[index]
 	return null
 
+func remove_item_null_index(index):
+	items[index] = null
+
 func remove_item(item):
-	items.erase(item)
-	on_inventory_changed()
+	var index = items.find(item)
+	if index > -1:
+		if allow_array_resize:
+			emit_signal("item_removed", item, index)
+			items.erase(item)
+		else:
+			emit_signal("item_removed", item, index)
+			remove_item_null_index(index)
+			on_inventory_changed()
 
 func remove_item_at_index(index : int):
-	items.remove(index)
-	on_inventory_changed()
+	if index < items.size():
+		emit_signal("item_removed", items[index], index)
+		items.remove(index)
+		on_inventory_changed()
 
 func on_inventory_changed():
-	emit_signal("inventory_changed")
-	update_inventory(items)
+	pass
 
 var ability_textures = {"item1": preload("res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/fire.png"),
 					"item2":  preload("res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/water-drop.png")
@@ -59,39 +96,3 @@ var ability_textures = {"item1": preload("res://assets/Sprites/Fourmagicalelemen
 var ability_actions = { "item1": "use_ability_1",
 						"item2": "use_ability_2"
 						}
-
-func update_inventory (items):
-	for i in get_child_count():
-		var button = get_child(i)
-		
-		if i < items.size():
-			button.set_normal_texture(ability_textures[items[i]])
-			button.set_disabled(false)
-			
-		else:
-			button.set_disabled(true)
-		
-		
-func call_ability(button_name):
-	var ability_button = get_node(button_name)
-	print_debug("button: ", button_name)
-	ability_button.set_disabled(true)
-	
-	var index = ability_button.get_index()
-	print_debug("index: ", index)
-	print_debug("items: ", items)
-	
-	emit_signal(ability_actions[items[index]])
-	remove_item_at_index(index)
-	print_debug("after removal: ", items)
-	
-	update_inventory(items)
-	
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	#add_item("item2")
-	#add_item("item1")
-	#add_item("item2")
-	pass
-

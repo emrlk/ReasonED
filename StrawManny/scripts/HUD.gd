@@ -45,9 +45,12 @@ func enemy_defeated():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	draw_health(5)
-	
 	for i in range(4):
 		enemy_defeated()
 		
 
 
+
+
+func _on_ability_pressed(extra_arg_0):
+	pass # Replace with function body.
