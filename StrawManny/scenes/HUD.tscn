@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/UI/HP_Bar/blue.png" type="Texture" id=6]
 [ext_resource path="res://assets/UI/HP_Bar/bg.png" type="Texture" id=7]
 [ext_resource path="res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/blank.png" type="Texture" id=8]
-[ext_resource path="res://scripts/inventory/inventory.gd" type="Script" id=9]
+[ext_resource path="res://scripts/hud/inventory_pickup_manager.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -88,9 +88,8 @@ fit_content_height = true
 scroll_active = false
 
 [node name="Spacer" type="CenterContainer" parent="VBoxContainer/Top_Bar"]
-margin_left = 363.0
-margin_top = 24.0
-margin_right = 377.0
+margin_left = 400.0
+margin_right = 400.0
 margin_bottom = 154.0
 size_flags_horizontal = 3
 
@@ -167,6 +166,7 @@ margin_top = 531.0
 margin_right = 1248.0
 margin_bottom = 659.0
 grow_horizontal = 2
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="toggle_sound" type="TextureButton" parent="VBoxContainer/Bottom_Bar"]
@@ -185,12 +185,14 @@ margin_left = 102.0
 margin_right = 1146.0
 margin_bottom = 128.0
 grow_horizontal = 2
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="Abilities" type="HBoxContainer" parent="VBoxContainer/Bottom_Bar/center_abilities"]
 margin_left = 260.0
 margin_right = 784.0
 margin_bottom = 128.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 9 )
@@ -199,6 +201,7 @@ script = ExtResource( 9 )
 margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( -1365, -561 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -211,6 +214,7 @@ margin_left = 132.0
 margin_right = 260.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( -1365, -561 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -250,7 +254,7 @@ grow_horizontal = 0
 rect_min_size = Vector2( 98, 103 )
 
 [connection signal="pressed" from="VBoxContainer/Bottom_Bar/toggle_sound" to="VBoxContainer/Bottom_Bar/toggle_sound" method="_on_Volume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/0" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "0" ]]
-[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/1" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "1" ]]
-[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/2" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "2" ]]
-[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/3" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="call_ability" binds= [ "3" ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/0" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/1" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/2" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/3" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 3 ]]
