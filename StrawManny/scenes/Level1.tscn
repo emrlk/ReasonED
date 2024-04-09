@@ -355,7 +355,7 @@ position = Vector2( 160.637, 254.057 )
 script = ExtResource( 16 )
 is_instant_powerup = true
 ability_texture = ExtResource( 18 )
-movement_speed_multiplier = 1.75
+movement_speed_multiplier = 2.0
 
 [node name="SpeedBoostPowerup2" parent="." instance=ExtResource( 11 )]
 position = Vector2( -659.637, 348.047 )

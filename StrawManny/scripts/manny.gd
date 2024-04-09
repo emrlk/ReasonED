@@ -181,7 +181,6 @@ func _on_Player_body_entered(body):
 			var item = Inventory.get_item_at_index(i)
 			if item != null:
 				var node_to_remove = item.get_parent()
-				print("Removing Item: ", node_to_remove)
 				var item_parent = node_to_remove.get_parent()
 				item_parent.remove_child(node_to_remove)
 		get_tree().change_scene("res://scenes/Challenge.tscn")

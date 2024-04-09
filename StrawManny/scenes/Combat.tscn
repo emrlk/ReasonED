@@ -521,10 +521,6 @@ input_pickable = true
 [node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
 frame = 9
 
-[node name="Area2D" parent="Knight/KinematicBody2D" index="1"]
-position = Vector2( 0.895508, 7.3623 )
-scale = Vector2( 1.03078, 1.01017 )
-
 [node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
 margin_left = -129.624
 margin_top = -381.366
@@ -621,7 +617,7 @@ texture_pressed = SubResource( 155 )
 texture_hover = SubResource( 156 )
 script = ExtResource( 16 )
 
-[connection signal="mouse_entered" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Knight/KinematicBody2D/Area2D" to="Knight" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_exited"]
 
 [editable path="Knight"]
