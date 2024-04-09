@@ -11,9 +11,10 @@ func get_knight():
 func _ready():
 	Inventory.connect("item_added", self, "_on_inventory_item_added")
 	Inventory.connect("item_removed", self, "_on_inventory_item_removed")
-	process_existing_items()
+	call_deferred("process_existing_items")
 
 func process_existing_items():
+	print("CALLED DEFERRED TEST")
 	for i in Inventory.get_num_of_items():
 		var item = Inventory.get_item_at_index(i)
 		if item != null:
