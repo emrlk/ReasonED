@@ -93,6 +93,11 @@ func display_answers(question: Question):
 	# Assign the shuffled answers to the buttons
 	for i in range(answer_buttons.size()):
 		answer_buttons[i].text = shuffled_answers[i]
+		
+		# Call TTS for each answer
+		var answer_text = shuffled_answers[i]
+		var speed = 0.9
+		yield($TextToSpeech.say(answer_text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
 
 
 
@@ -139,6 +144,11 @@ func _ready():
 	if random_question:
 		display_question(random_question) #Begin question display
 		$"Continue Button".show()
+		
+		# Call TTS for the question
+		var question_text = random_question.text
+		var speed = 0.9
+		yield($TextToSpeech.say(question_text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
 	else:
 		question_label.text = "No question available for this difficulty."
 
