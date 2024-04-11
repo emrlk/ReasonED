@@ -149,7 +149,7 @@ func _on_Continue_Button_pressed():
 	show_answer_choices()
 	$"Continue Button".hide()
 
-# Function to handle button press
+# Handles answer button selection
 func _on_answer_button_pressed():
 	var selected_answer = get_selected_answer()
 	var correct_answer = current_question.answers[current_question.answers.size() - 1]
@@ -161,7 +161,7 @@ func _on_answer_button_pressed():
 		#Switch to straw man scene
 		get_tree().change_scene("res://scenes/StrawMan.tscn")
 
-# Function to get the selected answer from the buttons
+#Retrieves the selected answer from the buttons
 func get_selected_answer():
 	for button in answer_buttons:
 		if button.get_parent().pressed:
