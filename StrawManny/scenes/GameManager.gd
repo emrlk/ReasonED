@@ -5,7 +5,6 @@ const NUM_KNIGHTS = 200
 const KNIGHT_LAYER = 1  # Adjust as needed to place the knights on the correct layer
 
 func _ready():
-	
 	start_game()
 
 
