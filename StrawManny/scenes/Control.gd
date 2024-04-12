@@ -97,6 +97,9 @@ func display_answers(question: Question):
 		# Call TTS for each answer
 		var answer_text = shuffled_answers[i]
 		var speed = 0.9
+		#Speak the number of the answer
+		yield($TextToSpeech.say("Answer number "+ str(i+1), TextToSpeechEngine.VOICE_AEW, speed), "completed")
+		#Speak the answer itself
 		yield($TextToSpeech.say(answer_text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
 
 
