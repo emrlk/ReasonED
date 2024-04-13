@@ -520,7 +520,7 @@ script = ExtResource( 13 )
 input_pickable = true
 
 [node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
-frame = 5
+frame = 9
 
 [node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
 margin_left = -129.624
@@ -622,6 +622,7 @@ script = ExtResource( 16 )
 stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
+bus = "Music"
 
 [connection signal="mouse_entered" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_entered"]
 [connection signal="mouse_exited" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_exited"]

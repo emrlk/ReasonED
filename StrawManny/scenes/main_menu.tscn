@@ -823,6 +823,7 @@ stretch_mode = 4
 stream = ExtResource( 17 )
 volume_db = -20.0
 autoplay = true
+bus = "Music"
 
 [node name="Manny" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 562.0
