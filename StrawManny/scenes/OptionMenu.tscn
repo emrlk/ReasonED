@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_2023_x_1522.png" type="Texture" id=1]
 [ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/VolumeSlider.gd" type="Script" id=3]
+[ext_resource path="res://scenes/TTSToggle.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 292
@@ -74,11 +75,15 @@ custom_fonts/font = SubResource( 2 )
 text = "Text to Speech    "
 flat = true
 icon_align = 2
+script = ExtResource( 4 )
+bus_name = "TTS"
 
 [node name="HSlider2" type="HSlider" parent="NinePatchRect/VBoxContainer"]
 margin_top = 262.0
 margin_right = 586.0
 margin_bottom = 278.0
+script = ExtResource( 3 )
+bus_name = "TTS"
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HSlider2"]
 margin_left = 9.97998
