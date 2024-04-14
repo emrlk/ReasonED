@@ -345,6 +345,7 @@ tile_data = PoolIntArray( -6226016, 6, 0, -6226015, 5, 0, -6226014, 5, 0, -62260
 stream = ExtResource( 2 )
 volume_db = -20.0
 autoplay = true
+bus = "Music"
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource( 14 )

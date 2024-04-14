@@ -13,4 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		show()
+		# Toggle menu visibility when Escape key is pressed
+		if is_visible():
+			hide()
+		else:
+			show()

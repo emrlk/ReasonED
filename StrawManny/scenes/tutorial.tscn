@@ -71,6 +71,7 @@ texture_hover = SubResource( 2 )
 script = ExtResource( 4 )
 
 [node name="TextToSpeech" type="AudioStreamPlayer" parent="."]
+bus = "TTS"
 script = ExtResource( 5 )
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/OKButton" to="MarginContainer/VBoxContainer/HBoxContainer/OKButton" method="_on_OKButton_pressed"]

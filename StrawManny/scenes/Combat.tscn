@@ -665,6 +665,7 @@ align = 1
 stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
+bus = "Music"
 
 [connection signal="mouse_entered" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_entered"]
 [connection signal="mouse_exited" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_exited"]
