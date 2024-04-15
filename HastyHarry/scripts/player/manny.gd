@@ -33,7 +33,6 @@ func _physics_process(_delta):
 		play_locomotion_animation(run_animation if is_any_movement_input_down() else idle_animation)		
 		var velocity = get_velocity_from_input()
 		apply_velocity(velocity)
-	print("inventory item count: ", Inventory.get_num_of_items())
 
 func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
