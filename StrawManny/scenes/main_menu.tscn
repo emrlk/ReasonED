@@ -818,6 +818,7 @@ size_flags_vertical = 8
 texture_normal = SubResource( 7 )
 texture_hover = SubResource( 8 )
 stretch_mode = 4
+script = ExtResource( 16 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu"]
 stream = ExtResource( 17 )
@@ -862,4 +863,5 @@ offset = Vector2( 510, 300 )
 current = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/Tutorial" to="MarginContainer/HBoxContainer/VBoxContainer/Menu/Tutorial" method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu/Play" to="MarginContainer/HBoxContainer/VBoxContainer/Menu/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="toggle_sound" to="toggle_sound" method="_on_Volume_pressed"]
