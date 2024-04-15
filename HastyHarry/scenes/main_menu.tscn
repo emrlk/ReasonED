@@ -122,6 +122,7 @@ text = "HARRY"
 stream = ExtResource( 12 )
 volume_db = -20.0
 autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="Tutorial-Btn" to="." method="_on_TutorialBtn_pressed"]
 [connection signal="pressed" from="Start-Btn" to="." method="_on_StartBtn_pressed"]
