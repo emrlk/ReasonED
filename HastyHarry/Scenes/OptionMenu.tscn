@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/white-background2.jpg" type="Texture" id=1]
 [ext_resource path="res://space_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scenes/VolumeSlider.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/OptionMenu.gd" type="Script" id=4]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 4 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_left = 331.0
@@ -35,7 +33,7 @@ margin_bottom = 213.0
 rect_scale = Vector2( 0.031, 0.051 )
 
 [node name="HSlider" type="HSlider" parent="NinePatchRect/VBoxContainer"]
-margin_right = 586.0
+margin_right = 1701.0
 margin_bottom = 16.0
 script = ExtResource( 3 )
 
@@ -50,9 +48,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Text To SPeech Volume"
 
 [node name="HSlider2" type="HSlider" parent="NinePatchRect/VBoxContainer"]
-margin_top = 262.0
-margin_right = 586.0
-margin_bottom = 278.0
+margin_top = 20.0
+margin_right = 1701.0
+margin_bottom = 36.0
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HSlider2"]
@@ -67,9 +65,8 @@ text = "Game Volume"
 
 [node name="CheckButton" type="CheckButton" parent="NinePatchRect/VBoxContainer"]
 margin_top = 40.0
-margin_right = 2480.0
-margin_bottom = 490.0
-rect_scale = Vector2( 0.158, 0.156 )
+margin_right = 1701.0
+margin_bottom = 260.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Text to Speech"
