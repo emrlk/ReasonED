@@ -57,9 +57,6 @@ func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
 	setup_initial_signals()
 	initialize_manny()
-	
-	if !TutorialManager.do_overworld_tutorial :
-		on_tutorial_finished()
 
 func execute_ability(index : int):
 	print("execute_ability index: ", index)
@@ -91,14 +88,14 @@ func setup_initial_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
 	var tutorial = get_tree().current_scene.get_node("Node2D2/Tutorial")
 	if tutorial:
-		tutorial.connect("overworld_tutorial_finished", self, "on_tutorial_finished")
+		tutorial.connect("tutorial_finished", self, "on_tutorial_finished")
 	Inventory.connect("item_received_for_instant_use", self, "_on_Inventory_item_received_for_instant_use")
 		
 func on_tutorial_finished():
 	can_move = true
 	var tutorial = get_tree().current_scene.get_node("Node2D2/Tutorial")
 	if tutorial:
-		tutorial.disconnect("overworld_tutorial_finished", self, "on_tutorial_finished")
+		tutorial.disconnect("tutorial_finished", self, "on_tutorial_finished")
 
 func initialize_manny():
 	play_locomotion_animation(idle_animation)

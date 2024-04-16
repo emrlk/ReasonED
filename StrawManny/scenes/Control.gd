@@ -136,6 +136,10 @@ func get_random_question(difficulty):
 func _ready():
 	# Hide answer choices initially
 	hide_answer_choices()
+	var tutorial = get_node("TutorialClaim")
+	tutorial.connect("tutorial_finished", self, "on_tutorial_finished")
+
+func on_tutorial_finished():
 	text_display_scene = preload("res://scenes/textbox.tscn")
 	text_display = text_display_scene.instance()
 	
@@ -157,8 +161,6 @@ func _ready():
 		yield($TextToSpeech.say(question_text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
 	else:
 		question_label.text = "No question available for this difficulty."
-
-
 
 func _on_Continue_Button_pressed():
 	if wrongChoice == false:

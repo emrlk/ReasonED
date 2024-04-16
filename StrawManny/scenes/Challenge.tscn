@@ -193,10 +193,10 @@ texture_pressed = SubResource( 5 )
 texture_hover = SubResource( 6 )
 
 [node name="TutorialClaim" parent="Control" instance=ExtResource( 14 )]
-margin_left = -499.492
-margin_top = -307.246
-margin_right = 268.508
-margin_bottom = 1046.75
+margin_left = 245.099
+margin_top = -272.397
+margin_right = 1013.1
+margin_bottom = 1081.6
 rect_scale = Vector2( 0.2, 0.2 )
 
 [node name="TextToSpeech" type="AudioStreamPlayer" parent="Control"]
