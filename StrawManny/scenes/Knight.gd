@@ -46,6 +46,7 @@ func _input(event):
 			if current_health <= 0:
 				showWin()
 				MannyData.enemy_defeated(500 , 700)
+				get_node("KinematicBody2D").visible = false # prevent additional scoring
 
 func showWin():
 	descriptionLabel.hide()
