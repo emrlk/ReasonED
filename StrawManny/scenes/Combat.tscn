@@ -561,7 +561,7 @@ script = ExtResource( 13 )
 input_pickable = true
 
 [node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
-frame = 9
+frame = 8
 
 [node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
 margin_left = -129.624
@@ -633,7 +633,7 @@ custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
 custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
 custom_constants/shadow_offset_x = 0
 custom_fonts/font = SubResource( 154 )
-text = "+ 0 Ability Use Bonus"
+text = "+ 200 Ability Use Bonus"
 align = 1
 
 [node name="AbilityPointUseLabel2" type="Label" parent="Knight/Knight_defeated"]
@@ -646,7 +646,7 @@ custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
 custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
 custom_constants/shadow_offset_x = 0
 custom_fonts/font = SubResource( 154 )
-text = "Score: +0000"
+text = "Score: +700"
 align = 1
 
 [node name="Continue Button" type="TextureButton" parent="Knight/Knight_defeated"]

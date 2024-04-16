@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 export var idle_animation = String("idle")
+export var strike_animation = String("Strike")
 onready var animation = $AnimatedSprite
 onready var inventory = $Inventory
 

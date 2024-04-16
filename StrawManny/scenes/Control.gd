@@ -4,6 +4,8 @@ var text_display_scene
 var current_question
 var current_level
 var random_question
+var wrongChoice
+var text_display
 
 # Define Question class
 class Question:
@@ -71,8 +73,8 @@ onready var answer_buttons = [
 
 # Function to display a question and its answer choices
 func display_question(question: Question):
+	wrongChoice = false;
 	current_question = question
-	var text_display = text_display_scene.instance()
 	add_child(text_display)
 	text_display.start_text_display(question.text)
 	
@@ -135,6 +137,7 @@ func _ready():
 	# Hide answer choices initially
 	hide_answer_choices()
 	text_display_scene = preload("res://scenes/textbox.tscn")
+	text_display = text_display_scene.instance()
 	
 	# Set the text of the text box to a random question based on the current level
 	current_level = "easy" # Change this based on the current level
@@ -158,11 +161,14 @@ func _ready():
 
 
 func _on_Continue_Button_pressed():
-	display_answers(random_question) #Begin Answer choice display
-	show_answer_choices()
-	$"Continue Button".hide()
+	if wrongChoice == false:
+		display_answers(random_question) #Begin Answer choice display
+		show_answer_choices()
+		$"Continue Button".hide()
+	if wrongChoice == true:
+		get_tree().change_scene("res://scenes/StrawMan.tscn")
 
-# Handles answer button selection
+# Handles Right and Wrong answer button selections
 func _on_answer_button_pressed():
 	var selected_answer = get_selected_answer()
 	var correct_answer = current_question.answers[current_question.answers.size() - 1]
@@ -171,8 +177,12 @@ func _on_answer_button_pressed():
 		#Switch to combat scene
 		get_tree().change_scene("res://scenes/Combat.tscn")
 	else:
-		#Switch to straw man scene
-		get_tree().change_scene("res://scenes/StrawMan.tscn")
+		wrongChoice = true;
+		
+		#Give feedback for wrong answer
+		text_display.start_text_display("I never said that!")
+		$"Continue Button".show()
+
 
 #Retrieves the selected answer from the buttons
 func get_selected_answer():
