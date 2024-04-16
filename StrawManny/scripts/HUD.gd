@@ -18,8 +18,7 @@ func draw_health():
 		elif MannyData.health > (i + 1) * heart_fractions.size():
 			health.get_child(i).texture = heart_fractions.front()
 		else:
-			health.get_child(i).texture = heart_fractions[MannyData.health % heart_fractions.size()]
-
+			health.get_child(i).texture = heart_fractions[value % heart_fractions.size()]
 
 
 onready var strength = $VBoxContainer/Top_Bar/Strength
