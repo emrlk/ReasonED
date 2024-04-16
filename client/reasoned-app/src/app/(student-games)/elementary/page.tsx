@@ -18,16 +18,22 @@ const GameCard = ({ thumbnail, title, description, link }) => {
 // Constants for game data
 const elementaryGames = [
     {
-        thumbnail: 'Manny-Logo.jpg',
+        thumbnail: 'MannyCharacterTransparentBG.png',
         title: 'Straw Manny',
         description: "Straw Manny, a hopeful knight, practices combat on fake straw men, hindering his skill development; players must guide him to confront real opponents, teaching the concept of the 'straw man' fallacy.",
-        link: '/elementary-game-1' // will display a page that embeds godot export 
+        link: '/manny-game' // will display a page that embeds godot export 
     },
     {
-        thumbnail: 'Manny-Logo.jpg',
+        thumbnail: 'HarryCharacterTransparentBG.png',
         title: 'Hasty Harry',
         description: "Hasty Harry, an astronaut, hastily generalizes about new creatures and plants on planets, prompting players to gather accurate information and prevent his hasty conclusions, teaching the 'hasty generalization' fallacy in a top-view game",
-        link: '/elementary-game-2' // will display a page that embeds godot export 
+        link: '/harry-game' // will display a page that embeds godot export 
+    },
+    {
+        thumbnail: 'SadieCharacterTransparentBG.png',
+        title: 'Slope Sadie',
+        description: "Slope Sadie guides players through treacherous mountain slopes, prompting them to avoid hasty assumptions and navigate based on accurate evidence, teaching the 'slippery slope' fallacy in a thrilling adventure game.",
+        link: '/sadie-game' // will display a page that embeds godot export 
     },
 ];
 
