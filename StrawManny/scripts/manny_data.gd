@@ -8,7 +8,7 @@ signal manny_health_update
 var level = 0
 var score = 0
 var strength = 0
-var strength_max_value = 1500
+var strength_max_value = 2500
 
 func decrease_manny_health(increment):
 	health -= increment
