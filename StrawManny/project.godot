@@ -42,6 +42,7 @@ DialogueManager="*res://scripts/dialogue_manager.gd"
 Inventory="*res://scripts/inventory/inventory.gd"
 TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 TutorialManager="*res://scripts/tutorial_manager.gd"
+MannyData="*res://scripts/manny_data.gd"
 
 [display]
 

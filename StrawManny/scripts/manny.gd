@@ -57,6 +57,9 @@ func _ready():
 	Engine.set_target_fps(Engine.get_iterations_per_second())
 	setup_initial_signals()
 	initialize_manny()
+	
+	if !TutorialManager.do_overworld_tutorial :
+		on_tutorial_finished()
 
 func execute_ability(index : int):
 	print("execute_ability index: ", index)

@@ -7,15 +7,19 @@ var heart_fractions = [ preload("res://assets/UI/extralife--134u37401q8c0y3e41/b
 						]
 var heart_empty = preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-border/0-percent.png")
 
+var manny_health = 6
+
+
 onready var health = $VBoxContainer/Top_Bar/Health
-func draw_health(value):
+func draw_health():
 	for i in health.get_child_count():
-		if value <= i * heart_fractions.size():
+		if MannyData.health <= i * heart_fractions.size():
 			health.get_child(i).texture = heart_empty
-		elif value > (i + 1) * heart_fractions.size():
+		elif MannyData.health > (i + 1) * heart_fractions.size():
 			health.get_child(i).texture = heart_fractions.front()
 		else:
-			health.get_child(i).texture = heart_fractions[value % heart_fractions.size()]
+			health.get_child(i).texture = heart_fractions[MannyData.health % heart_fractions.size()]
+
 
 
 onready var strength = $VBoxContainer/Top_Bar/Strength
@@ -23,30 +27,21 @@ onready var level_text = $VBoxContainer/Top_Bar/VBoxContainer/Level
 var level_format = " Level: %d"
 onready var score_text = $VBoxContainer/Top_Bar/VBoxContainer/Score
 var score_format = " Score: %d"
-var level = 0
-var score = 0
 
-var defeat_points = [100, 125, 150]
-
-func enemy_defeated():
-	strength.value = strength.value + 1
-	
-	score = score + defeat_points[level]
-	score_text.text = score_format % [score]
-	
-	
-	if strength.value == strength.max_value:
-		level = level + 1
-		level_text.text = level_format % [level + 1]
-		
-		strength.value = 0
-
+func draw_strength_score():
+	score_text.text = score_format % [MannyData.score]
+	level_text.text = level_format % [MannyData.level + 1]
+	strength.value = MannyData.strength
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	draw_health(5)
-	for i in range(4):
-		enemy_defeated()
+	MannyData.connect("manny_health_update", self, "draw_health")
+	MannyData.connect("strength_score_update", self, "draw_strength_score")
+	
+	strength.max_value = MannyData.strength_max_value
+	
+	draw_health()
+	draw_strength_score()
 		
 
 

@@ -16,6 +16,7 @@ func play_locomotion_animation(animation_to_play : String):
 func _ready():
 	textPanel.hide()
 	animation.play("Strike")
+	MannyData.decrease_manny_health(1)
 
 
 func _on_Timer_timeout():

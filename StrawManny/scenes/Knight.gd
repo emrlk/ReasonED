@@ -45,6 +45,7 @@ func _input(event):
 			
 			if current_health <= 0:
 				showWin()
+				MannyData.enemy_defeated(500 , 700)
 
 func showWin():
 	descriptionLabel.hide()
