@@ -24,7 +24,7 @@ const HarryPage = () => {
                     "constainer bg-orange h-screen mx-auto flex justify-center items-center flex-col text-center"
                 }
             >
-                <iframe src="" width="800" height="600"></iframe>
+                <iframe src="/Harry.html" width="1000" height="1000"></iframe>
 
             </div>
 
