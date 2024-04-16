@@ -16,7 +16,7 @@ const GameCard = ({ thumbnail, title, description, link }) => {
 };
 
 // Constants for game data
-const elementaryGames = [
+const collegeGames = [
     {
         thumbnail: '/MannyCharacterTransparentBG.png',
         title: 'Straw Manny',
@@ -38,7 +38,7 @@ const elementaryGames = [
 ];
 
 // Function to display 4x4 game cards for elementary students
-export default function ElementaryPage() {
+export default function CollegePage() {
 
     // TSX Structure
     return (
@@ -51,7 +51,7 @@ export default function ElementaryPage() {
                 <h2 className="text-center text-4xl text-white font-bold mb-6">College Level School Games</h2>
                 <div className="constainer d-flex justify-content-center">
                     <div className="row">
-                        {elementaryGames.map((game, index) => (
+                        {collegeGames.map((game, index) => (
                             <div key={index} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                                 <div className="game-card text-center">
                                     <a href={game.link} className="text-white">
