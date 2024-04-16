@@ -9,13 +9,14 @@ var heart_empty = preload("res://assets/UI/extralife--134u37401q8c0y3e41/black-b
 
 onready var health = $VBoxContainer/Top_Bar/Health
 func draw_health(value):
-	for i in health.get_child_count():
-		if value <= i * heart_fractions.size():
-			health.get_child(i).texture = heart_empty
-		elif value > (i + 1) * heart_fractions.size():
-			health.get_child(i).texture = heart_fractions.front()
+	for i in range(health.get_child_count()):
+		if value < (i + 1) * heart_fractions.size():
+			if value < i * heart_fractions.size():
+				health.get_child(i).texture = heart_empty
+			else:
+				health.get_child(i).texture = heart_fractions.front()
 		else:
-			health.get_child(i).texture = heart_fractions[value % heart_fractions.size()]
+			health.get_child(i).texture = heart_fractions.front()
 
 
 onready var strength = $VBoxContainer/Top_Bar/Strength
@@ -36,7 +37,7 @@ func enemy_defeated():
 	
 	
 	if strength.value == strength.max_value:
-		level = level + 1
+		level = level + 0
 		level_text.text = level_format % [level + 1]
 		
 		strength.value = 0
