@@ -10,6 +10,10 @@ var extra_damage_active = false
 var extra_damage_timer = null
 onready var descriptionLabel = $AbilityDescriptionPanel/Label
 onready var timerLabel = $Timer/Label
+onready var Manny = get_node("KinematicBody2D")
+onready var MannyAnimation = get_node("../KinematicBody2D/AnimatedSprite")
+export var strike = String("Strike")
+export var idle = String("idle")
 
 
 
@@ -40,6 +44,8 @@ func _input(event):
 					take_damage(basicAttackDmg)
 			
 			if current_health <= 0:
+				descriptionLabel.hide()
+				timerLabel.hide()
 				show_scorecard()
 
 # Reduce health
@@ -58,12 +64,12 @@ func show_scorecard():
 
 func _on_KinematicBody2D_mouse_entered():
 	mouseOnEnemy = true;
-	print("Mouse on enemy _on_KinematicBody2D_mouse_entered") 
 
 func _on_KinematicBody2D_mouse_exited():
 	mouseOnEnemy = false;
-	print("Mouse off enemy _on_KinematicBody2D_mouse_exited") 
 
+func play_locomotion_animation(animation_to_play : String):
+	MannyAnimation.play(animation_to_play)
 
 
 #COMBAT ABILITY FUNCTIONS-----------------------------------------------------
@@ -92,12 +98,20 @@ func _on_extra_damage_timer_timeout():
 	timerLabel.hide()
 	
 #Describe the effect of a clicked ability for a given duration
+# warning-ignore:unused_argument
 func describeAbility(description, abilityDuration):
 	descriptionLabel.text = description
 	descriptionLabel.get_parent().show()
 	descriptionLabel.show()
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if $Timer.time_left >=0:
 		timerLabel.text = "%d:%02d" % [floor($Timer.time_left / 60), int($Timer.time_left) % 60]
+		
+		
+func strike():
+	play_locomotion_animation(strike)
+	take_damage(100)
+	play_locomotion_animation(idle)
