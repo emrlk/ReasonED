@@ -1,7 +1,7 @@
 extends Area2D
 
 
-export var minimum_artifacts = int(4)
+export var minimum_artifacts = int(6)
 
 onready var notification = $Notification
 onready var timer = $Timer
