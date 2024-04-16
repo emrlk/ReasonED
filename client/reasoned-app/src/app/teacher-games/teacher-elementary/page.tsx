@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '@/components/common/header';
+import LoggedInTeacher from '@/components/common/logged-in-teacher';
 import Footer from '@/components/common/footer';
 
 // Game card component
@@ -18,19 +18,19 @@ const GameCard = ({ thumbnail, title, description, link }) => {
 // Constants for game data
 const elementaryGames = [
     {
-        thumbnail: 'MannyCharacterTransparentBG.png',
+        thumbnail: '/MannyCharacterTransparentBG.png',
         title: 'Straw Manny',
         description: "Straw Manny, a hopeful knight, practices combat on fake straw men, hindering his skill development; players must guide him to confront real opponents, teaching the concept of the 'straw man' fallacy.",
         link: '/manny-game' // will display a page that embeds godot export 
     },
     {
-        thumbnail: 'HarryCharacterTransparentBG.png',
+        thumbnail: '/HarryCharacterTransparentBG.png',
         title: 'Hasty Harry',
         description: "Hasty Harry, an astronaut, hastily generalizes about new creatures and plants on planets, prompting players to gather accurate information and prevent his hasty conclusions, teaching the 'hasty generalization' fallacy in a top-view game",
         link: '/harry-game' // will display a page that embeds godot export 
     },
     {
-        thumbnail: 'SadieCharacterTransparentBG.png',
+        thumbnail: '/SadieCharacterTransparentBG.png',
         title: 'Slope Sadie',
         description: "Slope Sadie guides players through treacherous mountain slopes, prompting them to avoid hasty assumptions and navigate based on accurate evidence, teaching the 'slippery slope' fallacy in a thrilling adventure game.",
         link: '/sadie-game' // will display a page that embeds godot export 
@@ -44,11 +44,11 @@ export default function ElementaryPage() {
     return (
         <>
             {/* Navbar */}
-            <Header />
+            <LoggedInTeacher />
 
             {/* Page Body */}
             <div className="constainer bg-orange min-h-screen py-8">
-                <h2 className="text-center text-4xl text-white font-bold mb-6">College Level Games</h2>
+                <h2 className="text-center text-4xl text-white font-bold mb-6">Elementary Level School Games</h2>
                 <div className="constainer d-flex justify-content-center">
                     <div className="row">
                         {elementaryGames.map((game, index) => (

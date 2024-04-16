@@ -48,17 +48,25 @@ export default function ElementaryPage() {
 
             {/* Page Body */}
             <div className="constainer bg-orange min-h-screen py-8">
-                <h2 className="text-center text-4xl text-white font-bold mb-6">Elementary School Games</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {elementaryGames.map((game, index) => (
-                        <GameCard
-                            key={index}
-                            thumbnail={game.thumbnail}
-                            title={game.title}
-                            description={game.description}
-                            link={game.link}
-                        />
-                    ))}
+                <h2 className="text-center text-4xl text-white font-bold mb-6">Elementary Level School Games</h2>
+                <div className="constainer d-flex justify-content-center">
+                    <div className="row">
+                        {elementaryGames.map((game, index) => (
+                            <div key={index} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                <div className="game-card text-center">
+                                    <a href={game.link} className="text-white">
+                                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                            <img src={game.thumbnail} alt={game.title} className="mb-4" style={{ maxWidth: '200px', maxHeight: '200px' }} />
+                                        </div>
+                                        <h3 className="text-white font-bold">{game.title}</h3>
+                                        <div className="description-container" style={{ maxWidth: '300px', margin: '0 auto' }}>
+                                            <p className="text-white">{game.description}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
