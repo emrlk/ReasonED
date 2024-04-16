@@ -41,6 +41,7 @@ config/icon="res://assets/Straw_Manny_Logo-no-background.png"
 DialogueManager="*res://scripts/dialogue_manager.gd"
 Inventory="*res://scripts/inventory/inventory.gd"
 TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
+TutorialManager="*res://scripts/tutorial_manager.gd"
 
 [display]
 
@@ -50,7 +51,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg", "res://addons/texttospeech/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/import_scml/plugin.cfg" )
 
 [gui]
 
