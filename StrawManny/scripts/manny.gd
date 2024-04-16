@@ -89,16 +89,16 @@ func get_movement_speed() -> float:
 
 func setup_initial_signals():
 	collision.connect("body_entered", self, "_on_Player_body_entered")
-	var tutorial_ok_button = get_tree().current_scene.get_node("Node2D2").get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
-	if tutorial_ok_button:
-		tutorial_ok_button.connect("pressed", self, "on_tutorial_finished")
+	var tutorial = get_tree().current_scene.get_node("Node2D2/Tutorial")
+	if tutorial:
+		tutorial.connect("overworld_tutorial_finished", self, "on_tutorial_finished")
 	Inventory.connect("item_received_for_instant_use", self, "_on_Inventory_item_received_for_instant_use")
 		
 func on_tutorial_finished():
 	can_move = true
-	var tutorial_ok_button = get_tree().current_scene.get_node("Node2D2").get_node("Tutorial").get_node("MarginContainer").get_node("VBoxContainer").get_node("HBoxContainer").get_node("OKButton")
-	if tutorial_ok_button:
-		tutorial_ok_button.disconnect("pressed", self, "on_tutorial_finished")
+	var tutorial = get_tree().current_scene.get_node("Node2D2/Tutorial")
+	if tutorial:
+		tutorial.disconnect("overworld_tutorial_finished", self, "on_tutorial_finished")
 
 func initialize_manny():
 	play_locomotion_animation(idle_animation)

@@ -1,16 +1,15 @@
-extends Node
+extends Control
 
+onready var textLabel = get_node("MarginContainer/VBoxContainer/Text")
+onready var okButton = get_node("MarginContainer/VBoxContainer/HBoxContainer/OKButton")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if TutorialManager.do_claim_tutorial:
+		TutorialManager.do_claim_tutorial = false
+		# TODO: TTS
+		okButton.connect("pressed", self, "_on_ok_pressed")
+	else:
+		_on_ok_pressed()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_ok_pressed():
+	queue_free()

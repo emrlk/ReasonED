@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HUD.tres" type="Theme" id=1]
 [ext_resource path="res://assets/UI/medievalbutton/Button.png" type="Texture" id=2]
 [ext_resource path="res://assets/scrollbg_tall.png" type="Texture" id=3]
-[ext_resource path="res://scripts/tutorial_button.gd" type="Script" id=4]
 [ext_resource path="res://addons/texttospeech/TextToSpeech.gd" type="Script" id=5]
 [ext_resource path="res://scripts/tutorial_overworld.gd" type="Script" id=6]
 
@@ -68,7 +67,6 @@ margin_bottom = 251.0
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 1 )
 texture_hover = SubResource( 2 )
-script = ExtResource( 4 )
 
 [node name="TextToSpeech" type="AudioStreamPlayer" parent="."]
 bus = "TTS"
