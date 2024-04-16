@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var animation = $AnimatedSprite
 onready var collision = $Area2D
 
-export var movement_speed = float(1400)
+export var movement_speed = float(1000)
 
 export var move_right_action = String("right")
 export var move_left_action = String("left")
@@ -81,10 +81,10 @@ func get_velocity_from_input() -> Vector2:
 		velocity.y += 1
 
 	if movement_inputs.get(move_right_action):
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 		velocity.x += 1
 	elif movement_inputs.get(move_left_action):
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 		velocity.x -= 1
 	
 	return velocity
