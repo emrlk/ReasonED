@@ -44,14 +44,20 @@ func _input(event):
 					take_damage(basicAttackDmg)
 			
 			if current_health <= 0:
-				descriptionLabel.hide()
-				timerLabel.hide()
-				show_scorecard()
+				showWin()
+
+func showWin():
+	descriptionLabel.hide()
+	descriptionLabel.get_parent().hide()
+	timerLabel.hide()
+	show_scorecard()
 
 # Reduce health
 func take_damage(amount):
 	current_health -= amount
 	update_bar_and_label()
+	if current_health <= 0:
+		showWin()
 	
 
 # Update the health bar progress and the label value
