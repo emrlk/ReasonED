@@ -21,6 +21,11 @@ func _ready():
 
 func _on_Timer_timeout():
 		textPanel.show()
+		print(MannyData.health)
+		
+		if MannyData.health <= 0:
+			var next_scene = preload('res://scenes/GameOver.tscn')
+			get_tree().change_scene_to(next_scene)
 
 
 func _on_AnimatedSprite_animation_finished():

@@ -29,7 +29,7 @@ var score_format = " Score: %d"
 
 func draw_strength_score():
 	score_text.text = score_format % [MannyData.score]
-	level_text.text = level_format % [MannyData.level + 1]
+	level_text.text = level_format % [MannyData.level]
 	strength.value = MannyData.strength
 
 # Called when the node enters the scene tree for the first time.

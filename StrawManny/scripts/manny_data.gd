@@ -5,7 +5,7 @@ var health = 6
 signal strength_score_update
 signal manny_health_update
 
-var level = 0
+var level = 1
 var score = 0
 var strength = 0
 var strength_max_value = 2500
