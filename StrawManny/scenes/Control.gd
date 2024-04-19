@@ -95,8 +95,9 @@ func display_answers(question: Question):
 	# Assign the shuffled answers to the buttons
 	for i in range(answer_buttons.size()):
 		answer_buttons[i].text = shuffled_answers[i]
-		
-		# Call TTS for each answer
+	
+	# Call TTS for each answer
+	for i in range(answer_buttons.size()):
 		var answer_text = shuffled_answers[i]
 		var speed = 0.9
 		#Speak the number of the answer
