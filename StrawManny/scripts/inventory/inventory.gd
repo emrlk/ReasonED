@@ -16,6 +16,13 @@ func _ready():
 		for i in items.size():
 			items[i] = null
 
+func prepare_items_to_change_scene():
+	for i in Inventory.get_num_of_items():
+		var item = Inventory.get_item_at_index(i)
+		if item != null:
+			var node_to_remove = item.get_parent()
+			var item_parent = node_to_remove.get_parent()
+			item_parent.remove_child(node_to_remove)
 
 func get_items():
 	return items

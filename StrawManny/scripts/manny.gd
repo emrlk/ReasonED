@@ -177,10 +177,5 @@ func _on_Inventory_item_received_for_instant_use(ability):
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("Knight"):
-		for i in Inventory.get_num_of_items():
-			var item = Inventory.get_item_at_index(i)
-			if item != null:
-				var node_to_remove = item.get_parent()
-				var item_parent = node_to_remove.get_parent()
-				item_parent.remove_child(node_to_remove)
+		Inventory.prepare_items_to_change_scene()
 		get_tree().change_scene("res://scenes/Challenge.tscn")
