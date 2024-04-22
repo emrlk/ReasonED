@@ -1,7 +1,7 @@
 extends Node
 
 var knight = preload("res://scenes/Knight.tscn")
-const NUM_KNIGHTS = 200
+const NUM_KNIGHTS = 5
 const KNIGHT_LAYER = 1  # Adjust as needed to place the knights on the correct layer
 const NUM_POWERUPS = 200
 const NUM_ABILITIES = 200
@@ -27,7 +27,7 @@ func spawnKnights():
 	var i = 0
 	while i < NUM_KNIGHTS:
 		var randomKnight = knight.instance()
-		randomKnight.position = Vector2(rand_range(-40000,40000), rand_range(-40000,40000))
+		randomKnight.position = Vector2(rand_range(-5000,5000), rand_range(-5000,5000))
 		randomKnight.set_z_index(KNIGHT_LAYER)  # Set the Z-index to place the knight on the desired layer
 		add_child(randomKnight)
 		i += 1
