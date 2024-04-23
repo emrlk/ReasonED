@@ -24,7 +24,7 @@ const MannyPage = () => {
                     "constainer bg-orange h-screen mx-auto flex justify-center items-center flex-col text-center"
                 }
             >
-                <iframe src="/Manny.html" width="1000" height="1000"></iframe>
+                <iframe src="/Manny Export/Manny.html" width="1000" height="1000"></iframe>
 
             </div>
 
