@@ -561,7 +561,7 @@ script = ExtResource( 13 )
 input_pickable = true
 
 [node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
-frame = 8
+frame = 3
 
 [node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
 margin_left = -129.624

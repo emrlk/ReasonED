@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Background Elements/Samples/colored_talltrees.png" type="Texture" id=1]
+[ext_resource path="res://assets/Background Elements/PNG/cloud7.png" type="Texture" id=2]
+[ext_resource path="res://assets/Background Elements/PNG/cloud6.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background Elements/PNG/cloud2.png" type="Texture" id=4]
+[ext_resource path="res://assets/manny-trimmed.png" type="Texture" id=5]
+[ext_resource path="res://scenes/GameOver.gd" type="Script" id=6]
+[ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_617_x_342.png" type="Texture" id=37]
+[ext_resource path="res://assets/UI/medievalbutton/Button-65.png" type="Texture" id=38]
+
+[sub_resource type="DynamicFont" id=153]
+size = 470
+use_filter = true
+font_data = ExtResource( 34 )
+
+[sub_resource type="AtlasTexture" id=154]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 71.5625, 1701.26, 150.1, 158.65 )
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id=155]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 223.562, 1698.41, 166.25, 167.2 )
+filter_clip = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -16.0
+margin_top = -19.0
+margin_right = 1008.0
+margin_bottom = 1006.0
+rect_scale = Vector2( 1.93897, 1.08581 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud" type="TextureRect" parent="Background"]
+margin_left = 20.1137
+margin_top = 62.6263
+margin_right = 1044.11
+margin_bottom = 1087.63
+rect_scale = Vector2( 0.260239, 0.292078 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud2" type="TextureRect" parent="Background"]
+margin_left = 400.727
+margin_top = 99.4653
+margin_right = 1424.73
+margin_bottom = 1124.47
+rect_scale = Vector2( 0.260239, 0.292078 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud3" type="TextureRect" parent="Background"]
+margin_left = 817.443
+margin_top = 23.9454
+margin_right = 1841.44
+margin_bottom = 1048.95
+rect_scale = Vector2( 0.176839, 0.258835 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="Manny" type="TextureRect" parent="."]
+margin_left = -2349.0
+margin_top = 49.0
+margin_right = -2315.0
+margin_bottom = 89.0
+rect_rotation = 179.57
+rect_scale = Vector2( 26.1765, -23.4126 )
+rect_pivot_offset = Vector2( 116.767, -4.8361 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="WinPanel" type="TextureRect" parent="."]
+margin_left = 832.0
+margin_top = 169.0
+margin_right = 1449.0
+margin_bottom = 511.0
+rect_scale = Vector2( 1.65705, 2.45746 )
+mouse_filter = 2
+texture = ExtResource( 37 )
+script = ExtResource( 6 )
+
+[node name="winTitle" type="Label" parent="WinPanel"]
+margin_left = 19.0
+margin_top = 20.0
+margin_right = 3791.0
+margin_bottom = 685.0
+rect_scale = Vector2( 0.15079, 0.139746 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 153 )
+text = "You Win!"
+align = 1
+autowrap = true
+
+[node name="playAgain" type="Label" parent="WinPanel"]
+margin_left = -533.478
+margin_top = -154.631
+margin_right = 5448.52
+margin_bottom = 1010.37
+rect_scale = Vector2( 0.0918807, 0.0897221 )
+rect_pivot_offset = Vector2( 631.368, 309.896 )
+custom_colors/font_color = Color( 0.623529, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 153 )
+text = "You have defeated all the 
+Knights. Play Again?"
+align = 1
+
+[node name="scoreLabel" type="Label" parent="WinPanel"]
+margin_left = 39.6187
+margin_top = 257.56
+margin_right = 5438.62
+margin_bottom = 838.56
+rect_scale = Vector2( 0.0988003, 0.0817392 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 153 )
+text = "Score: +0"
+align = 1
+
+[node name="Continue Button" type="TextureButton" parent="WinPanel"]
+margin_left = 511.753
+margin_top = 252.7
+margin_right = 670.753
+margin_bottom = 418.7
+rect_scale = Vector2( 0.536353, 0.381184 )
+texture_normal = SubResource( 154 )
+texture_pressed = SubResource( 154 )
+texture_hover = SubResource( 155 )
+
+[connection signal="pressed" from="WinPanel/Continue Button" to="WinPanel" method="_on_Continue_Button_pressed"]

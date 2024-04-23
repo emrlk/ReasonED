@@ -18,9 +18,8 @@ func _ready():
 
 
 func _on_Continue_Button_pressed():
-	MannyData.health = 6
-	MannyData.score = 0
-	MannyData.strength = 0
-	MannyData.level = 1
+	Inventory.items = []
+	Inventory._ready()
+	MannyData._ready()
 	var next_scene = preload('res://scenes/main_menu.tscn')
 	get_tree().change_scene_to(next_scene)

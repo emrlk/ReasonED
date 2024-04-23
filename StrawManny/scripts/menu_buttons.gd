@@ -9,5 +9,4 @@ func _on_Play_pressed():
 	TutorialManager.clear_tutorial_flags()
 
 func start_level1():
-	var level1 = preload('res://scenes/Level1.tscn')
-	var _result = get_tree().change_scene_to(level1)
+	var _result = get_tree().change_scene_to(MannyData.current_level)
