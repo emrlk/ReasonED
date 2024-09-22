@@ -8,4 +8,7 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/client/reasoned-app" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    automerged_updates:
+      - match:
+          update_type: "patch"
