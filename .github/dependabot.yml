@@ -9,6 +9,3 @@ updates:
     directory: "/client/reasoned-app" # Location of package manifests
     schedule:
       interval: "daily"
-    automerged_updates:
-      - match:
-          update_type: "patch"
