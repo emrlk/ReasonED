@@ -69,16 +69,16 @@ Originally a capstone project by students at Old Dominion University, ReasonED i
 
 ReasonED games all share the same goal of introducing and improving logical fallacy identification skills, but the difficulties and approaches vary depending on the age group. While the concepts and scenarios will be simplified for younger ages, the games aim to plant the seeds of critical thinking and encourage kids to recognize flawed reasoning. Many of the games involve logical fallacies personified as fun characters. The fallacy characters can serve as memorable guides in students’ fallacy education journeys.
 
-ReasonED resources can serve as a supplement to traditional classroom learning, offering an interactive and gamified approach to enhance critical reasoning skills, or as a standalone resource to introduce logical fallacies in places where such curriculum may be lacking. Because ReasonED is a website, once it is whitelisted on school networks, students can access it in their free time during school.
+ReasonED resources can supplement traditional classroom learning, offering an interactive and gamified approach to enhance critical reasoning skills, or be used as a standalone resource to introduce logical fallacies in places where such curriculum may be lacking. Because ReasonED is a website, once it is whitelisted on school networks, students can access it in their free time during school.
 
 ### The "Why?"
 In this digital era of the information age, the need for strong critical thinking skills is at an all-time high. The ease of viewing and sharing digital information has made us more vulnerable than ever to misinformation and disinformation. While Big Tech companies have started incorporating fact-checking systems into their platforms, flawed information is not the only way we can be misled online. With the growth of opinion content across the web has come a growth in the use of flawed reasoning, or logical fallacies. Britannica defines a logical fallacy as "erroneous reasoning that has the appearance of soundness".
 
-People use fallacies in their arguments, both accidentally and intentionally, to try to assert their points, but do so by misstating facts, using terms incorrectly, or using an improper process of inference (Britannica). Logical fallacies are not typically "black-and-white" claims of fact. Thus, they often slip through the cracks of fact-checking systems and are free to float around online. Making matters worse, social media sites employ algorithms that curate our feeds to only show us what we want to see. This process often results in filtering out content that is not in support of our own beliefs and interests, exploiting our confirmation bias, and creating personal echo chambers we may not even realize.
+People use fallacies in their arguments, both accidentally and intentionally, to try to assert their points, but do so by misstating facts, misusing terms, or using an improper process of inference (Britannica). Logical fallacies are not typically "black-and-white" claims of fact. Thus, they often slip through the cracks of fact-checking systems and are free to float around online. Making matters worse, social media sites employ algorithms that curate our feeds to only show us what we want to see. This process often results in filtering out content that is not in support of our own beliefs and interests, exploiting our confirmation bias, and creating personal echo chambers we may not even realize.
 
-Since fallacies are manipulative, yet go unchecked on a very opinionated internet, it is solely up to users to recognize any faulty logic in the content they encounter.
+Since fallacies are manipulative, yet go unchecked on a very opinionated internet, it is solely up to users to recognize faulty logic in the content they encounter.
 
-To be able to navigate the internet mindfully and distinguish manipulative reasoning from genuine reasoning, we must have a working knowledge of logical fallacies and adequate skills to identify them.
+To navigate the internet mindfully and distinguish manipulative reasoning from genuine reasoning, we must have a working knowledge of logical fallacies and adequate skills to identify them.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -100,40 +100,44 @@ To be able to navigate the internet mindfully and distinguish manipulative reaso
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+# Getting Started as a Contributor
 
-To get a local copy up and running, follow these steps.
+### 1. Ensure [Node.js](https://nodejs.org/en) is installed.
+  `node -v` should return a version number if it is.
 
-### Prerequisites
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
-### Installation
-
-1. Clone the repo
+### 2. Clone the Repo.
    ```sh
    git clone https://github.com/emrlk/ReasonED.git
    ```
-2. cd into reasoned-app
-   ```sh
-   cd client/reasoned-app
-   ```
-   
-3. Install NPM packages
+
+
+
+### 3. In the project root, run
    ```sh
    npm install
    ```
 
+
+### 4. To Contribute to one of the Games, Install Godot Engine .NET 3.6
+  * [Download for Windows](https://github.com/godotengine/godot/releases/download/3.6-stable/Godot_v3.6-stable_mono_win64.zip)
+  * [Download for Linux](https://github.com/godotengine/godot/releases/download/3.6-stable/Godot_v3.6-stable_mono_x11_64.zip)
+  * [Download for MacOS](https://github.com/godotengine/godot/releases/download/3.6-stable/Godot_v3.6-stable_mono_osx.universal.zip)
+
+  In Godot:
+  * Click `Import` > `Browse`
+  * Navigate to this-repos-folder/games
+  * Navigate into the folder of a game
+  * Highlight the game's `project.godot` file and click `Open`
+  * Click `Import and Edit`
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+# Roadmap
 
 - [ ] More levels to straw manny, debug, and optimize for HTML5
 - [ ] Working account creation
@@ -148,7 +152,7 @@ See the [open issues](https://github.com/emrlk/ReasonED/issues) for a full list 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+# Contributing
 
 Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -166,7 +170,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- LICENSE -->
-## License
+# License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
@@ -175,7 +179,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+# Contact
 
 Email  - reasoned411@gmail.com
 
@@ -184,7 +188,7 @@ Project Link: [https://github.com/emrlk/ReasonED](https://github.com/emrlk/Reaso
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
-## Acknowledgments
+# Acknowledgments
 
 ### Original Contributors
 Initial prototype contributors from the ODU Spring 2024 semester:
@@ -199,7 +203,7 @@ Initial prototype contributors from the ODU Spring 2024 semester:
 
 
 ### Old Dominion University Department of Computer Science
-* Thank you to the [ODU CS](https://www.odu.edu/computer-science) faculty for mentoring the prototype of this project and providing feedback.
+* Thank you to the [ODU CS](https://www.odu.edu/computer-science) faculty for mentoring the prototype design/development of this project and providing feedback.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
