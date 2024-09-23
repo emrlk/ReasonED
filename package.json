@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cd client/reasoned-app && npm run dev",
     "build": "next build client/reasoned-app",
-    "start": "cd client/reasoned-app && npm run start",
+    "start": "next start client/reasoned-app",
     "server": "cd server && node server.js",
     "dev-server": "cd server && nodemon server.js"
   },
