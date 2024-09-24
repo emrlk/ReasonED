@@ -1,0 +1,28 @@
+{
+    "name": "reasoned-server",
+    "version": "0.1.0-alpha",
+    "description": "Backend for ReasonED: an open-source game-based learning platform focused on teaching logical fallacies.",
+    "main": "page.tsx",
+    "scripts": {
+        "dev": "cd client/reasoned-app && npm run dev",
+        "vercel-build": "next build client/reasoned-app",
+        "build": "next build client/reasoned-app",
+        "start": "next start client/reasoned-app",
+        "server": "node server.js",
+        "dev-server": "nodemon server.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "dotenv": "^16.4.4",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.2",
+        "pg": "^8.11.3",
+        "nodemailer": "^6.9.14"
+    },
+    "keywords": [
+        "education",
+        "game-based learning",
+        "logical fallacies"
+    ],
+    "license": "MIT"
+}
