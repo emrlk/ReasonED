@@ -1,5 +1,5 @@
-import { notosans } from "@/app/ui/fonts";
 import "./globals.css";
+import { notosans } from "./ui/fonts";
 
 export const metadata = {
   title: "ReasonED",

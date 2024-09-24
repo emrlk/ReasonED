@@ -1,8 +1,8 @@
 "use client";
 
-import { sendEmail } from "@/utils/send-email";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
+import { sendEmail } from "../utils/send-email";
 
 export type FormData = {
   name: string;

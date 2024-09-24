@@ -1,8 +1,8 @@
 "use client";
-import { isClient } from "@/utils/helpers";
 import { useEffect, useState } from "react";
 import ForgotPassword from "../../components/forgot-password/forgot-password";
 import ResetPassword from "../../components/reset-password/reset-password";
+import { isClient } from "../../utils/helpers";
 
 // Client-side page to allow users to view the reset password page
 export default function ResetPasswordPage() {
