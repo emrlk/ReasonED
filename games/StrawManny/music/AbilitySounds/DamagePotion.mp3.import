@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DamagePotion.mp3-771b841e7397f847d0d6522253f1739b.mp3str"
+
+[deps]
+
+source_file="res://music/AbilitySounds/DamagePotion.mp3"
+dest_files=[ "res://.import/DamagePotion.mp3-771b841e7397f847d0d6522253f1739b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
