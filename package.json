@@ -5,6 +5,7 @@
   "main": "page.tsx",
   "scripts": {
     "dev": "cd client/reasoned-app && npm run dev",
+    "vercel-build": "next build client/reasoned-app",
     "build": "next build client/reasoned-app",
     "start": "next start client/reasoned-app",
     "server": "cd server && node server.js",
