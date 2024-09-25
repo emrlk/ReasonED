@@ -17,7 +17,7 @@ export default function AboutReasonED() {
                         <p className="text-white mb-4 text-xl font-medium">
                             ReasonED is a game-based learning website that improves the
                             ability of users to identify logical fallacies through engaging,
-                            age-appropriate video games. Games are be curated for elementary,
+                            age-appropriate video games. Games are curated for elementary,
                             middle, and high school students respectively to support
                             continuous learning over all grade levels. Our goal is to help
                             educators cultivate their student’s critical reasoning skills over
