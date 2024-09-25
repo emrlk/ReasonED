@@ -34,6 +34,10 @@ For anything bigger than a one or two-line fix:
 >3. Be sure your additions align with the goals of ReasonED
 >4. Send a pull request
 
+# Developer Resources
+* [Godot 3.6 Best Practices](https://docs.godotengine.org/en/3.6/tutorials/best_practices/index.html)
+* [Next.js Docs](https://nextjs.org/docs)
+* [Node.js Docs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
 
 # Reporting Issues
 If you find a security vulnerability, do NOT open an issue. Email reasoned411@gmail.com instead.
