@@ -1,0 +1,704 @@
+[gd_scene load_steps=130 format=2]
+
+[ext_resource path="res://assets/Background Elements/Samples/colored_talltrees.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Knight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Background Elements/PNG/cloud6.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background Elements/PNG/cloud7.png" type="Texture" id=4]
+[ext_resource path="res://assets/Background Elements/PNG/cloud2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://music/combat-scene.mp3" type="AudioStream" id=7]
+[ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=8]
+[ext_resource path="res://assets/idle-manny.png" type="Texture" id=9]
+[ext_resource path="res://assets/run-manny.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/UI Adventure Pack/PNG/barRed_horizontalMid.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/UI Adventure Pack/PNG/barBack_horizontalMid.png" type="Texture" id=12]
+[ext_resource path="res://scenes/Knight.gd" type="Script" id=13]
+[ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_617_x_342.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Continue Button.gd" type="Script" id=16]
+[ext_resource path="res://assets/UI/medievalbutton/Button-65.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_681_x_150.png" type="Texture" id=18]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_015.png" type="Texture" id=19]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_007.png" type="Texture" id=20]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_000.png" type="Texture" id=21]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_013.png" type="Texture" id=22]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_014.png" type="Texture" id=23]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_001.png" type="Texture" id=24]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_016.png" type="Texture" id=25]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_018.png" type="Texture" id=26]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_020.png" type="Texture" id=27]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_023.png" type="Texture" id=28]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_024.png" type="Texture" id=29]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_019.png" type="Texture" id=30]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_010.png" type="Texture" id=31]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_002.png" type="Texture" id=32]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_006.png" type="Texture" id=33]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_012.png" type="Texture" id=34]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_022.png" type="Texture" id=35]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_003.png" type="Texture" id=36]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_011.png" type="Texture" id=37]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_021.png" type="Texture" id=38]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_005.png" type="Texture" id=39]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_004.png" type="Texture" id=40]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_008.png" type="Texture" id=41]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_025.png" type="Texture" id=42]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_017.png" type="Texture" id=43]
+[ext_resource path="res://assets/Sprites/Basic Attack Animation/basic-attack-animation_009.png" type="Texture" id=44]
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=127]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 621, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=128]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1242, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=129]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1863, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=130]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2484, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=131]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 3105, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=132]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 3726, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=133]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 4347, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=134]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 4968, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=135]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 5589, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=136]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 6210, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=137]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 6831, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=138]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 7452, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=139]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 8073, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=140]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 8694, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=141]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 9315, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=142]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 9936, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=143]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 10557, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=144]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 11178, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=145]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 11799, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=146]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 12420, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=147]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 13041, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=148]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 13662, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=149]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 14283, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=150]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 14904, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=151]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 15525, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 621, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1242, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1863, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 2484, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 3105, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 3726, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 4347, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 4968, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 5589, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 6210, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 6831, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 7452, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 8073, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 8694, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 9315, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 9936, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 10557, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 11178, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 11799, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 12420, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 13041, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 13662, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=97]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 14283, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 14904, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 15525, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=100]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=101]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 621, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=102]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1242, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=103]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1863, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=104]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 2484, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=105]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 3105, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=106]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 3726, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 4347, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=108]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 4968, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 5589, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 6210, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 6831, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 7452, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=113]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 8073, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=114]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 8694, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 9315, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 9936, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=117]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 10557, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 11178, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 11799, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 12420, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 13041, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=122]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 13662, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 14283, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 14904, 0, 621, 489 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 15525, 0, 621, 489 )
+
+[sub_resource type="SpriteFrames" id=152]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 43 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "Strike",
+"speed": 26.0
+}, {
+"frames": [ SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ), SubResource( 145 ), SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ) ],
+"loop": true,
+"name": "run",
+"speed": 40.0
+} ]
+
+[sub_resource type="DynamicFont" id=153]
+size = 229
+outline_size = 24
+outline_color = Color( 0.0941176, 0.0901961, 0.0901961, 1 )
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=154]
+size = 470
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="AtlasTexture" id=155]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 71.5625, 1701.26, 150.1, 158.65 )
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id=156]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 223.562, 1698.41, 166.25, 167.2 )
+filter_clip = true
+
+[sub_resource type="DynamicFont" id=158]
+size = 339
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=157]
+size = 527
+font_data = ExtResource( 14 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -16.0
+margin_top = -19.0
+margin_right = 1008.0
+margin_bottom = 1006.0
+rect_scale = Vector2( 1.93897, 1.08581 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud" type="TextureRect" parent="Background"]
+margin_left = 20.1137
+margin_top = 62.6263
+margin_right = 1044.11
+margin_bottom = 1087.63
+rect_scale = Vector2( 0.260239, 0.292078 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud2" type="TextureRect" parent="Background"]
+margin_left = 400.727
+margin_top = 99.4653
+margin_right = 1424.73
+margin_bottom = 1124.47
+rect_scale = Vector2( 0.260239, 0.292078 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="Cloud3" type="TextureRect" parent="Background"]
+margin_left = 817.443
+margin_top = 23.9454
+margin_right = 1841.44
+margin_bottom = 1048.95
+rect_scale = Vector2( 0.176839, 0.258835 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 1500, 633 )
+scale = Vector2( 1.40276, 1.40276 )
+frames = SubResource( 152 )
+animation = "Strike"
+frame = 25
+
+[node name="Inventory" type="Node" parent="KinematicBody2D"]
+
+[node name="HUD" parent="KinematicBody2D" instance=ExtResource( 6 )]
+margin_left = -15.0
+margin_top = -40.0
+margin_right = 2025.0
+margin_bottom = 1160.0
+rect_min_size = Vector2( 2040, 1200 )
+rect_scale = Vector2( 0.950384, 0.950384 )
+
+[node name="Knight" parent="." instance=ExtResource( 2 )]
+position = Vector2( 398, 695 )
+scale = Vector2( 1.48892, 1.35827 )
+script = ExtResource( 13 )
+
+[node name="KinematicBody2D" parent="Knight" index="0"]
+input_pickable = true
+
+[node name="AnimatedSprite" parent="Knight/KinematicBody2D" index="0"]
+frame = 8
+
+[node name="KnightHealthBar" type="TextureProgress" parent="Knight"]
+margin_left = -129.624
+margin_top = -381.366
+margin_right = -89.6241
+margin_bottom = -341.366
+rect_scale = Vector2( 7.22437, 0.982083 )
+mouse_filter = 2
+max_value = 500.0
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+tint_progress = Color( 0.713726, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="HealthValue" type="Label" parent="Knight/KnightHealthBar"]
+margin_left = 16.1763
+margin_top = -8.99747
+margin_right = 441.176
+margin_bottom = 275.003
+rect_scale = Vector2( 0.0166885, 0.203171 )
+custom_fonts/font = SubResource( 153 )
+text = "Test"
+
+[node name="Knight_defeated" type="TextureRect" parent="Knight"]
+visible = false
+margin_left = -142.385
+margin_top = -391.675
+margin_right = 474.615
+margin_bottom = -49.6747
+rect_scale = Vector2( 1.67828, 1.6179 )
+mouse_filter = 2
+texture = ExtResource( 15 )
+
+[node name="KnightDefeatedLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 20.8098
+margin_top = 53.2411
+margin_right = 3792.81
+margin_bottom = 634.241
+rect_scale = Vector2( 0.15079, 0.15079 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "Knight Defeated!"
+align = 1
+
+[node name="StrengthRewardLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = -425.0
+margin_top = -144.252
+margin_right = 3806.0
+margin_bottom = 436.748
+rect_scale = Vector2( 0.0689196, 0.0689196 )
+rect_pivot_offset = Vector2( 631.368, 309.896 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "+ 500 Strength"
+align = 1
+
+[node name="AbilityPointUseLabel" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 121.657
+margin_top = 184.751
+margin_right = 5520.66
+margin_bottom = 765.751
+rect_scale = Vector2( 0.0686137, 0.0686137 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "+ 200 Ability Use Bonus"
+align = 1
+
+[node name="AbilityPointUseLabel2" type="Label" parent="Knight/Knight_defeated"]
+margin_left = 39.6187
+margin_top = 257.56
+margin_right = 5438.62
+margin_bottom = 838.56
+rect_scale = Vector2( 0.0988003, 0.0988003 )
+custom_colors/font_color = Color( 0.12549, 0.101961, 0.101961, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 154 )
+text = "Score: +700"
+align = 1
+
+[node name="Continue Button" type="TextureButton" parent="Knight/Knight_defeated"]
+margin_left = 537.453
+margin_top = 249.824
+margin_right = 696.453
+margin_bottom = 415.824
+rect_scale = Vector2( 0.435572, 0.435572 )
+texture_normal = SubResource( 155 )
+texture_pressed = SubResource( 155 )
+texture_hover = SubResource( 156 )
+script = ExtResource( 16 )
+
+[node name="Timer" type="Timer" parent="Knight"]
+
+[node name="Label" type="Label" parent="Knight/Timer"]
+margin_left = 915.0
+margin_top = 867.0
+margin_right = 1412.0
+margin_bottom = 1287.0
+rect_scale = Vector2( 0.13868, 0.133658 )
+custom_colors/font_color = Color( 0.643137, 0.278431, 0.278431, 1 )
+custom_fonts/font = SubResource( 158 )
+
+[node name="AbilityDescriptionPanel" type="NinePatchRect" parent="Knight"]
+margin_left = 124.923
+margin_top = 54.481
+margin_right = 164.923
+margin_bottom = 94.481
+rect_scale = Vector2( 12.091, 3.19235 )
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="Knight/AbilityDescriptionPanel"]
+margin_left = 1.44482
+margin_top = 11.0693
+margin_right = 7827.44
+margin_bottom = 1318.07
+rect_scale = Vector2( 0.00466236, 0.018754 )
+custom_colors/font_color = Color( 0.160784, 0.0705882, 0.396078, 1 )
+custom_colors/font_outline_modulate = Color( 0.160784, 0.0705882, 0.396078, 1 )
+custom_colors/font_color_shadow = Color( 0.160784, 0.0705882, 0.396078, 1 )
+custom_fonts/font = SubResource( 157 )
+text = "Basic Attack-Damage Increase!"
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+bus = "Music"
+
+[connection signal="mouse_entered" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="Knight/KinematicBody2D" to="Knight" method="_on_KinematicBody2D_mouse_exited"]
+
+[editable path="Knight"]

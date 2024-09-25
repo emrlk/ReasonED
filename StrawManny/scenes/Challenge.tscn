@@ -1,0 +1,207 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/Background Elements/Samples/uncolored_castle.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprites/1_KNIGHT/Knight_01__WALK_009.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/medievalbutton/Main_Menu.png" type="Texture" id=3]
+[ext_resource path="res://scripts/mute.gd" type="Script" id=4]
+[ext_resource path="res://music/challenge-scene.mp3" type="AudioStream" id=5]
+[ext_resource path="res://scenes/textbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/UI/Paperpanels--1h5l813w3r13988u2m/png/paper_panel_681_x_150.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Control.gd" type="Script" id=8]
+[ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/yellow-tinge/long-small-tag-above.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/Speechbubbles--17495u2t6p9v418b03/pngs/greyscale/long-small-tag-above.png" type="Texture" id=10]
+[ext_resource path="res://assets/immortal.regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/UI/medievalbutton/Button-65.png" type="Texture" id=12]
+[ext_resource path="res://addons/texttospeech/TextToSpeech.gd" type="Script" id=13]
+[ext_resource path="res://scenes/tutorial_claim.tscn" type="PackedScene" id=14]
+
+[sub_resource type="DynamicFont" id=4]
+size = 281
+use_filter = true
+extra_spacing_space = -54
+font_data = ExtResource( 11 )
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 231, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 111, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 71.5625, 1701.26, 150.1, 158.65 )
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 223.562, 1698.41, 166.25, 167.2 )
+filter_clip = true
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 1.72175, 1.72175 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 8 )
+
+[node name="Background" type="TextureRect" parent="Control"]
+margin_left = -556.412
+margin_top = -570.351
+margin_right = 467.588
+margin_bottom = 482.649
+rect_scale = Vector2( 1.1005, 0.997924 )
+texture = ExtResource( 1 )
+
+[node name="KnightImage" type="TextureRect" parent="Control"]
+margin_left = -1279.0
+margin_top = -549.0
+margin_right = 521.0
+margin_bottom = 451.0
+rect_scale = Vector2( 1.17363, 1.17363 )
+texture = ExtResource( 2 )
+
+[node name="AnswerButton1" type="TextureButton" parent="Control"]
+margin_left = 55.0
+margin_top = -370.0
+margin_right = 575.0
+margin_bottom = -205.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton1"]
+margin_left = 47.7947
+margin_top = 10.7593
+margin_right = 4125.45
+margin_bottom = 1060.76
+rect_scale = Vector2( 0.101238, 0.107781 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
+
+[node name="AnswerButton2" type="TextureButton" parent="Control"]
+margin_left = 56.0
+margin_top = -242.0
+margin_right = 576.0
+margin_bottom = -77.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton2"]
+margin_left = 47.7947
+margin_top = 10.7593
+margin_right = 4125.45
+margin_bottom = 1060.76
+rect_scale = Vector2( 0.101238, 0.107781 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
+
+[node name="AnswerButton3" type="TextureButton" parent="Control"]
+margin_left = 56.0
+margin_top = -113.0
+margin_right = 576.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.817885, 0.704216 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control/AnswerButton3"]
+margin_left = 42.1071
+margin_top = 11.1171
+margin_right = 4119.77
+margin_bottom = 1061.12
+rect_scale = Vector2( 0.101238, 0.107781 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+custom_fonts/font = SubResource( 4 )
+autowrap = true
+
+[node name="Camera2D" type="Camera2D" parent="Control"]
+position = Vector2( 0, -89 )
+current = true
+
+[node name="toggle_sound" type="TextureButton" parent="Control"]
+margin_left = -508.0
+margin_top = 137.0
+margin_right = -410.0
+margin_bottom = 240.0
+grow_horizontal = 0
+rect_scale = Vector2( 0.679985, 0.679985 )
+toggle_mode = true
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+stretch_mode = 4
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 5 )
+volume_db = -20.0
+autoplay = true
+bus = "Music"
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = -416.0
+margin_top = 43.0
+margin_right = 3628.0
+margin_bottom = 768.0
+rect_scale = Vector2( 0.212497, 0.206724 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="TextBoxContainer" parent="Control/TextureRect" instance=ExtResource( 6 )]
+margin_left = 329.417
+margin_top = 58.0484
+margin_right = 1181.42
+margin_bottom = 783.048
+rect_scale = Vector2( 0.975461, 0.208349 )
+script = null
+
+[node name="Continue Button" type="TextureButton" parent="Control"]
+margin_left = 373.458
+margin_top = 66.2119
+margin_right = 532.458
+margin_bottom = 232.212
+rect_scale = Vector2( 0.625684, 0.625684 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
+
+[node name="TutorialClaim" parent="Control" instance=ExtResource( 14 )]
+margin_left = 245.099
+margin_top = -272.397
+margin_right = 1013.1
+margin_bottom = 1081.6
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="TextToSpeech" type="AudioStreamPlayer" parent="Control"]
+bus = "TTS"
+script = ExtResource( 13 )
+
+[connection signal="pressed" from="Control/toggle_sound" to="Control/toggle_sound" method="_on_Volume_pressed"]
+[connection signal="pressed" from="Control/Continue Button" to="Control" method="_on_Continue_Button_pressed"]

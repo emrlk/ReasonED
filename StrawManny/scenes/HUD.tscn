@@ -1,0 +1,266 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/UI/medievalbutton/Main_Menu.png" type="Texture" id=1]
+[ext_resource path="res://scripts/mute.gd" type="Script" id=2]
+[ext_resource path="res://HUD.tres" type="Theme" id=3]
+[ext_resource path="res://assets/UI/extralife--134u37401q8c0y3e41/black-border/100-percent.png" type="Texture" id=4]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=5]
+[ext_resource path="res://assets/UI/HP_Bar/blue.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/HP_Bar/bg.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/Fourmagicalelementicons--15456i1x562p1k3g2d/pngs/badges/blank.png" type="Texture" id=8]
+[ext_resource path="res://scripts/hud/inventory_pickup_manager.gd" type="Script" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 231, 268, 98, 103 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 111, 268, 98, 103 )
+
+[node name="HUD" type="MarginContainer"]
+anchor_left = -0.293
+anchor_top = -0.333
+anchor_right = 0.293
+anchor_bottom = 0.333
+margin_left = -32.4399
+margin_top = 1.64001
+margin_right = 150.44
+margin_bottom = 2.04004
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 1378.0
+margin_bottom = 689.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Top_Bar" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1348.0
+margin_bottom = 154.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Top_Bar"]
+margin_right = 500.0
+margin_bottom = 154.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 500, 60 )
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+custom_constants/separation = 0
+
+[node name="Level" type="RichTextLabel" parent="VBoxContainer/Top_Bar/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+custom_constants/table_hseparation = 4
+text = " Level: "
+fit_content_height = true
+scroll_active = false
+
+[node name="Score" type="RichTextLabel" parent="VBoxContainer/Top_Bar/VBoxContainer"]
+margin_top = 77.0
+margin_right = 500.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+theme_type_variation = "HUD"
+text = " Score: "
+fit_content_height = true
+scroll_active = false
+
+[node name="Spacer" type="CenterContainer" parent="VBoxContainer/Top_Bar"]
+margin_left = 500.0
+margin_right = 500.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+
+[node name="Strength" type="TextureProgress" parent="VBoxContainer/Top_Bar"]
+margin_left = 500.0
+margin_right = 1100.0
+margin_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 600, 96 )
+max_value = 3.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+
+[node name="Spacer2" type="CenterContainer" parent="VBoxContainer/Top_Bar"]
+margin_left = 1100.0
+margin_right = 1100.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.41
+
+[node name="Health" type="HBoxContainer" parent="VBoxContainer/Top_Bar"]
+margin_left = 1100.0
+margin_right = 1348.0
+margin_bottom = 154.0
+size_flags_vertical = 3
+
+[node name="1" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
+margin_top = 37.0
+margin_right = 80.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="2" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
+margin_left = 84.0
+margin_top = 37.0
+margin_right = 164.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="3" type="TextureRect" parent="VBoxContainer/Top_Bar/Health"]
+margin_left = 168.0
+margin_top = 37.0
+margin_right = 248.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Center Spacer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 158.0
+margin_right = 1348.0
+margin_bottom = 527.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bottom_Bar" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 531.0
+margin_right = 1348.0
+margin_bottom = 659.0
+grow_horizontal = 2
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="toggle_sound" type="TextureButton" parent="VBoxContainer/Bottom_Bar"]
+margin_right = 98.0
+margin_bottom = 128.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+stretch_mode = 4
+script = ExtResource( 2 )
+
+[node name="center_abilities" type="CenterContainer" parent="VBoxContainer/Bottom_Bar"]
+margin_left = 102.0
+margin_right = 1246.0
+margin_bottom = 128.0
+grow_horizontal = 2
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Abilities" type="HBoxContainer" parent="VBoxContainer/Bottom_Bar/center_abilities"]
+margin_left = 310.0
+margin_right = 834.0
+margin_bottom = 128.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 9 )
+
+[node name="0" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( -1365, -561 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="1" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( -1365, -561 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="2" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="3" type="TextureButton" parent="VBoxContainer/Bottom_Bar/center_abilities/Abilities"]
+margin_left = 396.0
+margin_right = 524.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
+[node name="Spacer" type="MarginContainer" parent="VBoxContainer/Bottom_Bar"]
+margin_left = 1250.0
+margin_right = 1348.0
+margin_bottom = 128.0
+grow_horizontal = 0
+rect_min_size = Vector2( 98, 103 )
+mouse_filter = 2
+
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/toggle_sound" to="VBoxContainer/Bottom_Bar/toggle_sound" method="_on_Volume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/0" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/1" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/2" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="VBoxContainer/Bottom_Bar/center_abilities/Abilities/3" to="VBoxContainer/Bottom_Bar/center_abilities/Abilities" method="_on_ability_pressed" binds= [ 3 ]]
