@@ -1,13 +1,11 @@
 # Vercel
 .vercel
 
-# Godot-specific ignores for games (applies to all game directories)
-**/*.import/
+# Godot-3.6 specific ignores for games
 .import/
-.export/
-
-# Godot editor and cache files
-.godot/
+*.translation
+export_presets.cfg
+.mono/
 
 # Node.js
 node_modules/
