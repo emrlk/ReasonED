@@ -30,6 +30,7 @@ export default function PrototypePage() {
             </p>
           </div>
         </div>
+        <div className="space"></div>
       </div>
 
       {/* Footer */}

@@ -84,6 +84,7 @@ export default function Students() {
             </div>
           </div>
         </div>
+        <div className="space"></div>
       </div>
 
       {/* Footer */}
