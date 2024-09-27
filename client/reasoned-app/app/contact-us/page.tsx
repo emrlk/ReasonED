@@ -7,7 +7,7 @@ export default function contact() {
       {/* Navbar */}
       <Header />
       {/* Page Body */}
-      <div className="constainer bg-orange min-h-screen mx-auto py-5 ">
+      <div className="constainer bg-orange-shades-400 min-h-screen mx-auto py-5 ">
         <div className=" mb-5 mx-60 px-10 py-10">
           <h1 className="text-6xl text-white font-bold mb-10 ">Contact Us</h1>
 

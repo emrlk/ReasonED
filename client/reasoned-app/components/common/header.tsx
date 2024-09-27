@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div
       className={
-        "constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-2 h-24"
+        "constainer bg-purple-shades-900 text-white  mx-auto flex items-center  px-6 py-0 h-20"
       }
     >
       <Link href="/">
@@ -25,7 +25,7 @@ export default function Header() {
       {/*<div className="grow">
                 <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white"></div>*/}
       <div className="flex-grow ">
-        <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white text-2xl ">
+        <div className="flex items-center justify-center gap-2 md:gap-8 font-bold hover:white text-xl ">
           {/* Students */}
           <div className="relative transform hover:scale-110 transition-transform duration-100 ease-in-out">
             <Link href="/students" className="link">
