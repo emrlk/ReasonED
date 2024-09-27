@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "../Logo";
 
 // Default navigation bar before a user logs in
 export default function Header() {
@@ -11,14 +12,8 @@ export default function Header() {
     >
       <Link href="/">
         {/*<div className="hidden md:block cursor-pointer">*/}
-        <div className="hidden md:block cursor-pointer ml-5 transform hover:scale-105 pl-20">
-          <Image
-            src="/ReasonEDLogo.png"
-            width={250}
-            height={190}
-            className="hidden md:block"
-            alt="ReasonED Logo"
-          />
+        <div className="hidden md:block cursor-pointer ml-5 transform hover:scale-105 pl-20 pb-4">
+          <Logo size={200}></Logo>
         </div>
       </Link>
 
