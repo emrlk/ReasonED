@@ -8,11 +8,11 @@ const Page = () => {
     <>
       <Header />
       <div className={ "constainer bg-orange-shades-400 mx-auto flex justify-center items-center flex-col text-center pt-0"}>
-        <div className="flex-col flex">
+        <div className="flex-col flex mb-8">
           <Logo size={800} fillColor={'#541690'} />
         </div>
-        <p className="text-2xl text-white mb-16 hover:scale-105 transition duration-300 font-bold">
-          Empower Critical Thinking with Engaging Games
+        <p className="text-2xl text-white mb-5 hover:scale-105 transition duration-300 font-bold">
+          Browse Games For:
         </p>
 
         {/* Game Navigation Buttons */}
