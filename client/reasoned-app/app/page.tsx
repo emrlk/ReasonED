@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import Footer from "../components/common/footer";
+import Footer from "../components/common/Footer";
 import Header from "../components/common/header";
 import Logo from '../components/Logo';
 
