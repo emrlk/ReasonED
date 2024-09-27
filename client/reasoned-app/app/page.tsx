@@ -1,5 +1,6 @@
 import Footer from "../components/common/footer";
 import Header from "../components/common/header";
+import Logo from '../components/Logo';
 
 interface ButtonProps {
   // Text inside the button
@@ -22,11 +23,10 @@ const Page = () => {
       <div
         className={
           "constainer bg-orange h-screen mx-auto flex justify-center items-center flex-col text-center"
-        }
-      >
-        <h1 className="font-extrabold text-8xl text-purple mb-3 hover:scale-105 transition duration-300">
-          ReasonED
-        </h1>
+        }>
+        <div className="display-none mb-3">
+          <Logo size={800} fillColor={'#541690'} />
+        </div>
         <p className="text-2xl text-white mb-16 hover:scale-105 transition duration-300 font-bold">
           Empower Critical Thinking with Engaging Games
         </p>
