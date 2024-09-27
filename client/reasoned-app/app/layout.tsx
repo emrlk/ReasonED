@@ -3,7 +3,7 @@ import { notosans } from "./ui/fonts";
 
 export const metadata = {
   title: "ReasonED",
-  description: "",
+  description: "A logical fallacy game-based learning site",
 };
 
 export default function RootLayout({ children }) {
