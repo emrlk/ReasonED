@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useState } from 'react';
-import Footer from "../../components/common/footer";
+import Footer from "../../components/common/Footer";
 import Header from "../../components/common/header";
 
 // Define interface for educator resource

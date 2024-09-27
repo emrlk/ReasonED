@@ -1,4 +1,4 @@
-import Footer from "../../components/common/footer";
+import Footer from "../../components/common/Footer";
 import Header from "../../components/common/header";
 import ContactForm from "../../components/ContactForm";
 export default function contact() {

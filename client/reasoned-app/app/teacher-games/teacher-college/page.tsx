@@ -1,4 +1,4 @@
-import Footer from '../../../components/common/footer';
+import Footer from '../../../components/common/Footer';
 import LoggedInTeacher from '../../../components/common/logged-in-teacher';
 
 // Game card component

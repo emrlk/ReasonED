@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Footer from "../../components/common/footer";
+import Footer from "../../components/common/Footer";
 import Header from "../../components/common/header";
 export default function PrototypePage() {
   return (
