@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "../Logo";
 const Footer = () => {
   return (
-    <footer className=" bg-purple-shades-900 shadow m-0">
+    <div className=" bg-purple-shades-900 shadow m-0">
       <div className="w-full max-w-screen-xl mx-auto p-0 md:py-4">
         <div className="sm:flex sm:items-center sm:justify-between">
         <Link href="/">
@@ -43,7 +43,7 @@ const Footer = () => {
           . Open-source under MIT License.
         </span>
       </div>
-    </footer>
+    </div>
   );
 };
 

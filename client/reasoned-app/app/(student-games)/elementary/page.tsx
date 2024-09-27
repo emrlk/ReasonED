@@ -1,4 +1,4 @@
-import Footer from '../../../components/common/Footer';
+import Footer from '../../../components/common/footer';
 import Header from '../../../components/common/header';
 
 // Game card component
