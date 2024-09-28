@@ -15,12 +15,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/emrlk/ReasonED">
-    <img src="https://github.com/emrlk/ReasonED/blob/main/client/reasoned-app/public/ReasonEDLogo.png" alt="Logo" width="386" height="160">
+    <img src="https://github.com/emrlk/ReasonED/blob/main/client/reasoned-app/public/ReasonEDLogo.svg" alt="Logo" width="75%" height="75%">
   </a>
-  <p align="center">
+  <h2 align="center">
     A logical fallacy game-based learning site.
-    <br />
-    <a href="https://github.com/emrlk/ReasonED"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://reasoned.vercel.app/">View Demo</a>
@@ -28,7 +26,9 @@
     <a href="https://github.com/emrlk/ReasonED/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/emrlk/ReasonED/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    ·
+    <a href="https://github.com/emrlk/ReasonED">Explore Docs</a>
+  </h2>
 </div>
 
 
@@ -38,17 +38,13 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About ReasonED</a>
+      <a href="#about-reasoned">About ReasonED</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#getting-started-as-a-contributor">Getting Started as a Contributer</a>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -61,7 +57,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About ReasonED
+# About ReasonED
 
 [![ReasonED Screenshot][product-screenshot]](https://reasoned.vercel.app/)
 
@@ -224,7 +220,7 @@ Initial prototype contributors from the ODU Spring 2024 semester:
 [license-url]: https://github.com/emrlk/ReasonED/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555&labelColor=541690&color=541690
 [linkedin-url]: https://linkedin.com/in/emily-louk
-[product-screenshot]: https://github.com/emrlk/ReasonED/blob/main/client/reasoned-app/public/Screenshot.PNG
+[product-screenshot]: https://github.com/emrlk/ReasonED/blob/main/misc/ReasonED-README-screenshot.PNG
 [Postgresql]:https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 [Postgresql-url]: https://www.postgresql.org/about/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
