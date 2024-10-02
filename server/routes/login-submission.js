@@ -64,7 +64,7 @@ const handleLogin = async (req, res, client) => {
                 };
 
                 // Sign the token
-                const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
+                const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
 
                 // Return response with token 
                 return res.status(200).json({ token });
@@ -108,7 +108,7 @@ const handleLogin = async (req, res, client) => {
                 };
 
                 // Sign the token
-                const token = jwt.sign(tokenPayload, 'secret_key', { expiresIn: '1h' });
+                const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
 
                 // Return response with token 
                 return res.status(200).json({ token });
