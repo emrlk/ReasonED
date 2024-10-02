@@ -3,6 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectToDatabase = require('./database');
 const authenticateJWT = require('./helpers/authenticateJWT')
+const RateLimit = require('express-rate-limit');
+
+// Set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
 
 // Import API routes
 const handleStudentSignUp = require('./routes/student-submission');
@@ -86,7 +93,7 @@ app.post('/log-in', (req, res) => {
 });
 
 // POST endpoint to handle forgetting password
-app.post('/forgot-password', (req, res) => {
+app.post('/forgot-password', limiter, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
@@ -96,7 +103,7 @@ app.post('/forgot-password', (req, res) => {
 });
 
 // POST endpoint to handle resetting password
-app.post('/reset-password', (req, res) => {
+app.post('/reset-password', limiter, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
@@ -106,7 +113,7 @@ app.post('/reset-password', (req, res) => {
 });
 
 // POST endpoint to handle resetting password (after user is logged in)
-app.post('/change-password', (req, res) => {
+app.post('/change-password', limiter, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
@@ -116,7 +123,7 @@ app.post('/change-password', (req, res) => {
 });
 
 // GET endpoint to fetch user data
-app.get('/fetch/user', authenticateJWT, (req, res) => {
+app.get('/fetch/user', limiter, authenticateJWT, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
@@ -126,7 +133,7 @@ app.get('/fetch/user', authenticateJWT, (req, res) => {
 });
 
 // POST endpoint to verify 2FA code
-app.post('/verify-code', (req, res) => {
+app.post('/verify-code', limiter, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
@@ -136,7 +143,7 @@ app.post('/verify-code', (req, res) => {
 });
 
 // POST endpoint to change a student's username
-app.post('/change-username', (req, res) => {
+app.post('/change-username', limiter, (req, res) => {
   connectToDatabase((err, client) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
