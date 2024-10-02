@@ -21,7 +21,7 @@ const authenticateJWT = (req, res, next) => {
     console.log('Received token:', token);
 
     // Verify the JWT token
-    jwt.verify(token, 'secret_key', (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
             return res.status(403).json({ error: 'Forbidden' });
         }
