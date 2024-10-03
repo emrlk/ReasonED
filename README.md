@@ -1,14 +1,15 @@
 <a id="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
+<div align="center">
+  
+<a href="">[![Contributors][contributors-shield]][contributors-url]</a>
+<a href="">[![Forks][forks-shield]][forks-url]</a>
+<a href="">[![Stargazers][stars-shield]][stars-url]</a>
+<a href="">[![Issues][issues-shield]][issues-url]</a>
+<a href="">[![MIT License][license-shield]][license-url]</a>
 
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
-  [![Issues][issues-shield]][issues-url]
-  [![MIT License][license-shield]][license-url]
-
-
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
