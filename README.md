@@ -7,7 +7,6 @@
   [![Stargazers][stars-shield]][stars-url]
   [![Issues][issues-shield]][issues-url]
   [![MIT License][license-shield]][license-url]
-  [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -206,19 +205,18 @@ Initial prototype contributors from the ODU Spring 2024 semester:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/emrlk/ReasonED.svg?style=for-the-badge&labelColor=541690&color=FF8D29
+[contributors-shield]: https://img.shields.io/github/contributors/emrlk/ReasonED.svg?style=for-the-badge&labelColor=541690&color=541690
 [contributors-url]: https://github.com/emrlk/ReasonED/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/emrlk/ReasonED.svg?style=for-the-badge&labelColor=541690&color=FF8D29
+[forks-shield]: https://img.shields.io/github/forks/emrlk/ReasonED.svg?style=for-the-badge&labelColor=FF4949&color=FF4949
 [forks-url]: https://github.com/emrlk/ReasonED/network/members
 [godot]: https://img.shields.io/badge/Godot-3?style=for-the-badge&logo=godot-engine&logoColor=white&labelColor=478CBF&color=478CBF
 [godot-url]: https://godotengine.org/download/3.x/windows/
-[stars-shield]: https://img.shields.io/github/stars/emrlk/ReasonED.svg?style=for-the-badge&labelColor=541690&color=FF8D29
+[stars-shield]: https://img.shields.io/github/stars/emrlk/ReasonED.svg?style=for-the-badge&labelColor=FF8D29&color=FF8D29
 [stars-url]: https://github.com/emrlk/ReasonED/stargazers
-[issues-shield]: https://img.shields.io/github/issues/emrlk/ReasonED?style=for-the-badge&labelColor=541690&color=FF8D29
+[issues-shield]: https://img.shields.io/github/issues/emrlk/ReasonED?style=for-the-badge&labelColor=FFCD38&color=FFCD38
 [issues-url]: https://github.com/emrlk/ReasonED/issues
-[license-shield]: https://img.shields.io/github/license/emrlk/ReasonED.svg?style=for-the-badge&labelColor=541690&color=FF8D29
+[license-shield]: https://img.shields.io/github/license/emrlk/ReasonED.svg?style=for-the-badge&labelColor=3b82f6&color=3b82f6
 [license-url]: https://github.com/emrlk/ReasonED/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555&labelColor=541690&color=541690
 [linkedin-url]: https://linkedin.com/in/emily-louk
 [product-screenshot]: https://github.com/emrlk/ReasonED/blob/main/misc/ReasonED-README-screenshot.PNG
 [Postgresql]:https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
